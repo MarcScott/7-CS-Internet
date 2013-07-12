@@ -1,4 +1,4 @@
-How_the_internet_works
-======================
+VirtualPet
+==========
 
-Scratch project on how the internet works
+An introduction to Scratch
