@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title></title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="An introduction to how the Internet works">
+		<meta name="author" content="Marc Scott">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -37,13 +37,276 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>How the internet works</h1>
+					<h3>A Project in Scratch</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created by <a href="http://coding2learn.org">Marc Scott</a> / <a href="http://twitter.com/coding2learn">@coding2learn</a></small>
 					</p>
 				</section>
 
+				<section>
+					<h2>The Internet, The World Wide Web, Web Browsers and Search Engines.</h2>
+					<p>Do you know the difference between them?</p>
+					<p>Try and write down / explain your ideas</p>
+				</section>
+
+				<section>
+					<section>
+						<h1>The Internet</h1>
+					</section>
+					<section>
+						<h2>The Internet</h2>
+						<h3>Most people don't know what the Internet is.<br/>This guy certainly doesn't, and he's a US senator...</h3>
+						<iframe id="slideshare" src="http://www.youtube.com/embed/f99PcP0aFNE?rel=0" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+					</video>
+					</section>
+					<section>
+						<img src="http://blog.une.edu.au/robbi/files/2009/08/mg20227062200-8_792.jpg" alt="Undersea Fibre">
+						<p>He was partially correct though - the internet is a little like a "Series of Tubes"</p>
+					</section>
+					<section>
+						<h2>What is the Internet?</h2>
+						<p>It is a global network of computers, connected by fibre optic and copper cables or wireless and satellite signals.</p>
+						<p>On it's own, the internet is nothing more than a lot of very expensive equipment.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>The World Wide Web</h1>
+					</section>
+					<section>
+						<h2>The World Wide Web</h2>
+						<img src="http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg">
+						<p>Tim Berners-Lee invented the WWW.</p>
+						<p>To understand how the WWW works, we're going to do a little exercise.</p>
+					</section>
+					<section>
+						<h2>Making a little Web.</h2>
+						<p>We're going to produce a very tiny website. It won't be part of the www though, as it is going to sit on your computer alone and can't be accessed from outside of school.</p>
+						<p>First thing to do is to create a new directory in your home directory. Call it <em>myWebsite</em></p>
+					</section>
+					<section>
+						<h2>Our first page.</h2>
+						<p>Open up Notepad or some other texteditor</p>
+						<p>Now copy and paste the following into your document</p>
+						<pre><code>
+&lt;html&gt;
+&lt;body&gt;
+	&lt;h1&gt;My First Webpage&lt;/h1&gt;
+	&lt;p&gt;This is my first webpage. I hope you enjoy it.&lt;/p&gt;
+	&lt;img src="http://imgs.xkcd.com/comics/computer_problems.png"&gt;
+	&lt;a href="secondpage.html"&gt;Link to my Second Page&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+					</code></pre>
+					<p>Save your file as <pre><code>firstpage.html</code></pre></p>
+					<p>The name is important - make sure it is all lowercase and that the file ends in <pre><code>.html</code></pre> and <em>NOT</em> <pre><code>.txt</code></pre></p>
+					</section>
+					<section>
+						<h2>Our second page.</h2>
+						<p>Now create a new document.</p>
+						<p>Now copy and paste the following into your document</p>
+						<pre><code>
+&lt;html&gt;
+&lt;body&gt;
+	&lt;h1&gt;My Second Webpage&lt;/h1&gt;
+	&lt;p&gt;This is my second webpage. I hope you enjoy it as much as the first.&lt;/p&gt;
+	&lt;img src="http://imgs.xkcd.com/comics/tech_support_cheat_sheet.png"&gt;
+	&lt;a href="firstpage.html"&gt;Link to my First Page&lt;/a&gt;
+	&lt;a href="http://www.google.com"&gt;Link to my Google&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+					</code></pre>
+					<p>Save your file as <pre><code>secondpage.html</code></pre></p>
+					</section>
+					<section>
+						<h2>Testing our webpage</h2>
+						<p>Now have a look inside the directory you created. You should see two icons for the two files that you created and both should look like webbrowser icons</p>
+						<p>Double click the firstpage.html file and it should open up in a webbrowser.</p>
+					</section>
+					<section>
+						<h2>Debugging and editing</h2>
+						<p>To open your file in a text editor again - right click on the file and choose "Open with" and select Notepad.</p>
+						<p>If your pages didn't work then check the code again and check your file names.</p>
+						<p>If you think you understand what has been written then you could have a go at creating another page. If not, don't worry, you'll be tackling HTML in later lessons.</p>
+					</section>
+					<section>
+						<h2>So what is the World Wide Web?</h2>
+						<p>The world wide web is a load of documents, like the two that you created, that all link to each other and are stored on different computers all over the world. The computers are called <em>Web Servers</em></p>
+						<img src="http://upload.wikimedia.org/wikipedia/commons/9/98/Cern_datacenter.jpg" width=50%></img>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Web Browsers</h1>
+					</section>
+					<section>
+						<h2>What is a Web Browser?</h2>
+						<p>A web browser is a piece of software that you have installed on your computer</p>
+						<p>How many of the web browsers can you name from the logos?</p>
+						<img src="http://www.movingweb.co.nz/images/browser_logos.png">
+					</section>
+					<section>
+						<h2>What does a web browser do?</h2>
+						<p>Web browser can take the languages of the web (html, javascript, actionscript and many more) and turn them into web pages that you and I can read and interact with</p>
+						<p>For instance, here is a little HTML code</p>
+						<pre><code>
+<iframe src="http://player.vimeo.com/video/2619976" width="500" height="385"></iframe>
+						</code></pre>
+						<p>And you can see how your browser renders it below</p>
+					</section>
+					<section>
+							<iframe data-autoplay src="http://player.vimeo.com/video/2619976?portrait=0&autoplay=1"width="500" height="385"></iframe>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>URLs and Domain Names</h1>
+					</section>
+
+					<section>
+						<h1>Domain Names</h1>
+						<p>Look up in your browser's address bar.</p>
+						<p>What ever is written there after the <em>www</em> but <em>before</em> the first / is the domain name of the site you are on</p>
+						<p>You'll be very familiar with some domain names like;</p>
+						<code><ul>
+							<li>google.com</li>
+							<li>favebook.com</li>
+							<li>yahoo.com</li>
+							<li>youtube.com</li>
+							<li>wikipedia.org</li>
+						</ul></code>
+					</section>
+
+					<section>
+						<h2>What is a domain name?</h2>
+						<p>Domain names are a little like addresses. For instance, the Prime Minsiter lives at:</p>
+						<pre><code>
+10 Downing Street
+London,
+SW1A 2AA
+						</code></pre>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/2010_Official_Downing_Street_pic.jpg" width=50%>
+					</section>
+
+					<section>
+						<pre><code>
+10 Downing Street
+London,
+SW1A 2AA
+						</code></pre>
+						<p>This is nice and easy for humans to say and remember. Another way of saying where the Prime Minister lives would be to say he's at:</p>
+						<pre><code>
+51° 30′ 12.23″ N, 0° 7′ 39.5″ W
+						</code></pre>
+						<p>This is tricky for a human to remember but great for a computer. Try copying and pasting it into <a href="http://maps.google.com">Google Maps</a> and see what happens</p>
+					</section>
+
+					<section>
+						<h2>IP addresses</h2>
+						<p>Domain names are like address, they are designed for humans to read and remember. In reality a computer's address (that allows other computers on a network or the internet to find it), is made up of numbers.</p>
+						<p>Computer use <code>IP addresses</code> to send messages to each other.</p>
+						<p>Your Computer's current IP address should be shown below</p>
+						<pre>
+							<script language="JavaScript">
+VIH_BackColor = "black";
+VIH_ForeColor = "#00FF40";
+VIH_FontPix = "30";
+VIH_DisplayFormat = "You are visiting from:<br>IP Address: %%IP%%";
+VIH_DisplayOnPage = "yes";
+</script>
+<script language="JavaScript" src="http://scripts.hashemian.com/js/visitorIPHOST.js.php"></script>
+					</pre>
+					</section>
+
+					<section>
+						<h2>Looking up IP addresses</h2>
+						<p>We need domain names because IP addresses are too difficult for humans to remember.</p>
+						<p>Imagine typing in <pre><code>http://74.125.239.116</code></pre> everytime. Give it a go now</p>
+						<p>Try these as well:</p>
+						<code>
+						<ol>
+							<li>http://212.58.246.90</li>
+							<li>http://77.91.251.10</li>
+							<li>http://72.21.210.29</li>
+						</ol>
+						</code>
+					</section>
+
+					<section>
+						<h2>DNS</h2>
+						<p>When I type www.google.com into my address bar, my browser sends of a message to Google's servers asking for the webpage.</p>
+						<p>My computer needs to know the IP address of Google's server, and to do this it looks it up on a Domain Name Server</p>
+						<p>A Domain Name Server (DNS for short) is a special computer on the internet that stores tables of domain names and IP addresses.</p>
+					</section>
+
+					<section>
+						<h2>Modelling a DNS</h2>
+						<p>You're going to model a DNS, in Scratch.</p>
+						<p>Instructions start on the slide to the right</p>
+						<p>If you need more help then look to the slides below</p>
+						<p><em>Good Luck</em></p>
+					</section>
+				</section>
+
+				<section>
+					<h1>Modelling a DNS</h1>
+				</section>
+
+				<section>
+					<h3>Go to <a href="http://scratch.mit.edu">Scratch</a> and start a new project</h3>
+				</section>
+
+				<section>
+					<h2>Explaining DNS</h2>
+					<p>A DNS has a table stored on it that looks something like this:</p>
+					<table border="1">
+						<tr>
+							<td>Domain Name</td>
+							<td>IP Address</td>
+						</tr>
+						<tr>
+							<td>google.com</td>
+							<td>74.125.239.116</td>
+						</tr>
+						<tr>
+							<td>bbc.co.uk</td>
+							<td>212.58.246.90</td>
+						</tr>
+					</table>
+					<small>A quick note. Not everything explained in this presentation is true. Some of it is a <a href="http://en.wikipedia.org/wiki/Lie-to-children">simplification</a> to make things easier to understand</small>
+				</section>
+
+
+
+
+
+
+
+				<section>
+					<section>
+						<h1>Modelling<br/>the internet</h1>
+					</section>
+					<section>
+						<h2>Modelling a network</h2>
+						<p>The internet is a very large network, but at the end of the day it is still just a network.</p>
+						<p>You're going to build a model network in Scratch, the shows how information is past around.</p>
+					</section>
+					<section>
+						<h2>To use this tutorial you simply flip right to move onto the next section</h2>
+						<h2>If you get stuck and need further explanation, you can normally flip down</h2>
+					</section>
+				</section>
+
+				<section>
+
+					
+
+				</section>
+				<!--
 				<section>
 					<h2>Heads Up</h2>
 					<p>
@@ -56,7 +319,7 @@
 					</aside>
 				</section>
 
-				<!-- Example of nested vertical slides -->
+				
 				<section>
 					<section>
 						<h2>Vertical Slides</h2>
@@ -315,7 +578,7 @@ function linkify( selector ) {
 				<section>
 					<h2>Export to PDF</h2>
 					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+					<iframe id="slideshare" src="http://www.youtube.com/embed/CFsZ971zAks" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
 					<script>
 						document.getElementById('slideshare').attributeName = 'allowfullscreen';
 					</script>
@@ -342,6 +605,7 @@ function linkify( selector ) {
 					<h1>THE END</h1>
 					<h3>BY Hakim El Hattab / hakim.se</h3>
 				</section>
+-->
 
 			</div>
 
