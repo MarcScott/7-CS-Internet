@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/Bourne.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -31,6 +31,8 @@
 	</head>
 
 	<body>
+		<a href="http://www.bourne-grammar.lincs.sch.uk"><img src="images/logo.png"></img></a>
+		<a href="https://github.com/MarcScott/How_the_internet_works"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
 		<div class="reveal">
 
@@ -57,7 +59,7 @@
 					</section>
 					<section>
 						<h2>The Internet</h2>
-						<h3>Most people don't know what the Internet is.<br/>This guy certainly doesn't, and he's a US senator...</h3>
+						<p>Most people don't know what the Internet is.<br/>This guy certainly doesn't, and he's a US senator...</p>
 						<iframe id="slideshare" src="http://www.youtube.com/embed/f99PcP0aFNE?rel=0" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
 					</video>
 					<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
@@ -81,7 +83,7 @@
 					</section>
 					<section>
 						<h2>The World Wide Web</h2>
-						<img src="http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg">
+						<img src="http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg" height ='200'>
 						<p>Tim Berners-Lee invented the WWW.</p>
 						<p>To understand how the WWW works, we're going to do a little exercise.</p>
 						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
@@ -128,7 +130,7 @@
 &lt;/body&gt;
 &lt;/html&gt;
 					</code></pre>
-					<p>Save your file as <pre><code>secondpage.html</code></pre></p>
+					<p>Save your file as <code>secondpage.html</code></p>
 					<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 					<section>
@@ -160,7 +162,7 @@
 						<h2>What is a Web Browser?</h2>
 						<p>A web browser is a piece of software that you have installed on your computer</p>
 						<p>How many of the web browsers can you name from the logos?</p>
-						<img src="http://www.movingweb.co.nz/images/browser_logos.png">
+						<img src="http://www.movingweb.co.nz/images/browser_logos.png" height="200">
 						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 					<section>
@@ -188,13 +190,13 @@
 						<p>Look at your browser's address bar. What ever is written there is the URL of the page you are on.</p>
 						<p>What ever is written there after the <em>www</em> but <em>before</em> the first / is the domain name of the site you are on</p>
 						<p>You'll be very familiar with some domain names like;</p>
-						<code><ul>
-							<li>google.com</li>
-							<li>favebook.com</li>
-							<li>yahoo.com</li>
-							<li>youtube.com</li>
-							<li>wikipedia.org</li>
-						</ul></code>
+						<pre><code>
+google.com
+facebook.com
+yahoo.com
+youtube.com
+wikipedia.org
+						</code></pre>
 						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 			
@@ -207,7 +209,7 @@
 London,
 SW1A 2AA
 						</code></pre>
-						<img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/2010_Official_Downing_Street_pic.jpg" width=50%>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/2010_Official_Downing_Street_pic.jpg" width=40%>
 						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 
@@ -248,13 +250,11 @@ VIH_DisplayOnPage = "yes";
 						<p>We need domain names because IP addresses are too difficult for humans to remember.</p>
 						<p>Imagine typing in <pre><code>http://74.125.239.116</code></pre> everytime. Give it a go now</p>
 						<p>Try these as well:</p>
-						<code>
-						<ol>
-							<li>http://212.58.246.90</li>
-							<li>http://77.91.251.10</li>
-							<li>http://72.21.210.29</li>
-						</ol>
-						</code>
+						<pre><code>
+1. http://212.58.246.90
+2. http://77.91.251.10
+3. http://72.21.210.29
+						</code></pre>
 						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 
@@ -287,7 +287,7 @@ VIH_DisplayOnPage = "yes";
 				<section>
 					<h2>Explaining DNS</h2>
 					<p>A DNS has a table stored on it that looks something like this:</p>
-					<table border="1">
+					<table class="center">
 						<tr>
 							<td>Domain Name</td>
 							<td>IP Address</td>
@@ -351,6 +351,8 @@ VIH_DisplayOnPage = "yes";
 						<h2>Linear Search</h2>
 						<p>On the slide below you're going to be presented with an Identity Parade Lineup. You need to find this face:</p>
 						<img src="images/Face.jpg"></img> 
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+
 					</section>
 					<section>
 							<canvas id="myCanvas" width="960" height="600"></canvas>
@@ -438,14 +440,81 @@ VIH_DisplayOnPage = "yes";
 							        context.drawImage(blank_face, 760, 100, 100, 100);
 							      };
 							      UsualBkg.src = 'images/The_Usual_suspects.jpg';
-							      blank_face.src = 'images/blank_face.gif'
+							      blank_face.src = 'images/blank_face.gif';
 							    </script>
+							    <br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 					<section>
 						<h2>How did you do it?</h2>
 						<p>You could have selected people at random. This is one way of accomplishing a search.</p>
 						<p>Or maybe you started from one side and worked your way across. This is how a computer program would accomplish a search.</p>
 						<p>This method of searching is called a linear search.</p>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+					</section>
+					<section>
+						<h2>Linear Search</h2>
+						<p>Imagine we had a list of 'things'</p>
+						<code>[cat,dog,horse,mouse,rabbit,parrot,elephant]</code>
+						<p>If we wnated a computer to program to find the position of the element <code>parrot</code> it would check from left to right</p>
+						<p>The program would check what was at position 1, see if it was parrot and if it wasn't it would move onto position 2, and so on.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Using a linear search in our DNS.</h1>
+					</section>
+					<section>
+						<h2>Searching for domain names</h2>
+						<p>In our Scratch program so far we have a list of domain names and a list of IP addresses.</p>
+						<p>We need to be able to conduct a linear search on the list of domain names to find the position of any given name.</p>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+					</section>
+					<section>
+						<h2>Getting Started</h2>
+						<p>You're going to need a couple of new variable to start.</p>
+						<ol>
+							<li>Create a variable called <code>domain</code></li>
+							<li>Create a variable called <code>index</code></li>
+						</ol>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+					</section>
+					<section>
+						<h2>A linear search algorithm</h2>
+						<p>See if you can build this independently. If not there is help below</p>
+						<ul>
+							<li>When the script starts - the program asks for a domain name.</li>
+							<ul>
+								<li>The variable <code>domain</code> is set to the answer.</li>
+								<li>The variable <code>index</code> is set to 1</li>
+								<li>Within a loop that repeats the same number of times as the length of the Domain Name list.</li>
+								<ul>
+									<li>If the <code>index</code> of the Domain Name list = the variable <code>domain</code></li>
+									<ul>
+										<li>Say the <code>index</code> of the IP Address list</li>
+									</ul>
+									<li>Else</li>
+									<ul>
+										<li>Change the variable <code>index</code> by 1</li>
+									</ul>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Pseudocode</h2>
+						<pre><code>
+when GreenFlag clicked
+	ask "What domain are you looking for"
+	set domain to answer
+	set index to 1
+	repeat (length of Domain Names)
+		if (item index of Domain Names) = domain
+			say (join "the IP address is", "item index of IP Addresses")
+		else
+			change index by 1
+		</pre></code>
+
 					</section>
 				</section>
 
