@@ -349,7 +349,103 @@ VIH_DisplayOnPage = "yes";
 					</section>
 					<section>
 						<h2>Linear Search</h2>
-						<p>A linear
+						<p>On the slide below you're going to be presented with an Identity Parade Lineup. You need to find this face:</p>
+						<img src="images/Face.jpg"></img> 
+					</section>
+					<section>
+							<canvas id="myCanvas" width="960" height="600"></canvas>
+							    <script> //Some seriously ugly js here. Come back and fix.
+							    	var canvas = document.getElementById('myCanvas');
+									var context = canvas.getContext('2d');
+									var UsualBkg = new Image();
+									var blank_face = new Image();
+									var image1Vis = true;
+									var image2Vis = true;
+									var image3Vis = true;
+									var image4Vis = true;
+									var image5Vis = true;
+									var faceSize = 100
+									var x;
+									var y;
+								
+
+								    function getMousePos(canvas, evt) 
+								    {
+								    	var rect = canvas.getBoundingClientRect();
+								        return {
+								          x: evt.clientX - rect.left,
+								          y: evt.clientY - rect.top
+								        };
+									}
+
+
+									canvas.addEventListener('mousedown', function(evt) 
+										{
+											var mousePos = getMousePos(canvas, evt);
+
+											if (mousePos.x>100 && mousePos.x<200 && mousePos.y>130 && mousePos.y<230)
+											  	{
+											  		image1Vis = false
+											  	}
+											if (mousePos.x>240 && mousePos.x<340 && mousePos.y>90 && mousePos.y<190)
+											  	{
+											  		image2Vis = false
+											  	}
+											if (mousePos.x>435 && mousePos.x<535 && mousePos.y>75 && mousePos.y<1750)
+											  	{
+											  		image3Vis = false
+											  	}
+											if (mousePos.x>585 && mousePos.x<685 && mousePos.y>90 && mousePos.y<190)
+											  	{
+											  		image4Vis = false
+											  	}
+											if (mousePos.x>760 && mousePos.x<860 && mousePos.y>100 && mousePos.y<200)
+											  	{
+											  		image5Vis = false
+											  	}
+										  	context.drawImage(UsualBkg, 0, 0, 960, 600);
+											if (image1Vis == true) 
+												{
+													context.drawImage(blank_face, 100, 120, 100, 100);
+												}
+											if (image2Vis == true) 
+												{
+													context.drawImage(blank_face, 240, 90, 100, 100);
+												}
+											if (image3Vis == true) 
+												{
+													context.drawImage(blank_face, 435, 75, 100, 100);
+												}
+											if (image4Vis == true) 
+												{
+													context.drawImage(blank_face, 585, 90, 100, 100);
+												}
+											if (image5Vis == true) 
+												{
+													context.drawImage(blank_face, 760, 100, 100, 100);
+												}
+								      	}, false);
+
+
+
+
+							      UsualBkg.onload = function() {
+							        context.drawImage(UsualBkg, 0, 0, 960, 600);
+							        context.drawImage(blank_face, 100, 130, 100, 100);
+							        context.drawImage(blank_face, 240, 90, 100, 100);
+							        context.drawImage(blank_face, 435, 75, 100, 100);
+							        context.drawImage(blank_face, 585, 90, 100, 100);
+							        context.drawImage(blank_face, 760, 100, 100, 100);
+							      };
+							      UsualBkg.src = 'images/The_Usual_suspects.jpg';
+							      blank_face.src = 'images/blank_face.gif'
+							    </script>
+					</section>
+					<section>
+						<h2>How did you do it?</h2>
+						<p>You could have selected people at random. This is one way of accomplishing a search.</p>
+						<p>Or maybe you started from one side and worked your way across. This is how a computer program would accomplish a search.</p>
+						<p>This method of searching is called a linear search.</p>
 					</section>
 				</section>
 
