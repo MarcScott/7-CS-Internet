@@ -143,7 +143,7 @@ BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU
 4.  to Distribute and Publicly Perform Adaptations.
 5.  For the avoidance of doubt:
 
-        1.  **Non-waivable Compulsory License
+    1.  **Non-waivable Compulsory License
           Schemes**. In those jurisdictions in which the
           right to collect royalties through any statutory or
           compulsory licensing scheme cannot be waived, the
