@@ -43,11 +43,13 @@
 					<h3>A Project in Scratch</h3>
 					<p>
 						<small>Created by <a href="http://coding2learn.org">Marc Scott</a> / <a href="http://twitter.com/coding2learn">@coding2learn</a></small>
+						<small>using <a href="https://github.com/hakimel/reveal.js">reveal.js</a></small>
+					</br><small><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">How The Internet Works</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.coding2learn.org" property="cc:attributionName" rel="cc:attributionURL">Marc Scott</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</small>
 					</p>
 				</section>
 
 				<section>
-					<h2>The Internet, The World Wide Web, Web Browsers and Search Engines.</h2>
+					<h2>The Internet, The World Wide Web, Browsers and Search Engines.</h2>
 					<p>Do you know the difference between them?</p>
 					<p>Try and write down / explain your ideas</p>
 				</section>
@@ -65,7 +67,7 @@
 					<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 					<section>
-						<img src="http://blog.une.edu.au/robbi/files/2009/08/mg20227062200-8_792.jpg" alt="Undersea Fibre">
+						<img src="http://blog.une.edu.au/robbi/files/2009/08/mg20227062200-8_792.jpg" alt="Undersea Fibre" width="60%">
 						<p>He was partially correct though - the internet is a little like a "Series of Tubes"</p>
 						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
@@ -234,8 +236,8 @@ SW1A 2AA
 						<p>Your Computer's current IP address should be shown below</p>
 						<pre>
 							<script language="JavaScript">
-VIH_BackColor = "black";
-VIH_ForeColor = "#00FF40";
+VIH_BackColor = "#525252";
+VIH_ForeColor = "#F0F0F0";
 VIH_FontPix = "30";
 VIH_DisplayFormat = "You are visiting from:<br>IP Address: %%IP%%";
 VIH_DisplayOnPage = "yes";
@@ -455,7 +457,7 @@ VIH_DisplayOnPage = "yes";
 						<h2>Linear Search</h2>
 						<p>Imagine we had a list of 'things'</p>
 						<code>[cat,dog,horse,mouse,rabbit,parrot,elephant]</code>
-						<p>If we wnated a computer to program to find the position of the element <code>parrot</code> it would check from left to right</p>
+						<p>If we wanted a computer to program to find the position of the element <code>parrot</code> it would check from left to right</p>
 						<p>The program would check what was at position 1, see if it was parrot and if it wasn't it would move onto position 2, and so on.</p>
 					</section>
 				</section>
@@ -472,7 +474,7 @@ VIH_DisplayOnPage = "yes";
 					</section>
 					<section>
 						<h2>Getting Started</h2>
-						<p>You're going to need a couple of new variable to start.</p>
+						<p>You're going to need a couple of new variables to start.</p>
 						<ol>
 							<li>Create a variable called <code>domain</code></li>
 							<li>Create a variable called <code>index</code></li>
@@ -481,7 +483,6 @@ VIH_DisplayOnPage = "yes";
 					</section>
 					<section>
 						<h2>A linear search algorithm</h2>
-						<p>See if you can build this independently. If not there is help below</p>
 						<ul>
 							<li>When the script starts - the program asks for a domain name.</li>
 							<ul>
@@ -500,6 +501,7 @@ VIH_DisplayOnPage = "yes";
 								</ul>
 							</ul>
 						</ul>
+						<a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 					<section>
 						<h2>Pseudocode</h2>
@@ -509,19 +511,52 @@ when GreenFlag clicked
 	set domain to answer
 	set index to 1
 	repeat (length of Domain Names)
-		if (item index of Domain Names) = domain
-			say (join "the IP address is", "item index of IP Addresses")
+		if (index of Domain Names) = domain
+			say ("the IP address is", index of IP Addresses)
 		else
 			change index by 1
 		</pre></code>
+		<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 					<section>
 						<h2>The blocks</h2>
-						<p>Try and flick back up to the pseudocode and figure out how to place them before scrolling donw</p>
+						<p>Try and flick back up to the pseudocode and figure out how to place them before scrolling down</p>
 						<img src="images/linear_search_blocks.png"></img>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+					</section>
+					<section>
+						<h2>The blocks part 2</h2>
+						<p>If you're stuck here are a few of the blocks that have been stacked for you.</p>
+						<p>See if you can assemble the script now, before scrolling down.</p>
+						<img src="images/linear_search_blocks2.png"></img>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+					</section>
+					<section>
+						<h2>The completed script</h2>
+						<img src="images/linear_search_script.png"></img>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+					</section>
+					<section>
+						<h2>The video</h2>
+						<video controls preload>
+  							<source src="video/Linear_Search.mp4"  type='video/mp4'>
+  							<source src="video/Linear_Search.webm" type='video/webm; codecs="vp8, vorbis"'>
+  							<source src="video/Linear_Search.ogv"  type='video/ogg; codecs="theora, vorbis"'>
+						</video>
 					</section>
 				</section>
-
+				<section>
+					<section>
+						<h2>Recap.</h2>
+						<ol>
+							<li>Domian names are easy for humans to read and remember.</li>
+							<li>Each domain name links to an IP address that computers use to send messages to each other.</li>
+							<li>A Domain Name Server (DNS) stores a table of domain names and IP addresses.</li>
+							<li>When you type in a URL, your computer asks the DNS what the IP address is for the domain name.</li>
+							<li>Linear search is one method of finding an element in a list.</li>
+						</ol>
+					</section>
+				</section>
 
 
 				<section>
