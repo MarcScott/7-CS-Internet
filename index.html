@@ -465,6 +465,7 @@ VIH_DisplayOnPage = "yes";
 				<section>
 					<section>
 						<h1>Using a linear search in our DNS.</h1>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 					<section>
 						<h2>Searching for domain names</h2>
@@ -549,7 +550,7 @@ when GreenFlag clicked
 					<section>
 						<h2>Recap.</h2>
 						<ol>
-							<li>Domian names are easy for humans to read and remember.</li>
+							<li>Domain names are easy for humans to read and remember.</li>
 							<li>Each domain name links to an IP address that computers use to send messages to each other.</li>
 							<li>A Domain Name Server (DNS) stores a table of domain names and IP addresses.</li>
 							<li>When you type in a URL, your computer asks the DNS what the IP address is for the domain name.</li>
@@ -561,24 +562,68 @@ when GreenFlag clicked
 
 				<section>
 					<section>
-						<h1>Modelling<br/>the internet</h1>
+						<h1>The Internet (again)</h1>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 					<section>
 						<h2>Modelling a network</h2>
 						<p>The internet is a very large network, but at the end of the day it is still just a network.</p>
-						<p>You're going to build a model network in Scratch, the shows how information is past around.</p>
+						<p>You're going to build a model network in Scratch, that shows how information is past around.</p>
+					</section>
+				</section>
+	
+				<section>
+					<section>
+						<h2>Getting started</h2>
+						<p>Goto the Scratch website and create a new project</p>
+						<p>Call the project "Virtual Network"</h2>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
 					</section>
 					<section>
-						<h2>To use this tutorial you simply flip right to move onto the next section</h2>
-						<h2>If you get stuck and need further explanation, you can normally flip down</h2>
+						<h2>Sprites</h2>
+						<p>We're going to need three sprites to start with.</p>
+						<ol>
+							<li>A computer</li>
+							<li>A router</li>
+							<li>A packet</li>
+						</ol>
+						<br>
+						<br>
+						<p>Here's the ones I used but feel free to select,import or draw your own.</p>
+						<img src="images/Sprites.png"></img>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+					</section>
+					<section>
+						<p>We'll name the sprite for the computer with an IP address.</p>
+						<p>On most <em>home</em> networks the IP address will fall into the range of 192.168.1.1 up to 192.168.1.254. We'll give our computer the first IP address, so call it <code>192.168.1.1</code></p>
+						<p>We'll name the router <code>192.168.1.254</code> as this is normally the default IP address for a home network router</p>
+						<p>We'll name the packet <code>packet</code> because it's a packet</p>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+					</section>
+					<section>
+						<p>Here's a screenshot of my sprites so far</p>
+						<img src="images/named_sprites.png"></img>
 					</section>
 				</section>
 
 				<section>
-
-					
-
+					<section>
+						<h2>How computers communicate on a network</h2>
+						<small>
+						<p>Below is a simplified description of how computers on a network send messages to each other.</p>
+						<ol>
+							<li>The computer sending some data will split the data up into packets.</li>
+							<li>Each packet contains (amongst other things) the IP address of the computer sending the data, a chunk of the data and the IP address of the computer that is going to receive the data.</li>
+							<li>The computer sends the packet to the router.</li>
+							<li>The router examines the packet and sees the IP address of the computer it is supposed to go to.</li>
+							<li>The router forwards the packet onto the destination computer</li>
+							<li>The destination computer receives the packet and can see the data it contains</li>
+						</ol>
+						</small>
+						<br/><a href="#" class="image navigate-down"><img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+					</section>
 				</section>
+
 				<!--
 				<section>
 					<h2>Heads Up</h2>
