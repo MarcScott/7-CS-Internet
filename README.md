@@ -16,15 +16,15 @@ The project license (see LICENSE.md) is open, so feel free to remove the logos
 |Lesson|Section(s) to complete         |Quiz SOC number|
 |------|-------------------------------|---------------|
 |1     |The Internet - Web Browsers    |SOC-1722958    |
-|2     |URLs and Domain Names          |
-|3     |Modelling a DNS & Linear Search|
-|4     |Modelling a Network            |
-|5     |Modelling a Network            |
-|6     |Extension activities           |n/a
-|7     |Extension activities           |n/a
+|2     |URLs and Domain Names          |SOC-1725298    |
+|3     |Modelling a DNS & Linear Search|SOC-1725562    |
+|4     |Modelling a Network            |SOC-1725728    |     |
+|5     |Modelling a Network            |SOC-1725728    |
+|6     |Extension activities           |n/a            |
+|7     |Extension activities           |n/a            |
 
 ## Assessment
-As well as the Socrative quiz, there are several potential assessment points throughtout the project.
+As well as the Socrative quizzes, there are several potential assessment points throughout the project.
 
 1. The DNS Mini project
 2. The Linear Search project
