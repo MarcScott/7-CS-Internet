@@ -62,6 +62,7 @@
 					<li><a href="#/Building_a_DNS_table">Building a DNS table</a></li>
 					<li><a href="#/Adding_to_the_DNS_table">Adding to the DNS table</a></li>
 					<li><a href="#/Linear_Search">Linear Search</a></li>
+					<li><a href="#/index">Indexing a list</a></li>
 					<li><a href="#/Using_Linear_Search">Using Linear Search in our DNS</a></li>
 					<li><a href="#/Linear_Search_Project">A Linear Search Project</a></li>
 					<li><a href="#/More_Internet">The Internet (Again)</a></li>
@@ -514,6 +515,54 @@ VIH_DisplayOnPage = "yes";
 						<code>[cat,dog,horse,mouse,rabbit,parrot,elephant]</code>
 						<p>If we wanted a computer to program to find the position of the element <code>parrot</code> it would check from left to right</p>
 						<p>The program would check what was at position 1, see if it was parrot and if it wasn't it would move onto position 2, and so on.</p>
+					</section>
+				</section>
+
+				<section id="index">
+					<section>
+						<h1>Indexing a list</h1>
+						<a href="#" class="image navigate-down"><img width="45" height="60" src="images/arrow.png" alt="Down arrow"></a>
+					</section>
+
+					<section>
+						<h2>What is an index?</h2>
+						<p>As a computer reads through a list, it needs to keep track of where it is. This is what an index is for.</p>
+						<p>Imagine we have the following two lists:</p>
+						<pre><code>
+OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+Rating = ['4/5','2/5','4/5','3/5','5/5']
+						</code></pre>
+						<p>The items in the first list are Operating systems. The items in the second list give a user rating out of 5.</p>
+					</section>
+
+					<section>
+						<h2>A quick linear search</h2>
+						<p>Imagine we wanted to find out the rating out of 5 for Android.</p>
+						<p>We could step through the list of operating systems until we found Android.</p>
+						<p>This would not tell us where to find the rating out of five in the second list though. It would just tell us that Android exists in the first list.</p>
+					</section>
+
+					<section>
+						<h2>Using an index</h2>
+						<pre><code>
+OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+Rating = ['4/5','2/5','4/5','3/5','5/5']				
+						</code></pre>
+						<p>As we move through (iterate) the first list searching for 'Android', we keep a count of our position.</p>
+						<p>The algorithm looks something like this:</p>
+						<small>
+						<ol>
+							<li><code>index = 1</code></li>
+							<li>Is Android at <code>index</code> (position 1)</li>
+							<li>No, so add <code>1</code> to <code>index</code>.</li>
+							<li>Is  Android at <code>index</code> (position 2)</li>
+							<li>No, so add <code>1</code> to <code>index</code>.</li>
+							<li>Is Android at <code>index</code> (position 3)</li>
+							<li>Yes. So look up <code>index</code> of the second list</li>
+							<li><code>index</code> (position 3) of the second list is 4</li>
+							<li>So Android has a rating of 4</li>
+						</ol>
+						</small>
 					</section>
 				</section>
 
