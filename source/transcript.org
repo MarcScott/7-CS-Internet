@@ -1,0 +1,1175 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/main.css"/>
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/lesson.css"/>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
+#+TITLE: How the Internet Works
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+** The Internet, The World Wide Web, Browsers and Search Engines.
+
+Do you know the difference between them?
+
+Try and write down / explain your ideas
+
+* Introduction
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Throughout this unit, you're going to occasionally make notes and answer questions.
+- Use a text editor to record your progress as you go along.
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Create a new file and title it - How The Internet Works?
+- Under a subtitle (/Introduction/), try complete the following sentences without asking for help or lookling up answers. Just answer according to what you currently know.
+- /I think that the Internet is..../
+- /I think that the World Wide Web is.../
+- /I think that a Web Browser is.../
+- /I think that a Search Engine is.../
+
+* The Internet
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+** The Internet, The World Wide Web, Browsers and Search Engines.
+
+Do you know the difference between them?
+
+Try and write down / explain your ideas
+
+
+* The Internet
+** The Internet
+
+Most people don't know what the Internet is.
+This guy certainly doesn't, and he's a US senator...
+
+[[#][[[images/arrow.png]]]]
+
+[[http://blog.une.edu.au/robbi/files/2009/08/mg20227062200-8_792.jpg]]
+
+He was partially correct though - the internet is a little like a
+"Series of Tubes"
+
+[[#][[[images/arrow.png]]]]
+
+** What is the Internet?
+
+It is a global network of computers, connected by fibre optic and copper
+cables or wireless and satellite signals.
+
+On it's own, the internet is nothing more than a lot of very expensive
+equipment.
+
+* The World Wide Web
+
+[[#][[[images/arrow.png]]]]
+
+** The World Wide Web
+
+[[http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg]]
+
+Tim Berners-Lee invented the Web.
+
+To understand how the Web works, we're going to do a little exercise.
+
+[[#][[[images/arrow.png]]]]
+
+** Making a little Web.
+
+We're going to produce a very tiny website. It won't be part of the
+World Wide Web though, as it is going to sit on your computer alone and
+can't be accessed from outside.
+
+First thing to do is to create a new directory in your home directory.
+Call it /myWebsite/
+
+[[#][[[images/arrow.png]]]]
+
+** Our first page.
+
+Open up Notepad or some other text editor
+
+Now copy and paste the following into your document
+
+#+BEGIN_EXAMPLE
+    <html>
+    <body>
+        <h1>My First Webpage</h1>
+        <p>This is my first webpage. I hope you enjoy it.</p>
+        <img src="http://imgs.xkcd.com/comics/computer_problems.png">
+        <a href="secondpage.html">Link to my Second Page</a>
+    </body>
+    </html>
+                        
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+Save your file as
+
+#+BEGIN_EXAMPLE
+    firstpage.html
+#+END_EXAMPLE
+
+The name is important - make sure it is all lowercase and that the file
+ends in
+
+#+BEGIN_EXAMPLE
+    .html
+#+END_EXAMPLE
+
+and /NOT/
+
+#+BEGIN_EXAMPLE
+    .txt
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** Our second page.
+
+Now create a new document.
+
+Now copy and paste the following into your document
+
+#+BEGIN_EXAMPLE
+    <html>
+    <body>
+        <h1>My Second Webpage</h1>
+        <p>This is my second webpage. I hope you enjoy it as much as the first.</p>
+        <img src="http://imgs.xkcd.com/comics/tech_support_cheat_sheet.png">
+        <a href="firstpage.html">Link to my First Page</a>
+        <a href="http://www.google.com">Link to Google</a>
+    </body>
+    </html>
+                        
+#+END_EXAMPLE
+
+Save your file as =secondpage.html=
+
+[[#][[[images/arrow.png]]]]
+
+** Testing our webpage
+
+Now have a look inside the directory you created. You should see two
+icons for the two files that you created and both should look like web
+browser icons
+
+Double click the firstpage.html file and it should open up in a
+webbrowser.
+
+[[#][[[images/arrow.png]]]]
+
+** Debugging and editing
+
+To open your file in a text editor again - right click on the file and
+choose "Open with" and select Notepad.
+
+If your pages didn't work then check the code again and check your file
+names.
+
+Now have a go at creating a third page, and try linking to it from the
+other two.
+
+[[#][[[images/arrow.png]]]]
+
+** So what is the World Wide Web?
+
+The world wide web is a load of documents, like the two that you
+created, that all link to each other and are stored on different
+computers all over the world. The computers are called /Web Servers/
+
+[[http://upload.wikimedia.org/wikipedia/commons/9/98/Cern_datacenter.jpg]]
+
+* Web Browsers
+
+[[#][[[images/arrow.png]]]]
+
+** What is a Web Browser?
+
+A web browser is a piece of software that you have installed on your
+computer
+
+How many of the web browsers can you name from the logos?
+
+[[http://www.movingweb.co.nz/images/browser_logos.png]]
+[[#][[[images/arrow.png]]]]
+
+** What does a web browser do?
+
+Web browser can take the languages of the web (html, javascript,
+actionscript and many more) and display them in an way that is easy for
+you to read and interact with.
+
+For instance, here is a little HTML code
+
+#+BEGIN_EXAMPLE
+
+                            
+#+END_EXAMPLE
+
+And you can see how your browser renders it below
+
+[[#][[[images/arrow.png]]]]
+
+* URLs and Domain Names
+
+[[#][[[images/arrow.png]]]]
+
+Look at your browser's address bar. What ever is written there is the
+URL of the page you are on.
+
+What ever is written there after the /www/ but /before/ the first / is
+the domain name of the site you are on
+
+You'll be very familiar with some domain names like;
+
+#+BEGIN_EXAMPLE
+    google.com
+    facebook.com
+    yahoo.com
+    youtube.com
+    wikipedia.org
+                            
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** What is a domain name?
+
+Domain names are a little like addresses. For instance, the Prime
+Minsiter lives at:
+
+#+BEGIN_EXAMPLE
+    10 Downing Street
+    London,
+    SW1A 2AA
+                            
+#+END_EXAMPLE
+
+[[https://upload.wikimedia.org/wikipedia/commons/f/f5/2010_Official_Downing_Street_pic.jpg]]
+[[#][[[images/arrow.png]]]]
+
+#+BEGIN_EXAMPLE
+    10 Downing Street
+    London,
+    SW1A 2AA
+                            
+#+END_EXAMPLE
+
+This is nice and easy for humans to say and remember. Another way of
+saying where the Prime Minister lives would be to say he's at:
+
+#+BEGIN_EXAMPLE
+    51° 30′ 12.23″ N, 0° 7′ 39.5″ W
+                            
+#+END_EXAMPLE
+
+This is tricky for a human to remember but great for a computer. Try
+copying and pasting it into [[http://maps.google.com][Google Maps]] and
+see what happens
+
+[[#][[[images/arrow.png]]]]
+
+** IP addresses
+
+Domain names are like address, they are designed for humans to read and
+remember. In reality a computer's address (that allows other computers
+on a network or the internet to find it), is made up of numbers.
+
+Computer use =IP addresses= to send messages to each other.
+
+Your Computer's current IP address should be shown below
+
+#+BEGIN_EXAMPLE
+                                
+    VIH_BackColor = "#525252";
+    VIH_ForeColor = "#F0F0F0";
+    VIH_FontPix = "30";
+    VIH_DisplayFormat = "You are visiting from:IP Address: %%IP%%";
+    VIH_DisplayOnPage = "yes";
+
+
+                        
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** Looking up IP addresses
+
+We need domain names because IP addresses are too difficult for humans
+to remember.
+
+Imagine typing in
+
+#+BEGIN_EXAMPLE
+    http://74.125.239.116
+#+END_EXAMPLE
+
+everytime. Give it a go now
+
+Try these as well and write down the corresponding domains:
+
+#+BEGIN_EXAMPLE
+    1. http://212.58.246.90
+    2. http://77.91.251.10
+    3. http://72.21.210.29
+                            
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+* DNS
+
+[[#][[[images/arrow.png]]]]
+
+When I type www.google.com into my address bar, my browser sends off a
+message to Google's servers asking for the webpage.
+
+My computer needs to know the IP address of Google's server, and to do
+this it looks it up on a Domain Name Server
+
+A Domain Name Server (DNS for short) is a special computer on the
+internet that stores tables of domain names and IP addresses.
+
+[[#][[[images/arrow.png]]]]
+
+** DNS Explained in detail
+
+Watch the video and make a few notes as you go along
+
+[[#][[[images/arrow.png]]]]
+
+** DNS mini-project
+
+Imagine you had to explain DNS to somebody who had no idea what it was.
+
+Using whatever software you like (or even pen and paper if you prefer),
+create a product that you could use to help explain DNS to someone. You
+could create a poster, a presentation, a report. It's really up to you.
+
+* Introduction to
+
+* Modelling a DNS
+
+[[#][[[images/arrow.png]]]]
+
+*** Go to [[http://scratch.mit.edu][Scratch]] and start a new project
+
+Call it DNS Model
+
+[[#][[[images/arrow.png]]]]
+
+** Explaining DNS
+
+A DNS has a table stored on it that looks something like this:
+
+| Domain Name   | IP Address       |
+| google.com    | 74.125.239.116   |
+| bbc.co.uk     | 212.58.246.90    |
+
+A quick note. Not everything explained in this presentation is true.
+Some of it is a
+[[http://en.wikipedia.org/wiki/Lie-to-children][simplification]] to make
+things easier to understand
+
+* Building a DNS Table
+
+[[#][[[images/arrow.png]]]]
+
+We're going to have to build a DNS Table to begin with. This is going to
+be made up of two lists.
+
+Create a new list called =Domain Names= and then another list called
+=IP Addresses=
+
+To the =Domain Names= list add the domain name /google.com/
+
+To the =IP Addresses= list add the IP address /74.125.239.116/
+
+[[#][[[images/arrow.png]]]]
+
+** This is what you should end up with
+
+[[images/Create_Lists.png]]
+[[#][[[images/arrow.png]]]]
+
+* Adding to the DNS table
+
+[[#][[[images/arrow.png]]]]
+
+** More Domain Names
+
+We're going to need a few more Domain names and IP Addresses to populate
+our table.
+
+Goto [[http://www.hcidata.info/host2ip.cgi][this site]]
+
+Use the webpage to look up some common domain names like =facebook.com=
+and =youtube.com= and add them to the lists.
+
+[[#][[[images/arrow.png]]]]
+
+You should end up with something like this.
+
+Try and get at least 10 domain names and their corresponding IP
+Addresses
+
+[[images/Populated_Lists.png]]
+
+* Linear Search
+
+[[#][[[images/arrow.png]]]]
+
+** Searching algorithms
+
+When you type in a URL into a webbrowser address bar, your computer
+consults the DNS server, to find the IP address.
+
+The DNS server has to lookup the domain name and find the corresponding
+IP address
+
+To do this the server needs to use a searching algorithm
+
+[[#][[[images/arrow.png]]]]
+
+** Linear Search
+
+On the slide below you're going to be presented with an Identity Parade
+Lineup. You need to find this face:
+
+[[images/Face.jpg]]
+[[#][[[images/arrow.png]]]]
+
+[[#][[[images/arrow.png]]]]
+
+** How did you do it?
+
+You could have selected people at random. This is one way of
+accomplishing a search.
+
+Or maybe you started from one side and worked your way across. This is
+how a computer program would accomplish a search.
+
+This method of searching is called a linear search.
+
+[[#][[[images/arrow.png]]]]
+
+** Linear Search
+
+Imagine we had a list of 'things'
+
+=[cat,dog,horse,mouse,rabbit,parrot,elephant]=
+
+If we wanted a computer to program to find the position of the element
+=parrot= it would check from left to right
+
+The program would check what was at position 1, see if it was parrot and
+if it wasn't it would move onto position 2, and so on.
+
+* Indexing a list
+
+[[#][[[images/arrow.png]]]]
+
+** What is an index?
+
+As a computer reads through a list, it needs to keep track of where it
+is. This is what an index is for.
+
+Imagine we have the following two lists:
+
+#+BEGIN_EXAMPLE
+    OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+    Rating = ['4/5','2/5','4/5','3/5','5/5']
+                            
+#+END_EXAMPLE
+
+The items in the first list are Operating systems. The items in the
+second list give a user rating out of 5.
+
+** A quick linear search
+
+Imagine we wanted to find out the rating out of 5 for Android.
+
+We could step through the list of operating systems until we found
+Android.
+
+This would not tell us where to find the rating out of five in the
+second list though. It would just tell us that Android exists in the
+first list.
+
+** Using an index
+
+#+BEGIN_EXAMPLE
+    OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+    Rating = ['4/5','2/5','4/5','3/5','5/5']                
+                            
+#+END_EXAMPLE
+
+As we move through (iterate) the first list searching for 'Android', we
+keep a count of our position.
+
+The algorithm looks something like this:
+
+1. =index = 1=
+2. Is Android at =index= (position 1)
+3. No, so add =1= to =index=.
+4. Is Android at =index= (position 2)
+5. No, so add =1= to =index=.
+6. Is Android at =index= (position 3)
+7. Yes. So look up =index= of the second list
+8. =index= (position 3) of the second list is 4
+9. So Android has a rating of 4
+
+* Using a linear search in our DNS.
+
+[[#][[[images/arrow.png]]]]
+
+** Searching for domain names
+
+In our Scratch program so far we have a list of domain names and a list
+of IP addresses.
+
+We need to be able to conduct a linear search on the list of domain
+names to find the position of any given name.
+
+[[#][[[images/arrow.png]]]]
+
+** Getting Started
+
+You're going to need a couple of new variables to start.
+
+1. Create a variable called =domain=
+2. Create a variable called =index=
+
+[[#][[[images/arrow.png]]]]
+
+** A linear search algorithm
+
+When the script starts - the program asks for a domain name.
+
+The variable =domain= is set to the answer.
+
+The variable =index= is set to 1
+
+Within a loop that repeats the same number of times as the length of the
+Domain Name list.
+
+If the =index= of the Domain Name list = the variable =domain=
+
+-  Say the =index= of the IP Address list
+
+Else
+
+-  Change the variable =index= by 1
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when GreenFlag clicked
+        ask "What domain are you looking for"
+        set domain to answer
+        set index to 1
+        repeat (length of Domain Names)
+            if (index of Domain Names) = domain
+                say ("the IP address is", index of IP Addresses)
+            else
+                change index by 1
+            
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The blocks
+
+Try and flick back up to the pseudocode and figure out how to place them
+before scrolling down
+
+[[images/linear_search_blocks.png]]
+[[#][[[images/arrow.png]]]]
+
+** The blocks part 2
+
+If you're stuck here are a few of the blocks that have been stacked for
+you.
+
+See if you can assemble the script now, before scrolling down.
+
+[[images/linear_search_blocks2.png]]
+[[#][[[images/arrow.png]]]]
+
+** The completed script
+
+[[images/linear_search_script.png]]
+[[#][[[images/arrow.png]]]]
+
+** The video
+
+* A Linear Search Project
+
+** Instructions
+
+You're going to try an implement your own Linear Search program now.
+
+1. Create a Scratch program that:
+
+   -  Uses two lists, one to store a Subject Name (e.g. Science) and the
+      other to store a target grade.
+   -  Allows a user to search for a Subject Name and returns the target
+      grade.
+
+2. Use any sprites you like.
+3. If you have time, try to make it return 'Not found" if a subject that
+   doesn't exist is asked for.
+
+[[#][[[images/arrow.png]]]]
+
+** Recap.
+
+1. Domain names are easy for humans to read and remember.
+2. Each domain name links to an IP address that computers use to send
+   messages to each other.
+3. A Domain Name Server (DNS) stores a table of domain names and IP
+   addresses.
+4. When you type in a URL, your computer asks the DNS what the IP
+   address is for the domain name.
+5. Linear search is one method of finding an element in a list.
+
+* The Internet (again)
+
+[[#][[[images/arrow.png]]]]
+
+** Modelling a network
+
+The internet is a very large network, but at the end of the day it is
+still just a network.
+
+You're going to build a model network in Scratch, that shows how
+information is past around.
+
+[[#][[[images/arrow.png]]]]
+
+** Getting started
+
+Goto the Scratch website and create a new project
+
+Call the project "Virtual Network"
+
+* Sprites
+
+[[#][[[images/arrow.png]]]]
+
+** Sprites
+
+We're going to need three sprites to start with.
+
+1. A computer
+2. A router
+3. A packet
+
+Here's the ones I used but feel free to select,import or draw your own.
+
+[[images/Sprites.png]]
+[[#][[[images/arrow.png]]]]
+
+We'll name the sprite for the computer with an IP address.
+
+On most /home/ networks the IP address will fall into the range of
+192.168.1.1 up to 192.168.1.254. We'll give our computer the first IP
+address, so call it =192.168.1.1=
+
+We'll name the router =192.168.1.254= as this is normally the default IP
+address for a home network router
+
+We'll name the packet =packet= because it's a packet
+
+[[#][[[images/arrow.png]]]]
+
+Here's a screenshot of my sprites so far and a video to create them if
+you need it.
+
+[[images/named_sprites.png]]
+
+* Packets
+
+[[#][[[images/arrow.png]]]]
+
+** How computers communicate on a network
+
+Below is a simplified description of how computers on a network send
+messages to each other.
+
+1. The computer sending some data will split the data up into packets.
+2. Each packet contains (amongst other things) the IP address of the
+   computer sending the data, a chunk of the data and the IP address of
+   the computer that is going to receive the data.
+3. The computer sends the packet to the router.
+4. The router examines the packet and sees the IP address of the
+   computer it is supposed to go to.
+5. The router forwards the packet onto the destination computer
+6. The destination computer receives the packet and can see the data it
+   contains
+
+[[#][[[images/arrow.png]]]]
+
+* Building the network
+
+[[#][[[images/arrow.png]]]]
+
+** Building the virtual network.
+
+To start we're going to set up the initial script on the laptop.
+
+The script needs to do the following
+
+1. When the laptop is clicked it creates a clone of the packet.
+2. It then needs to add the laptop's IP to a list called =packet_list=.
+3. It needs to ask what data is to be sent and add that to the list.
+4. It needs to ask where the data is to be sent and add that to the
+   list.
+
+See if you can build this, but there's help below.
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when this sprite clicked
+    create clone of packet
+    add 192.168.1.1 to packet_list
+    ask "What data do you want to send?"
+    add answer to packet_list
+    ask "Where fo you want to send the data?"
+    add answer to packet_list
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Blocks
+
+[[images/laptop_blocks1.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/laptop_script1.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+[[#][[[images/arrow.png]]]]
+
+** Emptying the list.
+
+If you click on the laptop, then you're list will be populated with
+three pieces of data.
+
+1. The IP of the laptop
+2. The Data
+3. Where the data is to be sent
+
+The probelm is that if we click the laptop a second time then more data
+is added. We need to empty the list each time the laptop is clicked.
+
+[[#][[[images/arrow.png]]]]
+
+Add in a block to empty the list when the laptop is clicked.
+
+[[images/empty_the_list.png]]
+
+Click the laptop to make sure the script is working.
+
+[[#][[[images/arrow.png]]]]
+
+[[#][[[images/arrow.png]]]]
+
+As we're using clones of the packet, we're going to need to hide the
+parent sprite, then when the clone is created it needs to go to the
+mouse pointer and show itself.
+
+* Sending the packet
+
+[[#][[[images/arrow.png]]]]
+
+** The packet
+
+So far, when the laptop is clicked a packet is created and a list
+containing IP addresses and data is filled.
+
+The packet now needs to go to the router, so that it can be directed to
+the correct computer on the network.
+
+The following should now happen:
+
+1. The packet clone should wait until the packet list contains 3
+   elements
+2. Then move towards the router.
+
+Give this a go.
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when I start as a clone
+    go to mouse-pointer
+    show
+    go to front
+    forever
+        if length of packet_list = 3 then
+            point towards 192.168.1.254
+            move 1 step
+                            
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Blocks
+
+[[images/packet_blocks2.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/packet_script2.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+* Arriving at the router
+
+[[#][[[images/arrow.png]]]]
+
+** The Packet continued
+
+If you test your script now the packet should move off towards the
+router and then jiggle there for awhile.
+
+We now need to tell the router that the packet has arrived so it can
+direct it onward.
+
+Think about how you might achieve this and have a go. Help as always is
+available below.
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    if distance to 192.168.1.254 < 10
+        broadcast "at router"
+        stop this script
+                        
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/packet_Script3.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+[[#][[[images/arrow.png]]]]
+
+** Deleting the clone
+
+So we don't end up with thousands of clones, we need to delete the
+clones when the simulation starts.
+
+* Building the router
+
+[[#][[[images/arrow.png]]]]
+
+** The router
+
+It's time to script the router. The router is going to find out where
+the packet needs to be sent and send it in the right direction.
+
+1. create a list called =destination_list=
+2. when the router receives the broadcast "at router":
+3. add x coordinate of the destination to =destination_list=
+4. add y coordinate of the destination to =destination_list=
+5. broadcast that the packet can be sent
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when I receive "at router"
+        add x position of item last of packet_list to destination_list
+        add y position of item last of packet_list to destination_list
+        broadcast foward_packet
+                            
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Blocks
+
+[[images/router_blocks.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/router_script.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+[[#][[[images/arrow.png]]]]
+
+** Clearing the destination\_list
+
+Again, we're going to need to make sure that the =destination_list= is
+emptied when the simulation runs.
+
+[[#][[[images/arrow.png]]]]
+
+** So far
+
+We now have a simulation that sends a packet to the router and the
+router stores the destination.
+
+However, we only have one computer.
+
+We can still test our script out, by getting the laptop to send a packet
+to itself.
+
+Run the simulation sending any data you want to 192.168.1.1
+
+The destination list should fill with the x and y coordinates of the
+laptop.
+
+* Forwarding
+
+* the packet
+
+[[#][[[images/arrow.png]]]]
+
+** Forwarding the packet
+
+Next the packet needs to head off to it's destination
+
+To do this, the packet needs to listen out for the =forward_packet=
+broadcast.
+
+The packet should then head off to the x and y coordinates in the
+=destination_list=
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when I receive forward_packet
+    glide 5 secs to x: item 1 of destination_list y: item 2 of destination_list
+    broadcast arrived
+                            
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The blocks
+
+[[images/packet_blocks_forward.png]]
+[[#][[[images/arrow.png]]]]
+
+** The script
+
+[[images/packet_script_forward.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+* Receiving the packet
+
+[[#][[[images/arrow.png]]]]
+
+** Receiving the packet
+
+Nearly there now.
+
+To finish off scripting the following needs to happen.
+
+The laptop has to listen out for the packet to broadcast =arrived=
+
+When this happends it can say the contents of the =packet_list=
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when I receive arrived
+    if touching packet
+        say (join "Received " (join item 2 of packet_list (join " from " item 1 of packet_list)))
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Blocks
+
+[[images/receiving_packet_blocks.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/receiving_packet_script.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+[[#][[[images/arrow.png]]]]
+
+** Duplicating laptops
+
+The last thing to do is to duplicate the laptops and change the IP
+addresses each one adds to the =packet_list=
+
+* Finishing off
+
+[[#][[[images/arrow.png]]]]
+
+** Studying the network
+
+Play around with your network by clicking on different laptops and
+entering data and an IP address to send it to.
+
+Make sure you understand the basics of how the network works
+
+Remember - /this is an oversimplification but it should give you an
+idea./
+
+You can find a working model
+[[http://scratch.mit.edu/projects/11937692/][here]] if your's doesn't
+work.
+
+[[#][[[images/arrow.png]]]]
+
+** The real Internet
+
+The real internet is obviously much larger.
+
+On the internet packets are passed from one router to another, until
+they eventually end up on the network of the destination computer
+
+Also, not all the packets will go by the same route. Different packets
+can travel to the same computer by going across completely different
+countries!
+
+* Extension Activites
+
+[[#][[[images/arrow.png]]]]
+
+** Below are a series of extension activites.
+
+Choose an activity or activities that you feel will stretch your
+abilities but that you feel comfortable with.
+
+[[#][[[images/arrow.png]]]]
+
+** Expanding the Network
+
+Alter your network model so that it includes a DNS lookup.
+
+The sending computer should ask for a name to send to and the IP address
+should then be searched for.
+
+The packet can then be sent to the looked up IP address
+
+[[#][[[images/arrow.png]]]]
+
+** Creating a website.
+
+Go back and look at the web pages you created using HTML.
+
+Try to build on the website by adding more complex and a greater number
+of pages.
+
+You can find help on HTML at [w3schools](http://www.w3schools.com/html/)
+
+[[#][[[images/arrow.png]]]]
+
+** How the Internet works.
+
+Using any software you desire:
+
+Create a presentation, poster or report to explaian how the internet
+works. Include:
+
+-  What a packet is
+-  What a router is
+-  How a packet is transmitted from one computer to another
+
+Make sure the product you create is suitable for a person who know
+little about the Internet/
+
+Make sure to include some information that you have gathered
+independently.
