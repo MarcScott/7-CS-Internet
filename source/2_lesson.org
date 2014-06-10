@@ -44,424 +44,112 @@
 :HTML_CONTAINER_CLASS: badge
 :END:
 * URLs and Domain Names
-
-[[#][[[images/arrow.png]]]]
-
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
 Look at your browser's address bar. What ever is written there is the
 URL of the page you are on.
-
-What ever is written there after the /www/ but /before/ the first / is
-the domain name of the site you are on
-
+What ever is written there /after/ the =http://www= but /before/ the first =/= is the domain name of the site you are on.
 You'll be very familiar with some domain names like;
-
 #+BEGIN_EXAMPLE
     google.com
     facebook.com
     yahoo.com
     youtube.com
-    wikipedia.org
-                            
+    wikipedia.org               
 #+END_EXAMPLE
-
-[[#][[[images/arrow.png]]]]
-
-** What is a domain name?
-
-Domain names are a little like addresses. For instance, the Prime
-Minsiter lives at:
-
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- There are lots of /Top Level Domains/ available to website owners.
+- =.com=, =.org=, and =.co.uk= are just some of a few.
+- Gather a list of 10 other Top Level Domains that are available.
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Explain what a Top Level Domain is and give some examples for your notes.
+* IP addresses
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Domain names are a little like addresses. For instance, the Prime Minister lives at:
 #+BEGIN_EXAMPLE
     10 Downing Street
     London,
-    SW1A 2AA
-                            
+    SW1A 2AA                            
 #+END_EXAMPLE
-
 [[https://upload.wikimedia.org/wikipedia/commons/f/f5/2010_Official_Downing_Street_pic.jpg]]
-[[#][[[images/arrow.png]]]]
-
-#+BEGIN_EXAMPLE
-    10 Downing Street
-    London,
-    SW1A 2AA
-                            
-#+END_EXAMPLE
-
-This is nice and easy for humans to say and remember. Another way of
-saying where the Prime Minister lives would be to say he's at:
-
+- This is nice and easy for humans to say and remember. 
+- Another way of saying where the Prime Minister lives would be to use Longitude and Latitude.
 #+BEGIN_EXAMPLE
     51° 30′ 12.23″ N, 0° 7′ 39.5″ W
-                            
 #+END_EXAMPLE
-
-This is tricky for a human to remember but great for a computer. Try
-copying and pasting it into [[http://maps.google.com][Google Maps]] and
-see what happens
-
-[[#][[[images/arrow.png]]]]
-
-** IP addresses
-
-Domain names are like address, they are designed for humans to read and
-remember. In reality a computer's address (that allows other computers
-on a network or the internet to find it), is made up of numbers.
-
-Computer use =IP addresses= to send messages to each other.
-
-Your Computer's current IP address should be shown below
-
-#+BEGIN_HTML                         
-    VIH_BackColor = "#525252";
-    VIH_ForeColor = "#F0F0F0";
-    VIH_FontPix = "30";
-    VIH_DisplayFormat = "You are visiting from:IP Address: %%IP%%";
-    VIH_DisplayOnPage = "yes";
+- This is tricky for a human to remember but great for a computer. 
+- Try copying and pasting it into [[http://maps.google.com][Google Maps]] and see what happens
+----
+- Domain names are like address, they are designed for humans to read and remember. In reality a computer's address (that allows other computers on a network or the internet to find it), is made up of numbers.
+- Computer use =IP addresses= to send messages to each other.
+- Your Computer's current IP address should be shown below
+#+BEGIN_HTML
+<div style="text-align:center;margin:0 auto;">
+</br>                   
+<script language="JavaScript">
+VIH_BackColor = "#525252";
+VIH_ForeColor = "#F0F0F0";
+VIH_FontPix = "30";
+VIH_DisplayFormat = "The IP address is of your current location is:</br> %%IP%%";
+VIH_DisplayOnPage = "yes";
+</script>
+<script language="JavaScript" src="http://scripts.hashemian.com/js/visitorIPHOST.js.php"></script>
+</br>
+</div>
 #+END_HTML
-
-[[#][[[images/arrow.png]]]]
-
-** Looking up IP addresses
-
-We need domain names because IP addresses are too difficult for humans
-to remember.
-
-Imagine typing in
-
+- We need domain names because *IP addresses are too difficult for humans to remember.*
+- Imagine typing in this every time you needed to go to a certain web address.
 #+BEGIN_EXAMPLE
     http://74.125.239.116
 #+END_EXAMPLE
-
-everytime. Give it a go now
-
-Try these as well and write down the corresponding domains:
-
+- Try these as well and write down the corresponding domains:
 #+BEGIN_EXAMPLE
     1. http://212.58.246.90
     2. http://77.91.251.10
     3. http://72.21.210.29
-                            
 #+END_EXAMPLE
-
-[[#][[[images/arrow.png]]]]
-
-* DNS
-
-[[#][[[images/arrow.png]]]]
-
-When I type www.google.com into my address bar, my browser sends off a
-message to Google's servers asking for the webpage.
-
-My computer needs to know the IP address of Google's server, and to do
-this it looks it up on a Domain Name Server
-
-A Domain Name Server (DNS for short) is a special computer on the
-internet that stores tables of domain names and IP addresses.
-
-[[#][[[images/arrow.png]]]]
-
-** DNS Explained in detail
-
-Watch the video and make a few notes as you go along
-
-[[#][[[images/arrow.png]]]]
-
-** DNS mini-project
-
-Imagine you had to explain DNS to somebody who had no idea what it was.
-
-Using whatever software you like (or even pen and paper if you prefer),
-create a product that you could use to help explain DNS to someone. You
-could create a poster, a presentation, a report. It's really up to you.
-
-* Introduction to
-
-* Modelling a DNS
-
-[[#][[[images/arrow.png]]]]
-
-*** Go to [[http://scratch.mit.edu][Scratch]] and start a new project
-
-Call it DNS Model
-
-[[#][[[images/arrow.png]]]]
-
-** Explaining DNS
-
-A DNS has a table stored on it that looks something like this:
-
-| Domain Name   | IP Address       |
-| google.com    | 74.125.239.116   |
-| bbc.co.uk     | 212.58.246.90    |
-
-A quick note. Not everything explained in this presentation is true.
-Some of it is a
-[[http://en.wikipedia.org/wiki/Lie-to-children][simplification]] to make
-things easier to understand
-
-* Building a DNS Table
-
-[[#][[[images/arrow.png]]]]
-
-We're going to have to build a DNS Table to begin with. This is going to
-be made up of two lists.
-
-Create a new list called =Domain Names= and then another list called
-=IP Addresses=
-
-To the =Domain Names= list add the domain name /google.com/
-
-To the =IP Addresses= list add the IP address /74.125.239.116/
-
-[[#][[[images/arrow.png]]]]
-
-** This is what you should end up with
-
-[[images/Create_Lists.png]]
-[[#][[[images/arrow.png]]]]
-
-* Adding to the DNS table
-
-[[#][[[images/arrow.png]]]]
-
-** More Domain Names
-
-We're going to need a few more Domain names and IP Addresses to populate
-our table.
-
-Goto [[http://www.hcidata.info/host2ip.cgi][this site]]
-
-Use the webpage to look up some common domain names like =facebook.com=
-and =youtube.com= and add them to the lists.
-
-[[#][[[images/arrow.png]]]]
-
-You should end up with something like this.
-
-Try and get at least 10 domain names and their corresponding IP
-Addresses
-
-[[images/Populated_Lists.png]]
-
-* Linear Search
-
-[[#][[[images/arrow.png]]]]
-
-** Searching algorithms
-
-When you type in a URL into a webbrowser address bar, your computer
-consults the DNS server, to find the IP address.
-
-The DNS server has to lookup the domain name and find the corresponding
-IP address
-
-To do this the server needs to use a searching algorithm
-
-[[#][[[images/arrow.png]]]]
-
-** Linear Search
-
-On the slide below you're going to be presented with an Identity Parade
-Lineup. You need to find this face:
-
-[[images/Face.jpg]]
-[[#][[[images/arrow.png]]]]
-
-[[#][[[images/arrow.png]]]]
-
-** How did you do it?
-
-You could have selected people at random. This is one way of
-accomplishing a search.
-
-Or maybe you started from one side and worked your way across. This is
-how a computer program would accomplish a search.
-
-This method of searching is called a linear search.
-
-[[#][[[images/arrow.png]]]]
-
-** Linear Search
-
-Imagine we had a list of 'things'
-
-=[cat,dog,horse,mouse,rabbit,parrot,elephant]=
-
-If we wanted a computer to program to find the position of the element
-=parrot= it would check from left to right
-
-The program would check what was at position 1, see if it was parrot and
-if it wasn't it would move onto position 2, and so on.
-
-* Indexing a list
-
-[[#][[[images/arrow.png]]]]
-
-** What is an index?
-
-As a computer reads through a list, it needs to keep track of where it
-is. This is what an index is for.
-
-Imagine we have the following two lists:
-
-#+BEGIN_EXAMPLE
-    OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
-    Rating = ['4/5','2/5','4/5','3/5','5/5']
-                            
-#+END_EXAMPLE
-
-The items in the first list are Operating systems. The items in the
-second list give a user rating out of 5.
-
-** A quick linear search
-
-Imagine we wanted to find out the rating out of 5 for Android.
-
-We could step through the list of operating systems until we found
-Android.
-
-This would not tell us where to find the rating out of five in the
-second list though. It would just tell us that Android exists in the
-first list.
-
-** Using an index
-
-#+BEGIN_EXAMPLE
-    OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
-    Rating = ['4/5','2/5','4/5','3/5','5/5']                
-                            
-#+END_EXAMPLE
-
-As we move through (iterate) the first list searching for 'Android', we
-keep a count of our position.
-
-The algorithm looks something like this:
-
-1. =index = 1=
-2. Is Android at =index= (position 1)
-3. No, so add =1= to =index=.
-4. Is Android at =index= (position 2)
-5. No, so add =1= to =index=.
-6. Is Android at =index= (position 3)
-7. Yes. So look up =index= of the second list
-8. =index= (position 3) of the second list is 4
-9. So Android has a rating of 4
-
-* Using a linear search in our DNS.
-
-[[#][[[images/arrow.png]]]]
-
-** Searching for domain names
-
-In our Scratch program so far we have a list of domain names and a list
-of IP addresses.
-
-We need to be able to conduct a linear search on the list of domain
-names to find the position of any given name.
-
-[[#][[[images/arrow.png]]]]
-
-** Getting Started
-
-You're going to need a couple of new variables to start.
-
-1. Create a variable called =domain=
-2. Create a variable called =index=
-
-[[#][[[images/arrow.png]]]]
-
-** A linear search algorithm
-
-When the script starts - the program asks for a domain name.
-
-The variable =domain= is set to the answer.
-
-The variable =index= is set to 1
-
-Within a loop that repeats the same number of times as the length of the
-Domain Name list.
-
-If the =index= of the Domain Name list = the variable =domain=
-
--  Say the =index= of the IP Address list
-
-Else
-
--  Change the variable =index= by 1
-
-[[#][[[images/arrow.png]]]]
-
-** Pseudocode
-
-#+BEGIN_EXAMPLE
-    when GreenFlag clicked
-        ask "What domain are you looking for"
-        set domain to answer
-        set index to 1
-        repeat (length of Domain Names)
-            if (index of Domain Names) = domain
-                say ("the IP address is", index of IP Addresses)
-            else
-                change index by 1
-            
-#+END_EXAMPLE
-
-[[#][[[images/arrow.png]]]]
-
-** The blocks
-
-Try and flick back up to the pseudocode and figure out how to place them
-before scrolling down
-
-[[images/linear_search_blocks.png]]
-[[#][[[images/arrow.png]]]]
-
-** The blocks part 2
-
-If you're stuck here are a few of the blocks that have been stacked for
-you.
-
-See if you can assemble the script now, before scrolling down.
-
-[[images/linear_search_blocks2.png]]
-[[#][[[images/arrow.png]]]]
-
-** The completed script
-
-[[images/linear_search_script.png]]
-[[#][[[images/arrow.png]]]]
-
-** The video
-
-* A Linear Search Project
-
-** Instructions
-
-You're going to try an implement your own Linear Search program now.
-
-1. Create a Scratch program that:
-
-   -  Uses two lists, one to store a Subject Name (e.g. Science) and the
-      other to store a target grade.
-   -  Allows a user to search for a Subject Name and returns the target
-      grade.
-
-2. Use any sprites you like.
-3. If you have time, try to make it return 'Not found" if a subject that
-   doesn't exist is asked for.
-
-[[#][[[images/arrow.png]]]]
-
-** Recap.
-
-1. Domain names are easy for humans to read and remember.
-2. Each domain name links to an IP address that computers use to send
-   messages to each other.
-3. A Domain Name Server (DNS) stores a table of domain names and IP
-   addresses.
-4. When you type in a URL, your computer asks the DNS what the IP
-   address is for the domain name.
-5. Linear search is one method of finding an element in a list.
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Answer the following questions in your notes.
+  - What is a domain name?
+  - What is an IP address?
+  - Why do humans not use IP addresses?
+* The DNS
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Below are three videos, each explaining DNS in a little more detail. You can watch just the first, or all three, but make sure you understand what DNS is.
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/2ZUxoi7YNgs" frameborder="0" allowfullscreen></iframe>
+<iframe class="wistia_embed" name="wistia_embed" src="http://fast.wistia.net/embed/iframe/z8ryt1i6yf?canonicalUrl=http%3A%2F%2Fdyn.com%2Fblog%2Fdynedu-video-dns-explained%2F&canonicalTitle=%23DynEdu%20Video%3A%20DNS%20Explained%20%7C%20Dyn%20Blog" allowtransparency="true" frameborder="0" scrolling="no" width="480" height="498"></iframe>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/72snZctFFtA" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+** Badge It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Imagine you had to explain DNS to somebody who had no idea what it was.
+- Using whatever software you like (or even pen and paper if you prefer), create a product that you could use to help explain DNS to someone. You could create a poster, a presentation, a report. It's really up to you.
+- You'll be awarded a bronze, silver or gold badge, depending on your teacher's assessment of your understanding of DNS.
 
 

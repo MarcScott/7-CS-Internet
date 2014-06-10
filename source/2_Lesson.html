@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Domain Names, IP Addresses and DNS</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/lesson.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Domain Names, IP Addresses and DNS</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. URLs and Domain Names</a>
+<ul>
+<li><a href="#sec-1-1">Research It</a></li>
+<li><a href="#sec-1-2">Present It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. IP addresses</a>
+<ul>
+<li><a href="#sec-2-1">Research It</a></li>
+<li><a href="#sec-2-2">Present It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. The DNS</a>
+<ul>
+<li><a href="#sec-3-1">Research It</a></li>
+<li><a href="#sec-3-2">Badge It:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> URLs and Domain Names</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Look at your browser's address bar. What ever is written there is the
+URL of the page you are on.
+What ever is written there <i>after</i> the <code>http://www</code> but <i>before</i> the first <code>/</code> is the domain name of the site you are on.
+You'll be very familiar with some domain names like;
+</p>
+<pre class="example">
+google.com
+facebook.com
+yahoo.com
+youtube.com
+wikipedia.org
+</pre>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 research">
+<h3 id="sec-1-1">Research It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>There are lots of <i>Top Level Domains</i> available to website owners.
+</li>
+<li><code>.com</code>, <code>.org</code>, and <code>.co.uk</code> are just some of a few.
+</li>
+<li>Gather a list of 10 other Top Level Domains that are available.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 present">
+<h3 id="sec-1-2">Present It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Explain what a Top Level Domain is and give some examples for your notes.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> IP addresses</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 research">
+<h3 id="sec-2-1">Research It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Domain names are a little like addresses. For instance, the Prime Minister lives at:
+</li>
+</ul>
+<pre class="example">
+10 Downing Street
+London,
+SW1A 2AA
+</pre>
+
+<div class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/2010_Official_Downing_Street_pic.jpg" alt="2010_Official_Downing_Street_pic.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>This is nice and easy for humans to say and remember. 
+</li>
+<li>Another way of saying where the Prime Minister lives would be to use Longitude and Latitude.
+</li>
+</ul>
+<pre class="example">
+51° 30′ 12.23″ N, 0° 7′ 39.5″ W
+</pre>
+<ul class="org-ul">
+<li>This is tricky for a human to remember but great for a computer. 
+</li>
+<li>Try copying and pasting it into <a href="http://maps.google.com/">Google Maps</a> and see what happens
+</li>
+</ul>
+<p>
+-&#x2014;
+</p>
+<ul class="org-ul">
+<li>Domain names are like address, they are designed for humans to read and remember. In reality a computer's address (that allows other computers on a network or the internet to find it), is made up of numbers.
+</li>
+<li>Computer use <code>IP addresses</code> to send messages to each other.
+</li>
+<li>Your Computer's current IP address should be shown below
+</li>
+</ul>
+<div style="text-align:center;margin:0 auto;">
+</br>                   
+<script language="JavaScript">
+VIH_BackColor = "#525252";
+VIH_ForeColor = "#F0F0F0";
+VIH_FontPix = "30";
+VIH_DisplayFormat = "The IP address is of your current location is:</br> %%IP%%";
+VIH_DisplayOnPage = "yes";
+</script>
+<script language="JavaScript" src="http://scripts.hashemian.com/js/visitorIPHOST.js.php"></script>
+</br>
+</div>
+<ul class="org-ul">
+<li>We need domain names because <b>IP addresses are too difficult for humans to remember.</b>
+</li>
+<li>Imagine typing in this every time you needed to go to a certain web address.
+</li>
+</ul>
+<pre class="example">
+http://74.125.239.116
+</pre>
+<ul class="org-ul">
+<li>Try these as well and write down the corresponding domains:
+</li>
+</ul>
+<pre class="example">
+1. http://212.58.246.90
+2. http://77.91.251.10
+3. http://72.21.210.29
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 present">
+<h3 id="sec-2-2">Present It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Answer the following questions in your notes.
+<ul class="org-ul">
+<li>What is a domain name?
+</li>
+<li>What is an IP address?
+</li>
+<li>Why do humans not use IP addresses?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> The DNS</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 research">
+<h3 id="sec-3-1">Research It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Below are three videos, each explaining DNS in a little more detail. You can watch just the first, or all three, but make sure you understand what DNS is.
+</li>
+</ul>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/2ZUxoi7YNgs" frameborder="0" allowfullscreen></iframe>
+<iframe class="wistia_embed" name="wistia_embed" src="http://fast.wistia.net/embed/iframe/z8ryt1i6yf?canonicalUrl=http%3A%2F%2Fdyn.com%2Fblog%2Fdynedu-video-dns-explained%2F&canonicalTitle=%23DynEdu%20Video%3A%20DNS%20Explained%20%7C%20Dyn%20Blog" allowtransparency="true" frameborder="0" scrolling="no" width="480" height="498"></iframe>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/72snZctFFtA" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3 badge">
+<h3 id="sec-3-2">Badge It:</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Imagine you had to explain DNS to somebody who had no idea what it was.
+</li>
+<li>Using whatever software you like (or even pen and paper if you prefer), create a product that you could use to help explain DNS to someone. You could create a poster, a presentation, a report. It's really up to you.
+</li>
+<li>You'll be awarded a bronze, silver or gold badge, depending on your teacher's assessment of your understanding of DNS.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
