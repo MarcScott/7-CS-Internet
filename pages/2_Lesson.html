@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Domain Names, IP Addresses and DNS</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/lesson.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Domain Names, IP Addresses and DNS</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. URLs and Domain Names</a>
+<ul>
+<li><a href="#sec-1-1">What is a domain name?</a></li>
+<li><a href="#sec-1-2">IP addresses</a></li>
+<li><a href="#sec-1-3">Looking up IP addresses</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. DNS</a>
+<ul>
+<li><a href="#sec-2-1">DNS Explained in detail</a></li>
+<li><a href="#sec-2-2">DNS mini-project</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Introduction to</a></li>
+<li><a href="#sec-4">4. Modelling a DNS</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-4-0-1">Go to Scratch and start a new project</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-1">Explaining DNS</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Building a DNS Table</a>
+<ul>
+<li><a href="#sec-5-1">This is what you should end up with</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Adding to the DNS table</a>
+<ul>
+<li><a href="#sec-6-1">More Domain Names</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Linear Search</a>
+<ul>
+<li><a href="#sec-7-1">Searching algorithms</a></li>
+<li><a href="#sec-7-2">Linear Search</a></li>
+<li><a href="#sec-7-3">How did you do it?</a></li>
+<li><a href="#sec-7-4">Linear Search</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Indexing a list</a>
+<ul>
+<li><a href="#sec-8-1">What is an index?</a></li>
+<li><a href="#sec-8-2">A quick linear search</a></li>
+<li><a href="#sec-8-3">Using an index</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Using a linear search in our DNS.</a>
+<ul>
+<li><a href="#sec-9-1">Searching for domain names</a></li>
+<li><a href="#sec-9-2">Getting Started</a></li>
+<li><a href="#sec-9-3">A linear search algorithm</a></li>
+<li><a href="#sec-9-4">Pseudocode</a></li>
+<li><a href="#sec-9-5">The blocks</a></li>
+<li><a href="#sec-9-6">The blocks part 2</a></li>
+<li><a href="#sec-9-7">The completed script</a></li>
+<li><a href="#sec-9-8">The video</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. A Linear Search Project</a>
+<ul>
+<li><a href="#sec-10-1">Instructions</a></li>
+<li><a href="#sec-10-2">Recap.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> URLs and Domain Names</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+
+<p>
+Look at your browser's address bar. What ever is written there is the
+URL of the page you are on.
+</p>
+
+<p>
+What ever is written there after the <i>www</i> but <i>before</i> the first / is
+the domain name of the site you are on
+</p>
+
+<p>
+You'll be very familiar with some domain names like;
+</p>
+
+<pre class="example">
+google.com
+facebook.com
+yahoo.com
+youtube.com
+wikipedia.org
+</pre>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">What is a domain name?</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Domain names are a little like addresses. For instance, the Prime
+Minsiter lives at:
+</p>
+
+<pre class="example">
+10 Downing Street
+London,
+SW1A 2AA
+</pre>
+
+<p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/2010_Official_Downing_Street_pic.jpg" alt="2010_Official_Downing_Street_pic.jpg" />
+[[#][<i>images/arrow.png</i>]]
+</p>
+
+<pre class="example">
+10 Downing Street
+London,
+SW1A 2AA
+</pre>
+
+<p>
+This is nice and easy for humans to say and remember. Another way of
+saying where the Prime Minister lives would be to say he's at:
+</p>
+
+<pre class="example">
+51° 30′ 12.23″ N, 0° 7′ 39.5″ W
+</pre>
+
+<p>
+This is tricky for a human to remember but great for a computer. Try
+copying and pasting it into <a href="http://maps.google.com/">Google Maps</a> and
+see what happens
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">IP addresses</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Domain names are like address, they are designed for humans to read and
+remember. In reality a computer's address (that allows other computers
+on a network or the internet to find it), is made up of numbers.
+</p>
+
+<p>
+Computer use <code>IP addresses</code> to send messages to each other.
+</p>
+
+<p>
+Your Computer's current IP address should be shown below
+</p>
+
+VIH_BackColor = "#525252";
+VIH_ForeColor = "#F0F0F0";
+VIH_FontPix = "30";
+VIH_DisplayFormat = "You are visiting from:IP Address: %%IP%%";
+VIH_DisplayOnPage = "yes";
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">Looking up IP addresses</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+We need domain names because IP addresses are too difficult for humans
+to remember.
+</p>
+
+<p>
+Imagine typing in
+</p>
+
+<pre class="example">
+http://74.125.239.116
+</pre>
+
+<p>
+everytime. Give it a go now
+</p>
+
+<p>
+Try these as well and write down the corresponding domains:
+</p>
+
+<pre class="example">
+1. http://212.58.246.90
+2. http://77.91.251.10
+3. http://72.21.210.29
+</pre>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> DNS</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+
+<p>
+When I type www.google.com into my address bar, my browser sends off a
+message to Google's servers asking for the webpage.
+</p>
+
+<p>
+My computer needs to know the IP address of Google's server, and to do
+this it looks it up on a Domain Name Server
+</p>
+
+<p>
+A Domain Name Server (DNS for short) is a special computer on the
+internet that stores tables of domain names and IP addresses.
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">DNS Explained in detail</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Watch the video and make a few notes as you go along
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">DNS mini-project</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Imagine you had to explain DNS to somebody who had no idea what it was.
+</p>
+
+<p>
+Using whatever software you like (or even pen and paper if you prefer),
+create a product that you could use to help explain DNS to someone. You
+could create a poster, a presentation, a report. It's really up to you.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Introduction to</h2>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Modelling a DNS</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+
+<div id="outline-container-sec-4-0-1" class="outline-4">
+<h4 id="sec-4-0-1">Go to <a href="http://scratch.mit.edu/">Scratch</a> and start a new project</h4>
+<div class="outline-text-4" id="text-4-0-1">
+<p>
+Call it DNS Model
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">Explaining DNS</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+A DNS has a table stored on it that looks something like this:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Domain Name</td>
+<td class="right">IP Address</td>
+</tr>
+
+<tr>
+<td class="left">google.com</td>
+<td class="right">74.125.239.116</td>
+</tr>
+
+<tr>
+<td class="left">bbc.co.uk</td>
+<td class="right">212.58.246.90</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+A quick note. Not everything explained in this presentation is true.
+Some of it is a
+<a href="http://en.wikipedia.org/wiki/Lie-to-children">simplification</a> to make
+things easier to understand
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Building a DNS Table</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+
+<p>
+We're going to have to build a DNS Table to begin with. This is going to
+be made up of two lists.
+</p>
+
+<p>
+Create a new list called <code>Domain Names</code> and then another list called
+<code>IP Addresses</code>
+</p>
+
+<p>
+To the <code>Domain Names</code> list add the domain name <i>google.com</i>
+</p>
+
+<p>
+To the <code>IP Addresses</code> list add the IP address <i>74.125.239.116</i>
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1">This is what you should end up with</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+<i>images/Create_Lists.png</i>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Adding to the DNS table</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1">More Domain Names</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+We're going to need a few more Domain names and IP Addresses to populate
+our table.
+</p>
+
+<p>
+Goto <a href="http://www.hcidata.info/host2ip.cgi">this site</a>
+</p>
+
+<p>
+Use the webpage to look up some common domain names like <code>facebook.com</code>
+and <code>youtube.com</code> and add them to the lists.
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+
+<p>
+You should end up with something like this.
+</p>
+
+<p>
+Try and get at least 10 domain names and their corresponding IP
+Addresses
+</p>
+
+<p>
+<i>images/Populated_Lists.png</i>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Linear Search</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1">Searching algorithms</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+When you type in a URL into a webbrowser address bar, your computer
+consults the DNS server, to find the IP address.
+</p>
+
+<p>
+The DNS server has to lookup the domain name and find the corresponding
+IP address
+</p>
+
+<p>
+To do this the server needs to use a searching algorithm
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2">Linear Search</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+On the slide below you're going to be presented with an Identity Parade
+Lineup. You need to find this face:
+</p>
+
+<p>
+<i>images/Face.jpg</i>
+[[#][<i>images/arrow.png</i>]]
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3">How did you do it?</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+You could have selected people at random. This is one way of
+accomplishing a search.
+</p>
+
+<p>
+Or maybe you started from one side and worked your way across. This is
+how a computer program would accomplish a search.
+</p>
+
+<p>
+This method of searching is called a linear search.
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4">Linear Search</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+Imagine we had a list of 'things'
+</p>
+
+<p>
+<code>[cat,dog,horse,mouse,rabbit,parrot,elephant]</code>
+</p>
+
+<p>
+If we wanted a computer to program to find the position of the element
+<code>parrot</code> it would check from left to right
+</p>
+
+<p>
+The program would check what was at position 1, see if it was parrot and
+if it wasn't it would move onto position 2, and so on.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Indexing a list</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1">What is an index?</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+As a computer reads through a list, it needs to keep track of where it
+is. This is what an index is for.
+</p>
+
+<p>
+Imagine we have the following two lists:
+</p>
+
+<pre class="example">
+OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+Rating = ['4/5','2/5','4/5','3/5','5/5']
+</pre>
+
+<p>
+The items in the first list are Operating systems. The items in the
+second list give a user rating out of 5.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2">A quick linear search</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+Imagine we wanted to find out the rating out of 5 for Android.
+</p>
+
+<p>
+We could step through the list of operating systems until we found
+Android.
+</p>
+
+<p>
+This would not tell us where to find the rating out of five in the
+second list though. It would just tell us that Android exists in the
+first list.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8-3" class="outline-3">
+<h3 id="sec-8-3">Using an index</h3>
+<div class="outline-text-3" id="text-8-3">
+<pre class="example">
+OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+Rating = ['4/5','2/5','4/5','3/5','5/5']
+</pre>
+
+<p>
+As we move through (iterate) the first list searching for 'Android', we
+keep a count of our position.
+</p>
+
+<p>
+The algorithm looks something like this:
+</p>
+
+<ol class="org-ol">
+<li><code>index = 1</code>
+</li>
+<li>Is Android at <code>index</code> (position 1)
+</li>
+<li>No, so add <code>1</code> to <code>index</code>.
+</li>
+<li>Is Android at <code>index</code> (position 2)
+</li>
+<li>No, so add <code>1</code> to <code>index</code>.
+</li>
+<li>Is Android at <code>index</code> (position 3)
+</li>
+<li>Yes. So look up <code>index</code> of the second list
+</li>
+<li><code>index</code> (position 3) of the second list is 4
+</li>
+<li>So Android has a rating of 4
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Using a linear search in our DNS.</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1">Searching for domain names</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+In our Scratch program so far we have a list of domain names and a list
+of IP addresses.
+</p>
+
+<p>
+We need to be able to conduct a linear search on the list of domain
+names to find the position of any given name.
+</p>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9-2" class="outline-3">
+<h3 id="sec-9-2">Getting Started</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+You're going to need a couple of new variables to start.
+</p>
+
+<ol class="org-ol">
+<li>Create a variable called <code>domain</code>
+</li>
+<li>Create a variable called <code>index</code>
+</li>
+</ol>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9-3" class="outline-3">
+<h3 id="sec-9-3">A linear search algorithm</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+When the script starts - the program asks for a domain name.
+</p>
+
+<p>
+The variable <code>domain</code> is set to the answer.
+</p>
+
+<p>
+The variable <code>index</code> is set to 1
+</p>
+
+<p>
+Within a loop that repeats the same number of times as the length of the
+Domain Name list.
+</p>
+
+<p>
+If the <code>index</code> of the Domain Name list = the variable <code>domain</code>
+</p>
+
+<ul class="org-ul">
+<li>Say the <code>index</code> of the IP Address list
+</li>
+</ul>
+
+<p>
+Else
+</p>
+
+<ul class="org-ul">
+<li>Change the variable <code>index</code> by 1
+</li>
+</ul>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9-4" class="outline-3">
+<h3 id="sec-9-4">Pseudocode</h3>
+<div class="outline-text-3" id="text-9-4">
+<pre class="example">
+when GreenFlag clicked
+    ask "What domain are you looking for"
+    set domain to answer
+    set index to 1
+    repeat (length of Domain Names)
+        if (index of Domain Names) = domain
+            say ("the IP address is", index of IP Addresses)
+        else
+            change index by 1
+</pre>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9-5" class="outline-3">
+<h3 id="sec-9-5">The blocks</h3>
+<div class="outline-text-3" id="text-9-5">
+<p>
+Try and flick back up to the pseudocode and figure out how to place them
+before scrolling down
+</p>
+
+<p>
+<i>images/linear_search_blocks.png</i>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9-6" class="outline-3">
+<h3 id="sec-9-6">The blocks part 2</h3>
+<div class="outline-text-3" id="text-9-6">
+<p>
+If you're stuck here are a few of the blocks that have been stacked for
+you.
+</p>
+
+<p>
+See if you can assemble the script now, before scrolling down.
+</p>
+
+<p>
+<i>images/linear_search_blocks2.png</i>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9-7" class="outline-3">
+<h3 id="sec-9-7">The completed script</h3>
+<div class="outline-text-3" id="text-9-7">
+<p>
+<i>images/linear_search_script.png</i>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9-8" class="outline-3">
+<h3 id="sec-9-8">The video</h3>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> A Linear Search Project</h2>
+<div class="outline-text-2" id="text-10">
+</div><div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1">Instructions</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+You're going to try an implement your own Linear Search program now.
+</p>
+
+<ol class="org-ol">
+<li>Create a Scratch program that:
+
+<ul class="org-ul">
+<li>Uses two lists, one to store a Subject Name (e.g. Science) and the
+other to store a target grade.
+</li>
+<li>Allows a user to search for a Subject Name and returns the target
+grade.
+</li>
+</ul>
+</li>
+
+<li>Use any sprites you like.
+</li>
+<li>If you have time, try to make it return 'Not found" if a subject that
+doesn't exist is asked for.
+</li>
+</ol>
+
+<p>
+[[#][<i>images/arrow.png</i>]]
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-10-2" class="outline-3">
+<h3 id="sec-10-2">Recap.</h3>
+<div class="outline-text-3" id="text-10-2">
+<ol class="org-ol">
+<li>Domain names are easy for humans to read and remember.
+</li>
+<li>Each domain name links to an IP address that computers use to send
+messages to each other.
+</li>
+<li>A Domain Name Server (DNS) stores a table of domain names and IP
+addresses.
+</li>
+<li>When you type in a URL, your computer asks the DNS what the IP
+address is for the domain name.
+</li>
+<li>Linear search is one method of finding an element in a list.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
