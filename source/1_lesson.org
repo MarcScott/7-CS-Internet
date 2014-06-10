@@ -1,0 +1,260 @@
+#+STARTUP:indent
+
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/lesson.css"/>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
+#+TITLE: The Internet, The Web, Browsers and Search Engines.
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+** Badge It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+* Introduction
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Throughout this unit, you're going to occasionally make notes and answer questions.
+- Use a text editor to record your progress as you go along.
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Create a new directory called =The-Internet=.
+- Create a new file and call it =Notes=.
+- Title your new document =How The Internet Works=
+- Under a subtitle (/Introduction/), try complete the following sentences without asking for help or lookling up answers. Just answer according to what you currently know.
+  - /I think that the Internet is..../
+  - /I think that the World Wide Web is.../
+  - /I think that a Web Browser is.../
+  - /I think that a Search Engine is.../
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your work. Call it /How-the-internet-works/
+
+* The Internet
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Most people don't know what the Internet is or how it works, even though they use it every day.
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/iDbyYGrswtg" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+- In reality, The Internet is a global network of computers, connected by /fibre optic/ and /copper cables/ or /wireless and satellite signals/.
+- On it's own, the internet is nothing more than a lot of very expensive equipment.
+** Research It
+- Use online resources to find out a little bit about what /Fibre Optic/ cables are.
+- Find out where the world's longest fibre optic cables can be found.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Add into your notes your new understanding of what The Internet is.
+- Add into your notes what /Fibre Optic/ cables are.
+- Try and find some images that illustrate your findings.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your work
+* The World Wide Web (from now on just called /the web/)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg]]
+- Tim Berners-Lee invented the Web back in 1989.
+- To understand how the Web works, we're going to create a little webpage.
+  - Create a new directory somewhere in your directory. Call it =myWebsite=
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Open up a text editor.
+- Now copy and paste the following into your document
+#+BEGIN_EXAMPLE
+    <html>
+    <body>
+        <h1>My First Webpage</h1>
+        <p>This is my first webpage. I hope you enjoy it.</p>
+        <img src="http://en.wikipedia.org/wiki/World_wide_web#mediaviewer/File:WorldWideWebAroundWikipedia.png" width="600px">
+        <a href="secondpage.html">Link to my Second Page</a>
+    </body>
+    </html>             
+#+END_EXAMPLE
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your file as =firstpage.html=
+- The name is important - make sure it is all lowercase and that the file
+ends in =.html= and /NOT/ =.txt=
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now create a second document.
+- Now copy and paste the following into your document
+#+BEGIN_EXAMPLE
+    <html>
+    <body>
+        <h1>My Second Webpage</h1>
+        <p>This is my second webpage. I hope you enjoy it as much as the first.</p>
+        <a href="firstpage.html">Link to my First Page</a>
+        <a href="http://www.google.com">Link to Google</a>
+    </body>
+    </html>
+#+END_EXAMPLE 
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save the file as =secondpage.html=
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Now have a look inside the directory you created. You should see two icons for the two files that you created and both should look like web browser icons
+- Double click the firstpage.html file and it should open up in a webbrowser.
+- Test that the links work.
+- If the pages don't work, go back and look at them in your text editor, and make sure you have copied and pasted the code correctly. Also check that the names of the files are correct.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you make a third web page by altering the code we've used in the other two?
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- The world wide web is a collection of =html= documents, like the two that you created.
+- They all link to each other using links like the ones you made.
+- The =html= documents are stored on different computers all over the world.
+- These computers are called /Web Servers/
+[[http://upload.wikimedia.org/wikipedia/commons/9/98/Cern_datacenter.jpg]]
+- Try to find out the following information
+  - What is the most popular web page in the world?
+  - What was the worlds first web page?
+  - How many web pages currently make up the World Wide Web?
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Write up your findings. Be sure to include a description of what the web is.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your work
+
+* Web Browsers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- A web browser is a piece of software that you have installed on your
+computer
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- For each of the browser icons shown below, find out the name of the browser and the company that makes it.
+[[http://www.movingweb.co.nz/images/browser_logos.png]]
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Present your findings on different web browsers in your notes.
+- Which of the web browsers is currently the most popular in the world?
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Find out what a web browser actually does?
+- What are the major differences between the different web browsers?
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Add your findings to your notes.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Don't forget to save your notes.
+* Search Engines
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+- Watch the following video about Google search. Most search engines like Bing, Duck Duck Go and Yahoo work in much the same way.
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/BNHR6IQJGZs" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Write up what you learned in your notes. You should be able to do it in a paragraph or two.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your work.
+
+* A little test
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Badge It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- To get your badge for this section, you're going to need to pass a little online test.
+- 50% or above will award you with the bronze badge
+- 70& or above will award you with the silver badge
+- 90% or above will award you with the gold badge.
+- If you get below 50%, then you'll have to do a little more revision and take the test again.
+
+

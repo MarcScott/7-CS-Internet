@@ -1,0 +1,28 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="pages/css/lesson.css"/>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil html-style:nil 
+
+#+TITLE: How The Internet Works
+#+AUTHOR: Marc Scott
+
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* [[file:pages/1_Lesson.html][Lesson 1 - The Internet, The Web, Browsers and Search Engines]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+* [[file:pages/2_Lesson.html][Lesson 2 - Domain Names, IP Addresses and DNS]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+* [[file:pages/3_Lesson.html][Lesson 3 - How A Network Works]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+
+
+
