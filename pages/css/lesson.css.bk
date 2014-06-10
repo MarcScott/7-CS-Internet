@@ -1,0 +1,299 @@
+.intro h2{
+    font-size: 30px;
+    color: #FFF;
+    background: #4099FF;
+    margin-top: 30px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.intro h3 {
+    color: #4099FF;
+    font-size: 22px;
+    margin-top:10px;
+    border: none;
+    background: none;
+}
+
+.intro p {
+    font-size: 16px;
+}
+.intro img {
+    padding: 5px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width:300px;
+}
+.intro ul {
+    background-color: rgb(220,220,220);
+    border-radius: 10px;
+    list-style: none;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+.intro li.activity {
+    background-image: url(../img/code.svg);
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 50px;
+}
+.intro li.test {
+    background-image: url(../img/terminal.svg);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-indent: 50px;
+}
+
+.intro li.save {
+    background-image: url(../img/stiffy.svg);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-indent: 50px;
+}
+.intro li.activity strong {
+    color: rgb(230,134,45);
+    text-transform: capitalize;
+}
+.intro li.save strong {
+    color: rgb(36,90,154);
+    text-transform: capitalize;        
+}
+.intro li.test strong {
+    color: rgb(54,161,55);
+    text-transform: capitalize;        
+}
+.activity header div{
+    color: #FFF;
+    font-size: 25px;
+    background-color: rgb(51,150,55);
+    text-align: center;
+    width: 60px;
+    padding: 5px;
+    border-radius: 10px;
+    float: left;
+    margin-left: 30px;
+    margin-top: -20px;
+    margin-right: 15px;
+}
+.activity header h2 {
+    background: #4099FF;
+    padding: 8px;
+    padding-top: 16px;
+    text-align: left;
+    margin-left: 0px;
+    margin-top: 0px;
+    font-size: 20px;
+    color: #000;        
+}
+.activity h2 {
+    font-size: 30px;
+    color: #FFF;
+    background: #4099FF;
+    margin-top: 30px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.activity img {
+    padding: 5px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width:800px;
+}
+
+.research h3{
+    color: #4099FF;
+    background-image: url(../img/research.svg);
+    line-height:40px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+}
+
+.present h3{
+    color: #4099FF;
+    background-image: url(../img/present.svg);
+    line-height:40px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+}
+
+.code h3{
+    color: #4099FF;
+    background-image: url(../img/code.svg);
+    line-height:40px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+}
+.run h3 {
+    color: #4099FF;
+    background-image: url(../img/terminal.svg);
+    background-position: 0px 10px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-left:50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+    border-top: 3px dotted #4099FF;
+}
+.save h3 {
+    color: #4099FF;
+    background-image: url(../img/stiffy.svg);
+    background-position: 0px 10px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-left:50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+    border-top: 3px dotted #4099FF;        
+}
+
+.try h3 {
+    color: #4099FF;
+    background-image: url(../img/bulb.svg);
+    background-position: 0px 10px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-left:50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+    border-top: 3px dotted #4099FF;
+}
+
+.badge h3{
+    color: #4099FF;
+    background-image: url(../img/star.svg);
+    line-height:40px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+}
+.badge b{
+    color: #4099ff;
+}
+
+.try code {
+	background:#fff;
+	color: #007CC9;
+}
+.activity .try li:before {
+    border-color:#00b1da;
+    background:#fff;
+}
+
+.try p {
+    padding:0 20px;
+}
+.activity p {        
+    clear:both;
+}
+.activity ul p {
+    clear:none;
+    margin-top:0;
+    padding-top:0;
+}
+
+.activity li {
+    font-size: 16px;        
+    line-height:24px;
+    width:100%;
+}
+
+.code li, .try li, .save li, .run li, .badge li{
+    margin-top:3px;
+    float:left;
+    list-style-position: outside;
+    margin-left: 5px;
+}
+
+.code li:before, .try li:before, .save li:before, .run li:before, .badge li:before{
+    content: " ";
+    border-radius: 8px;
+    border: 3px solid #4099FF;
+    padding: 10px 10px;
+    margin-right:20px;
+    float:left;
+}
+
+.code ul, .try ul, .save ul, .run ul, .badge ul{
+    list-style-type:none;
+    line-height:24px;
+}
+
+ /* things to be cleared */
+ .try ul:after, ol:after, ul:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+ }
+ /* print styles */
+ .activity {
+    page-break-inside:avoid;
+ }
+.try {
+    page-break-inside:avoid;
+}
+ .code, .try{
+    page-break-before: auto;
+}
+.try, .check {
+    page-break-after:auto;
+}
+.code {
+    page-break-inside:avoid;
+}
+

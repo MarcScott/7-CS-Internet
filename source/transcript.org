@@ -1,5 +1,5 @@
 #+STARTUP:indent
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/lesson.css"/>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
 #+TITLE: How the Internet Works
@@ -39,12 +39,6 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-** The Internet, The World Wide Web, Browsers and Search Engines.
-
-Do you know the difference between them?
-
-Try and write down / explain your ideas
-
 * Introduction
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
@@ -55,14 +49,173 @@ Try and write down / explain your ideas
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: present
 :END:
-- Create a new file and title it - How The Internet Works?
+- Create a new directory called =The-Internet=.
+- Create a new file and call it =Notes=.
+- Title your new document =How The Internet Works=
 - Under a subtitle (/Introduction/), try complete the following sentences without asking for help or lookling up answers. Just answer according to what you currently know.
-- /I think that the Internet is..../
-- /I think that the World Wide Web is.../
-- /I think that a Web Browser is.../
-- /I think that a Search Engine is.../
+  - /I think that the Internet is..../
+  - /I think that the World Wide Web is.../
+  - /I think that a Web Browser is.../
+  - /I think that a Search Engine is.../
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your work. Call it /How-the-internet-works/
 
 * The Internet
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Most people don't know what the Internet is or how it works, even though they use it every day.
+#+BEGIN_HTML
+<iframe width="560" height="315" src="http://www.youtube.com/embed/iDbyYGrswtg" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+- In reality, The Internet is a global network of computers, connected by /fibre optic/ and /copper cables/ or /wireless and satellite signals/.
+- On it's own, the internet is nothing more than a lot of very expensive equipment.
+** Research It
+- Use online resources to find out a little bit about what /Fibre Optic/ cables are.
+- Find out where the world's longest fibre optic cables can be found.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Add into your notes your new understanding of what The Internet is.
+- Add into your notes what /Fibre Optic/ cables are.
+- Try and find some images that illustrate your findings.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your work
+* The World Wide Web (from now on just called /the web/)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg]]
+- Tim Berners-Lee invented the Web back in 1989.
+- To understand how the Web works, we're going to create a little webpage.
+  - Create a new directory somewhere in your directory. Call it =myWebsite=
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Open up a text editor.
+- Now copy and paste the following into your document
+#+BEGIN_EXAMPLE
+    <html>
+    <body>
+        <h1>My First Webpage</h1>
+        <p>This is my first webpage. I hope you enjoy it.</p>
+        <img src="http://en.wikipedia.org/wiki/World_wide_web#mediaviewer/File:WorldWideWebAroundWikipedia.png" width="600px">
+        <a href="secondpage.html">Link to my Second Page</a>
+    </body>
+    </html>             
+#+END_EXAMPLE
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your file as =firstpage.html=
+- The name is important - make sure it is all lowercase and that the file
+ends in =.html= and /NOT/ =.txt=
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now create a second document.
+- Now copy and paste the following into your document
+#+BEGIN_EXAMPLE
+    <html>
+    <body>
+        <h1>My Second Webpage</h1>
+        <p>This is my second webpage. I hope you enjoy it as much as the first.</p>
+        <a href="firstpage.html">Link to my First Page</a>
+        <a href="http://www.google.com">Link to Google</a>
+    </body>
+    </html>
+#+END_EXAMPLE 
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save the file as =secondpage.html=
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Now have a look inside the directory you created. You should see two icons for the two files that you created and both should look like web browser icons
+- Double click the firstpage.html file and it should open up in a webbrowser.
+- Test that the links work.
+- If the pages don't work, go back and look at them in your text editor, and make sure you have copied and pasted the code correctly. Also check that the names of the files are correct.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you make a third web page by altering the code we've used in the other two?
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- The world wide web is a collection of =html= documents, like the two that you created.
+- They all link to each other using links like the ones you made.
+- The =html= documents are stored on different computers all over the world.
+- These computers are called /Web Servers/
+[[http://upload.wikimedia.org/wikipedia/commons/9/98/Cern_datacenter.jpg]]
+- Try to find out the following information
+  - What is the most popular web page in the world?
+  - What was the worlds first web page?
+  - How many web pages currently make up the World Wide Web?
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Write up your findings. Be sure to include a description of what the web is.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your work
+
+* Web Browsers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- A web browser is a piece of software that you have installed on your
+computer
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- For each of the browser icons shown below, find out the name of the browser and the company that makes it.
+[[http://www.movingweb.co.nz/images/browser_logos.png]]
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Present your findings on different web browsers in your notes.
+- Which of the web browsers is currently the most popular in the world?
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Find out what a web browser actually does?
+- What are the major differences between the different web browsers?
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Add your findings to your notes.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Don't forget to save your notes.
+* Search Engines
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -74,204 +227,10 @@ Try and write down / explain your ideas
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: present
 :END:
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
 ** Save It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: save
 :END:
-** Run It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: run
-:END:
-** Try It:
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: try
-:END:
-** The Internet, The World Wide Web, Browsers and Search Engines.
-
-Do you know the difference between them?
-
-Try and write down / explain your ideas
-
-
-* The Internet
-** The Internet
-
-Most people don't know what the Internet is.
-This guy certainly doesn't, and he's a US senator...
-
-[[#][[[images/arrow.png]]]]
-
-[[http://blog.une.edu.au/robbi/files/2009/08/mg20227062200-8_792.jpg]]
-
-He was partially correct though - the internet is a little like a
-"Series of Tubes"
-
-[[#][[[images/arrow.png]]]]
-
-** What is the Internet?
-
-It is a global network of computers, connected by fibre optic and copper
-cables or wireless and satellite signals.
-
-On it's own, the internet is nothing more than a lot of very expensive
-equipment.
-
-* The World Wide Web
-
-[[#][[[images/arrow.png]]]]
-
-** The World Wide Web
-
-[[http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg]]
-
-Tim Berners-Lee invented the Web.
-
-To understand how the Web works, we're going to do a little exercise.
-
-[[#][[[images/arrow.png]]]]
-
-** Making a little Web.
-
-We're going to produce a very tiny website. It won't be part of the
-World Wide Web though, as it is going to sit on your computer alone and
-can't be accessed from outside.
-
-First thing to do is to create a new directory in your home directory.
-Call it /myWebsite/
-
-[[#][[[images/arrow.png]]]]
-
-** Our first page.
-
-Open up Notepad or some other text editor
-
-Now copy and paste the following into your document
-
-#+BEGIN_EXAMPLE
-    <html>
-    <body>
-        <h1>My First Webpage</h1>
-        <p>This is my first webpage. I hope you enjoy it.</p>
-        <img src="http://imgs.xkcd.com/comics/computer_problems.png">
-        <a href="secondpage.html">Link to my Second Page</a>
-    </body>
-    </html>
-                        
-#+END_EXAMPLE
-
-[[#][[[images/arrow.png]]]]
-
-Save your file as
-
-#+BEGIN_EXAMPLE
-    firstpage.html
-#+END_EXAMPLE
-
-The name is important - make sure it is all lowercase and that the file
-ends in
-
-#+BEGIN_EXAMPLE
-    .html
-#+END_EXAMPLE
-
-and /NOT/
-
-#+BEGIN_EXAMPLE
-    .txt
-#+END_EXAMPLE
-
-[[#][[[images/arrow.png]]]]
-
-** Our second page.
-
-Now create a new document.
-
-Now copy and paste the following into your document
-
-#+BEGIN_EXAMPLE
-    <html>
-    <body>
-        <h1>My Second Webpage</h1>
-        <p>This is my second webpage. I hope you enjoy it as much as the first.</p>
-        <img src="http://imgs.xkcd.com/comics/tech_support_cheat_sheet.png">
-        <a href="firstpage.html">Link to my First Page</a>
-        <a href="http://www.google.com">Link to Google</a>
-    </body>
-    </html>
-                        
-#+END_EXAMPLE
-
-Save your file as =secondpage.html=
-
-[[#][[[images/arrow.png]]]]
-
-** Testing our webpage
-
-Now have a look inside the directory you created. You should see two
-icons for the two files that you created and both should look like web
-browser icons
-
-Double click the firstpage.html file and it should open up in a
-webbrowser.
-
-[[#][[[images/arrow.png]]]]
-
-** Debugging and editing
-
-To open your file in a text editor again - right click on the file and
-choose "Open with" and select Notepad.
-
-If your pages didn't work then check the code again and check your file
-names.
-
-Now have a go at creating a third page, and try linking to it from the
-other two.
-
-[[#][[[images/arrow.png]]]]
-
-** So what is the World Wide Web?
-
-The world wide web is a load of documents, like the two that you
-created, that all link to each other and are stored on different
-computers all over the world. The computers are called /Web Servers/
-
-[[http://upload.wikimedia.org/wikipedia/commons/9/98/Cern_datacenter.jpg]]
-
-* Web Browsers
-
-[[#][[[images/arrow.png]]]]
-
-** What is a Web Browser?
-
-A web browser is a piece of software that you have installed on your
-computer
-
-How many of the web browsers can you name from the logos?
-
-[[http://www.movingweb.co.nz/images/browser_logos.png]]
-[[#][[[images/arrow.png]]]]
-
-** What does a web browser do?
-
-Web browser can take the languages of the web (html, javascript,
-actionscript and many more) and display them in an way that is easy for
-you to read and interact with.
-
-For instance, here is a little HTML code
-
-#+BEGIN_EXAMPLE
-
-                            
-#+END_EXAMPLE
-
-And you can see how your browser renders it below
-
-[[#][[[images/arrow.png]]]]
-
 * URLs and Domain Names
 
 [[#][[[images/arrow.png]]]]
@@ -341,17 +300,13 @@ Computer use =IP addresses= to send messages to each other.
 
 Your Computer's current IP address should be shown below
 
-#+BEGIN_EXAMPLE
-                                
+#+BEGIN_HTML                         
     VIH_BackColor = "#525252";
     VIH_ForeColor = "#F0F0F0";
     VIH_FontPix = "30";
     VIH_DisplayFormat = "You are visiting from:IP Address: %%IP%%";
     VIH_DisplayOnPage = "yes";
-
-
-                        
-#+END_EXAMPLE
+#+END_HTML
 
 [[#][[[images/arrow.png]]]]
 
