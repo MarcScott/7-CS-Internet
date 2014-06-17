@@ -1,6 +1,7 @@
 #+STARTUP:indent
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/lesson.css"/>
-#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
 #+TITLE: Modelling a DNS
 #+AUTHOR: Marc Scott
 #+BEGIN_HTML
@@ -13,34 +14,66 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
 ** Research It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: research
 :END:
-** Present It
+
+** Design It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: present
+:HTML_CONTAINER_CLASS: design
 :END:
-** Code It
+
+** Build It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: code
+:HTML_CONTAINER_CLASS: build
 :END:
-** Save It
+
+** Test It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: save
+:HTML_CONTAINER_CLASS: test
 :END:
+
 ** Run It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: run
 :END:
-** Try It:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-** Badge It:
+
+** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
 * Modelling a DNS table
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
@@ -186,130 +219,78 @@ On the image below you're presented with an Identity Parade Lineup. You need to 
 	    </script>
 #+END_HTML
 
-
-
-** How did you do it?
-
-You could have selected people at random. This is one way of
-accomplishing a search.
-
-Or maybe you started from one side and worked your way across. This is
-how a computer program would accomplish a search.
-
-This method of searching is called a linear search.
-
-[[#][[[images/arrow.png]]]]
-
-** Linear Search
-
-Imagine we had a list of 'things'
-
+** Documnent It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: documnet
+:END:
+- Explain how you choose to find the correct face from the line up.
+- Try and explain how you think a computer might have doen it.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- A linear search is a method of going through a list of items, one by one, and checking each item. 
+- Imagine we had a list of 'things'
 =[cat,dog,horse,mouse,rabbit,parrot,elephant]=
-
-If we wanted a computer to program to find the position of the element
+- If we wanted a computer to program to find the position of the element
 =parrot= it would check from left to right
-
-The program would check what was at position 1, see if it was parrot and
-if it wasn't it would move onto position 2, and so on.
+- The program would check what was at position 1, see if it was parrot and if it wasn't it would move onto position 2, and so on.
 
 * Indexing a list
-
-[[#][[[images/arrow.png]]]]
-
-** What is an index?
-
-As a computer reads through a list, it needs to keep track of where it
-is. This is what an index is for.
-
-Imagine we have the following two lists:
-
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- As a computer reads through a list, it needs to keep track of where it is. This is what an index is for.
+- Imagine we have the following two lists:
 #+BEGIN_EXAMPLE
     OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
     Rating = ['4/5','2/5','4/5','3/5','5/5']
-                            
 #+END_EXAMPLE
-
-The items in the first list are Operating systems. The items in the
-second list give a user rating out of 5.
-
-** A quick linear search
-
-Imagine we wanted to find out the rating out of 5 for Android.
-
-We could step through the list of operating systems until we found
-Android.
-
-This would not tell us where to find the rating out of five in the
-second list though. It would just tell us that Android exists in the
-first list.
-
-** Using an index
-
+- The items in the first list are Operating systems.
+- The items in the second list give a user rating out of 5.
+- Imagine we wanted to find out the rating out of 5 for Android.
+- We could step through the list of operating systems until we found Android.
+- This would not tell us where to find the rating out of five in the second list though. It would just tell us that Android exists in the first list.
 #+BEGIN_EXAMPLE
     OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
-    Rating = ['4/5','2/5','4/5','3/5','5/5']                
-                            
+    Rating = ['4/5','2/5','4/5','3/5','5/5']                 
 #+END_EXAMPLE
-
-As we move through (iterate) the first list searching for 'Android', we
-keep a count of our position.
-
-The algorithm looks something like this:
-
-1. =index = 1=
-2. Is Android at =index= (position 1)
-3. No, so add =1= to =index=.
-4. Is Android at =index= (position 2)
-5. No, so add =1= to =index=.
-6. Is Android at =index= (position 3)
-7. Yes. So look up =index= of the second list
-8. =index= (position 3) of the second list is 4
-9. So Android has a rating of 4
-
+- As we move through (iterate) the first list searching for 'Android', we keep a count of our position.
+- The algorithm looks something like this:
+#+BEGIN_EXAMPLE
+1. index = 1
+2. Is Android at index (position 1)
+3. No, so add 1 to index
+4. Is Android at index (position 2)
+5. No, so add 1 to index.
+6. Is Android at index (position 3)
+7. Yes. So look up index of the second list
+8. index (position 3) of the second list is 4/5
+9. So Android has a rating of 4/5
+#+END_EXAMPLE
 * Using a linear search in our DNS.
-
-[[#][[[images/arrow.png]]]]
-
-** Searching for domain names
-
 In our Scratch program so far we have a list of domain names and a list
 of IP addresses.
-
 We need to be able to conduct a linear search on the list of domain
 names to find the position of any given name.
-
-[[#][[[images/arrow.png]]]]
-
-** Getting Started
-
-You're going to need a couple of new variables to start.
-
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- You're going to need a couple of new variables to start.
 1. Create a variable called =domain=
 2. Create a variable called =index=
-
-[[#][[[images/arrow.png]]]]
-
-** A linear search algorithm
-
-When the script starts - the program asks for a domain name.
-
-The variable =domain= is set to the answer.
-
-The variable =index= is set to 1
-
-Within a loop that repeats the same number of times as the length of the
-Domain Name list.
-
-If the =index= of the Domain Name list = the variable =domain=
-
--  Say the =index= of the IP Address list
-
-Else
-
--  Change the variable =index= by 1
-
-[[#][[[images/arrow.png]]]]
-
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- When the script starts - the program should ask for a domain name.
+- The variable =domain= is set to the answer.
+- The variable =index= is set to 1
+- Within a loop that repeats the same number of times as the length of the Domain Name list.
+- If the =index= of the Domain Name list = the variable =domain=
+- Say the =index= of the IP Address list Else Change the variable =index= by 1
 ** Pseudocode
 
 #+BEGIN_EXAMPLE

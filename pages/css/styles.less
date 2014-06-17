@@ -1,27 +1,30 @@
-/*GITHUB ribbon*/
+@scheme-color: #A30000;
+@scheme-font: 'Ubuntu', Helvetica, Arial, sans-serif;
+@code-font: 'Ubuntu mono', "Courier New", Courier, monospace;
 
+/*GitHub Ribbon*/
 .ribbon {
-  background-color: #4099FF;
-  overflow: hidden;
-  white-space: nowrap;
-  position: absolute;
-  left: -50px;
-  top: 40px;
-  -webkit-transform: rotate(-45deg);
-     -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-       -o-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
+    background-color: @scheme-color;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    left: -50px;
+    top: 40px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);}
+
 .ribbon a {
-  border: 1px solid #faa;
-  color: #fff;
-  display: block;
-  font: bold 81.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin: 1px 0;
-  padding: 10px 50px;
-  text-align: center;
-  text-decoration: none;}
+    border: 1px solid #faa;
+    color: #fff;
+    display: block;
+    font: bold 81.25% @scheme-font;
+    margin: 1px 0;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;}
 
 /*Main Styles*/
 
@@ -31,7 +34,7 @@
 }
 
 html {
-    font-family: PTSans, Arial, sans-serif;
+    font-family: @scheme-font;
     text-align: center;
     background: #FFF;
 }
@@ -47,7 +50,7 @@ body {
     clear:both;
 }
 
-p code, li code {
+p code {
     border-radius: 4px 4px 4px 4px;
     background:#B9E5FA;
     padding:2px 5px;
@@ -55,14 +58,14 @@ p code, li code {
     -moz-hyphens: none;
     hyphens: none;
     white-space: pre-wrap; /* css-3 */
-	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
-	white-space: -pre-wrap; /* Opera 4-6 */
-	white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
 }
-	
+
 pre {
     font-size:16px;
-    font-family: "Source Code Pro",Courier,monospace;
+    font-family: @code-font;
     font-weight: 400;
     line-height: 1.5;
     clear:both;
@@ -71,7 +74,6 @@ pre {
     -webkit-hyphens: none;
     -moz-hyphens: none;
     hyphens: none;
-    overflow: auto;
 }
 
 
@@ -118,13 +120,9 @@ pre {
 
 /* CSS For Lesson*/
 
-table{
-    margin:0 auto;
-}
-
 h1{
     font-size:50px;
-    color: #4099FF;
+    color: @scheme-color;
     margin-left: auto;
     margin-right: auto;
 }
@@ -132,7 +130,7 @@ h1{
 .activity h2 {
     font-size: 30px;
     color: #FFF;
-    background: #4099FF;
+    background: @scheme-color;
     margin-top: 30px;
     padding: 10px 10px;
     border-radius: 5px;
@@ -144,8 +142,8 @@ h1{
     margin-right: auto;
     display: block;
     max-width:600px;
-    max-height:600px;
 }
+
 .activity iframe {
     padding: 5px;
     margin-left: auto;
@@ -156,43 +154,55 @@ h1{
 
 /* CSS for sub activities*/
 
+.learn h3{
+    background-image: url(icons/Learn.svg);
+}
+
 .research h3{
-    background-image: url(../img/research.svg);
+    background-image: url(icons/Research.png);
 }
 
-.present h3{
-    background-image: url(../img/present.svg);
+.design h3 {
+    background-image: url(icons/Design.png);
 }
 
-.code h3{
-    background-image: url(../img/code.svg);
+.build h3 {
+    background-image: url(icons/Build.png);
 }
 
-.save h3{
-    background-image: url(../img/stiffy.svg);
+.test h3 {
+    background-image: url(icons/Test.png);
+}
+
+.run h3 {
+    background-image: url(icons/Run.svg);
+}
+
+.document h3 {
+    background-image: url(icons/Document.png);
+}
+
+.code h3 {
+    background-image: url(icons/Code.svg);
+}
+
+.program h3 {
+    background-image: url(icons/Program.png);
 }
 
 .try h3{
-    background-image: url(../img/bulb.svg);
-}
-
-.run h3{
-    background-image: url(../img/terminal.svg);
+    background-image: url(icons/Try.svg);
 }
 
 .badge h3{
-    background-image: url(../img/star.svg);
+    background-image: url(icons/Badge.svg);
+}
+.save h3{
+    background-image: url(icons/Save.svg);
 }
 
-
-.research h3,
-.present h3,
-.code h3,
-.save h3,
-.try h3,
-.run h3,
-.badge h3 {
-    color: #4099FF;
+h3 {
+    color: @scheme-color;
     background-position: 0px 10px;
     background-size: 40px 40px;
     background-repeat: no-repeat;
@@ -204,7 +214,7 @@ h1{
     font-size: 20px;
     float: left;
     width: 100%;
-    border-top: 3px dotted #4099FF;
+    border-top: 3px dotted @scheme-color;
 }
 
 /*CSS FOR LISTS*/
@@ -219,7 +229,7 @@ li:before{
     margin-left: 5px;
     content: " ";
     border-radius: 4px;
-    border: 2px solid #4099FF;
+    border: 2px solid @scheme-color;
     padding: 6px 6px;
     margin-right:20px;
     float:left;
@@ -229,15 +239,3 @@ ul{
     list-style-type:none;
     line-height:24px;
 }
-
-
- /* things to be cleared*/
- ul:after, ol:after{
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
- }
-
