@@ -278,9 +278,18 @@ names to find the position of any given name.
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- You're going to need a couple of new variables to start.
-1. Create a variable called =domain=
-2. Create a variable called =index=
+- Start by adding in a When =green flag= clicked block
+[[file:img/Linear_Search_1.png]]
+- Now we'll ask the user for the domain name they're looking for.
+[[file:/img/Linear_searc_2.png]]
+- Next you'll need a couple of variables:
+  - Create a variable called =domain=
+  - Create a variable called =index=
+[[file:img/Linear_Search_3.png]]
+- You should set the domain to be the answer of the =ask= block and the index to be the integer =1=
+[[file:img/Linear_search_4.png]]
+
+
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
