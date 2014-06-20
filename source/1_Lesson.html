@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>The Internet, The Web, Browsers and Search Engines.</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">The Internet, The Web, Browsers and Search Engines.</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Introduction</a>
+<ul>
+<li><a href="#sec-1-1">Present It</a></li>
+<li><a href="#sec-1-2">Save It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. The Internet</a>
+<ul>
+<li><a href="#sec-2-1">Research It</a></li>
+<li><a href="#sec-2-2">Present It</a></li>
+<li><a href="#sec-2-3">Save It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. The World Wide Web (from now on just called <i>the web</i>)</a>
+<ul>
+<li><a href="#sec-3-1">Code It</a></li>
+<li><a href="#sec-3-2">Save It</a></li>
+<li><a href="#sec-3-3">Code It</a></li>
+<li><a href="#sec-3-4">Save It</a></li>
+<li><a href="#sec-3-5">Run It</a></li>
+<li><a href="#sec-3-6">Try It:</a></li>
+<li><a href="#sec-3-7">Research It</a></li>
+<li><a href="#sec-3-8">Present It</a></li>
+<li><a href="#sec-3-9">Save It</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Web Browsers</a>
+<ul>
+<li><a href="#sec-4-1">Research It</a></li>
+<li><a href="#sec-4-2">Present It</a></li>
+<li><a href="#sec-4-3">Research It</a></li>
+<li><a href="#sec-4-4">Present It</a></li>
+<li><a href="#sec-4-5">Save It</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Search Engines</a>
+<ul>
+<li><a href="#sec-5-1">Research It</a></li>
+<li><a href="#sec-5-2">Present It</a></li>
+<li><a href="#sec-5-3">Save It</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. A little test</a>
+<ul>
+<li><a href="#sec-6-1">Badge It:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Throughout this unit, you're going to occasionally make notes and answer questions.
+</li>
+<li>Use a text editor to record your progress as you go along.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 present">
+<h3 id="sec-1-1">Present It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Create a new directory called <code>The-Internet</code>.
+</li>
+<li>Create a new file and call it <code>Notes</code>.
+</li>
+<li>Title your new document <code>How The Internet Works</code>
+</li>
+<li>Under a subtitle (<i>Introduction</i>), try complete the following sentences without asking for help or lookling up answers. Just answer according to what you currently know.
+<ul class="org-ul">
+<li><i>I think that the Internet is&#x2026;.</i>
+</li>
+<li><i>I think that the World Wide Web is&#x2026;</i>
+</li>
+<li><i>I think that a Web Browser is&#x2026;</i>
+</li>
+<li><i>I think that a Search Engine is&#x2026;</i>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 save">
+<h3 id="sec-1-2">Save It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Save your work. Call it <i>How-the-internet-works</i>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> The Internet</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Most people don't know what the Internet is or how it works, even though they use it every day.
+</li>
+</ul>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/iDbyYGrswtg" frameborder="0" allowfullscreen></iframe>
+
+<ul class="org-ul">
+<li>In reality, The Internet is a global network of computers, connected by <i>fibre optic</i> and <i>copper cables</i> or <i>wireless and satellite signals</i>.
+</li>
+<li>On it's own, the internet is nothing more than a lot of very expensive equipment.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 research">
+<h3 id="sec-2-1">Research It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Use online resources to find out a little bit about what <i>Fibre Optic</i> cables are.
+</li>
+<li>Find out where the world's longest fibre optic cables can be found.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 present">
+<h3 id="sec-2-2">Present It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Add into your notes your new understanding of what The Internet is.
+</li>
+<li>Add into your notes what <i>Fibre Optic</i> cables are.
+</li>
+<li>Try and find some images that illustrate your findings.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 save">
+<h3 id="sec-2-3">Save It</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>Save your work
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> The World Wide Web (from now on just called <i>the web</i>)</h2>
+<div class="outline-text-2" id="text-3">
+
+<div class="figure">
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg" alt="Tim_Berners-Lee-Knight-crop.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Tim Berners-Lee invented the Web back in 1989.
+</li>
+<li>To understand how the Web works, we're going to create a little webpage.
+<ul class="org-ul">
+<li>Create a new directory somewhere in your directory. Call it <code>myWebsite</code>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 code">
+<h3 id="sec-3-1">Code It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Open up a text editor.
+</li>
+<li>Now copy and paste the following into your document
+</li>
+</ul>
+<pre class="example">
+&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;My First Webpage&lt;/h1&gt;
+    &lt;p&gt;This is my first webpage. I hope you enjoy it.&lt;/p&gt;
+    &lt;img src="http://en.wikipedia.org/wiki/World_wide_web#mediaviewer/File:WorldWideWebAroundWikipedia.png" width="600px"&gt;
+    &lt;a href="secondpage.html"&gt;Link to my Second Page&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 save">
+<h3 id="sec-3-2">Save It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Save your file as <code>firstpage.html</code>
+</li>
+<li>The name is important - make sure it is all lowercase and that the file
+</li>
+</ul>
+<p>
+ends in <code>.html</code> and <i>NOT</i> <code>.txt</code>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 code">
+<h3 id="sec-3-3">Code It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>Now create a second document.
+</li>
+<li>Now copy and paste the following into your document
+</li>
+</ul>
+<pre class="example">
+&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;My Second Webpage&lt;/h1&gt;
+    &lt;p&gt;This is my second webpage. I hope you enjoy it as much as the first.&lt;/p&gt;
+    &lt;a href="firstpage.html"&gt;Link to my First Page&lt;/a&gt;
+    &lt;a href="http://www.google.com"&gt;Link to Google&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3 save">
+<h3 id="sec-3-4">Save It</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Save the file as <code>secondpage.html</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3 run">
+<h3 id="sec-3-5">Run It</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>Now have a look inside the directory you created. You should see two icons for the two files that you created and both should look like web browser icons
+</li>
+<li>Double click the firstpage.html file and it should open up in a webbrowser.
+</li>
+<li>Test that the links work.
+</li>
+<li>If the pages don't work, go back and look at them in your text editor, and make sure you have copied and pasted the code correctly. Also check that the names of the files are correct.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3 try">
+<h3 id="sec-3-6">Try It:</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>Can you make a third web page by altering the code we've used in the other two?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-7" class="outline-3 research">
+<h3 id="sec-3-7">Research It</h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li>The world wide web is a collection of <code>html</code> documents, like the two that you created.
+</li>
+<li>They all link to each other using links like the ones you made.
+</li>
+<li>The <code>html</code> documents are stored on different computers all over the world.
+</li>
+<li>These computers are called <i>Web Servers</i>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/9/98/Cern_datacenter.jpg" alt="Cern_datacenter.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Try to find out the following information
+<ul class="org-ul">
+<li>What is the most popular web page in the world?
+</li>
+<li>What was the worlds first web page?
+</li>
+<li>How many web pages currently make up the World Wide Web?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-8" class="outline-3 present">
+<h3 id="sec-3-8">Present It</h3>
+<div class="outline-text-3" id="text-3-8">
+<ul class="org-ul">
+<li>Write up your findings. Be sure to include a description of what the web is.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-9" class="outline-3 save">
+<h3 id="sec-3-9">Save It</h3>
+<div class="outline-text-3" id="text-3-9">
+<ul class="org-ul">
+<li>Save your work
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Web Browsers</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>A web browser is a piece of software that you have installed on your
+</li>
+</ul>
+<p>
+computer
+</p>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 research">
+<h3 id="sec-4-1">Research It</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>For each of the browser icons shown below, find out the name of the browser and the company that makes it.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="http://www.movingweb.co.nz/images/browser_logos.png" alt="browser_logos.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3 present">
+<h3 id="sec-4-2">Present It</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Present your findings on different web browsers in your notes.
+</li>
+<li>Which of the web browsers is currently the most popular in the world?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3 research">
+<h3 id="sec-4-3">Research It</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Find out what a web browser actually does?
+</li>
+<li>What are the major differences between the different web browsers?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-4" class="outline-3 present">
+<h3 id="sec-4-4">Present It</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>Add your findings to your notes.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5" class="outline-3 save">
+<h3 id="sec-4-5">Save It</h3>
+<div class="outline-text-3" id="text-4-5">
+<ul class="org-ul">
+<li>Don't forget to save your notes.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> Search Engines</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 research">
+<h3 id="sec-5-1">Research It</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Watch the following video about Google search. Most search engines like Bing, Duck Duck Go and Yahoo work in much the same way.
+</li>
+</ul>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/BNHR6IQJGZs" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3 present">
+<h3 id="sec-5-2">Present It</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Write up what you learned in your notes. You should be able to do it in a paragraph or two.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3 save">
+<h3 id="sec-5-3">Save It</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Save your work.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2 activity">
+<h2 id="sec-6"><span class="section-number-2">6</span> A little test</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-sec-6-1" class="outline-3 badge">
+<h3 id="sec-6-1">Badge It:</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>To get your badge for this section, you're going to need to pass a little online test.
+</li>
+<li>50% or above will award you with the bronze badge
+</li>
+<li>70&amp; or above will award you with the silver badge
+</li>
+<li>90% or above will award you with the gold badge.
+</li>
+<li>If you get below 50%, then you'll have to do a little more revision and take the test again.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

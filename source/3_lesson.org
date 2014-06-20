@@ -102,21 +102,19 @@ A quick note. Not everything explained in this presentation is true. Some of it 
 :END:
 - We're going to have to build a DNS Table to begin with. This is going to be made up of two lists.
 - In Scratch, create a new list called =Domain Names= and then another list called =IP Addresses=
-- To the =Domain Names= list add the domain name /google.com/
-- To the =IP Addresses= list add the IP address /74.125.239.116/
-[[file:images/Create_Lists.png]]
+[[file:img/Create_Lists_1.png]]
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-
-
-- We're going to need a few more Domain names and IP Addresses to populate our table.
-- Goto [[http://www.hcidata.info/host2ip.cgi][this site]]
-  - Use the webpage to look up some common domain names like =facebook.com= and =youtube.com= and add them to the lists.
-  - You should end up with something like this.
-[[file:images/Populated_Lists.png]]
-- Try to gather around 10 domains and IP addresses.
+- We're going to need a few Domain names and IP Addresses to populate our table. About 1000 of each should do the trick.
+- This would take ages by hand, but luckily Scratch allows us to import text files.
+- Download this text file - [[file:~/Curriculum/7-CS-Internet/resources/domains.txt][domains.txt]] and this text file - [[file:~/Curriculum/7-CS-Internet/resources/IPs.txt][IPs.txt]]
+- Now right click on the gray box that represents the Domain Names list and choose import from the context menu.
+- You can then direct your file browser to the downloaded file.
+[[file:img/Create_Lists_2.png]]
+- Do the same for the IP Addresses list and you should end up with something that looks like this.
+[[file:img/Create_Lists_3.png]]
 * Linear Search
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
@@ -125,9 +123,9 @@ A quick note. Not everything explained in this presentation is true. Some of it 
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: research
 :END:
-- When you type in a URL into a webbrowser address bar, your computer consults the DNS server, to find the IP address.
-- The DNS server has to lookup the domain name and find the corresponding IP address
-- To do this the server needs to use a searching algorithm
+- When you type in a URL into a web-browser address bar, your computer consults the DNS server, to find the IP address.
+- The DNS server has to look up the domain name and find the corresponding IP address
+- To do this the server needs to use a searching algorithm.
 ----
 On the image below you're presented with an Identity Parade Lineup. You need to find this face:
 [[file:images/Face.jpg]]
@@ -219,12 +217,13 @@ On the image below you're presented with an Identity Parade Lineup. You need to 
 	    </script>
 #+END_HTML
 
-** Documnent It
+** Document It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: documnet
+:HTML_CONTAINER_CLASS: document
 :END:
 - Explain how you choose to find the correct face from the line up.
-- Try and explain how you think a computer might have doen it.
+- Try and explain how you think a computer might have done it.
+- How long do you think it would take you to find the IP address of a domain name in the list of 1001 you now have in Scratch?
 ** Learn It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
@@ -235,8 +234,11 @@ On the image below you're presented with an Identity Parade Lineup. You need to 
 - If we wanted a computer to program to find the position of the element
 =parrot= it would check from left to right
 - The program would check what was at position 1, see if it was parrot and if it wasn't it would move onto position 2, and so on.
-
+- Luckily, computers can do this exceptionally quickly.
 * Indexing a list
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
 ** Learn It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
@@ -256,7 +258,7 @@ On the image below you're presented with an Identity Parade Lineup. You need to 
     OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
     Rating = ['4/5','2/5','4/5','3/5','5/5']                 
 #+END_EXAMPLE
-- As we move through (iterate) the first list searching for 'Android', we keep a count of our position.
+- As we move through (iterate) the first list searching for 'Android', we keep a count of our position. The position is called the /index/ of the list.
 - The algorithm looks something like this:
 #+BEGIN_EXAMPLE
 1. index = 1
@@ -270,10 +272,11 @@ On the image below you're presented with an Identity Parade Lineup. You need to 
 9. So Android has a rating of 4/5
 #+END_EXAMPLE
 * Using a linear search in our DNS.
-In our Scratch program so far we have a list of domain names and a list
-of IP addresses.
-We need to be able to conduct a linear search on the list of domain
-names to find the position of any given name.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- In our Scratch program so far we have a list of domain names and a list of IP addresses.
+- We need to be able to conduct a linear search on the list of domain names to find the index of any given name.
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
@@ -281,95 +284,66 @@ names to find the position of any given name.
 - Start by adding in a When =green flag= clicked block
 [[file:img/Linear_Search_1.png]]
 - Now we'll ask the user for the domain name they're looking for.
-[[file:/img/Linear_searc_2.png]]
+[[file:img/Linear_Search_2.png]]
 - Next you'll need a couple of variables:
   - Create a variable called =domain=
   - Create a variable called =index=
 [[file:img/Linear_Search_3.png]]
 - You should set the domain to be the answer of the =ask= block and the index to be the integer =1=
 [[file:img/Linear_search_4.png]]
-
-
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- When the script starts - the program should ask for a domain name.
-- The variable =domain= is set to the answer.
-- The variable =index= is set to 1
-- Within a loop that repeats the same number of times as the length of the Domain Name list.
-- If the =index= of the Domain Name list = the variable =domain=
-- Say the =index= of the IP Address list Else Change the variable =index= by 1
-** Pseudocode
+- Our linear search algorithm could possibly need to search right to the end of the list. So we'll need to use a loop that keeps going until the index is at 1001.
+[[file:img/Linear_Search_5.png]]
+- Currently =index= is =1=. So the algorithm needs to check the 1st item in domain names, and see if it matches the domain that the user is looking for. We can do this with a conditional =if/else= inside the =repeat until= loop.
+[[file:img/Linear_Search_6.png]]
+- If the domain names do not match, then we want =index= to become =2=, and the algorithm to go back to the start of the loop.
+[[file:img/Linear_Search_7.png]]
+- If however there is a match, then we know that the index of the IPs list will contain the IP address we're looking for.
+[[file:img/Linear_Search_8.png]]
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
 
-#+BEGIN_EXAMPLE
-    when GreenFlag clicked
-        ask "What domain are you looking for"
-        set domain to answer
-        set index to 1
-        repeat (length of Domain Names)
-            if (index of Domain Names) = domain
-                say ("the IP address is", index of IP Addresses)
-            else
-                change index by 1
-            
-#+END_EXAMPLE
+- Pick some random domain names from the list and use your algorithm to search for their IP addresses.
+- Once you have an IP address you can copy and paste it into your browser's URL bar, and you should get directed to the site
+[[file:img/Linear_Search_9.png]]
+- Not all of them will work however, as some sites use redirects and other trickery that will fool your browser.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
 
-[[#][[[images/arrow.png]]]]
+- Use screen shots and some text to try to explain how your Linear Search algorithm works.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+Here's a quick recap of what you've covered so far.
+- Domain names are easy for humans to read and remember.
+- Each domain name links to an IP address that computers use to send messages to each other.
+- A Domain Name Server (DNS) stores a table of domain names and IP addresses.
+- When you type in a URL, your computer asks the DNS what the IP address is for the domain name.
+- An item in a list can be referenced by its position, which is called it's index.
+- Linear search is one method of finding an element in a list.
 
-** The blocks
-
-Try and flick back up to the pseudocode and figure out how to place them
-before scrolling down
-
-[[images/linear_search_blocks.png]]
-[[#][[[images/arrow.png]]]]
-
-** The blocks part 2
-
-If you're stuck here are a few of the blocks that have been stacked for
-you.
-
-See if you can assemble the script now, before scrolling down.
-
-[[images/linear_search_blocks2.png]]
-[[#][[[images/arrow.png]]]]
-
-** The completed script
-
-[[images/linear_search_script.png]]
-[[#][[[images/arrow.png]]]]
-
-** The video
 
 * A Linear Search Project
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
 
-** Instructions
-
-You're going to try an implement your own Linear Search program now.
-
-1. Create a Scratch program that:
-
-   -  Uses two lists, one to store a Subject Name (e.g. Science) and the
-      other to store a target grade.
-   -  Allows a user to search for a Subject Name and returns the target
-      grade.
-
-2. Use any sprites you like.
-3. If you have time, try to make it return 'Not found" if a subject that
-   doesn't exist is asked for.
-
-[[#][[[images/arrow.png]]]]
-
-** Recap.
-
-1. Domain names are easy for humans to read and remember.
-2. Each domain name links to an IP address that computers use to send
-   messages to each other.
-3. A Domain Name Server (DNS) stores a table of domain names and IP
-   addresses.
-4. When you type in a URL, your computer asks the DNS what the IP
-   address is for the domain name.
-5. Linear search is one method of finding an element in a list.
-
+- You're going to try an implement your own Linear Search program now.
+- Create a Scratch program that:
+   -  Uses two lists, one to store a Subject Name (e.g. Science) and the other to store a teacher's name.
+   -  Allows a user to search for a Subject Name and returns the teacher of that subject
+- Use any sprites you like.
+- Make it return 'Not found" if a subject that doesn't exist is asked for.
 

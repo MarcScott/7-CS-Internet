@@ -1,7 +1,7 @@
 #+STARTUP:indent
-
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/lesson.css"/>
-#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
 #+TITLE: Domain Names, IP Addresses and DNS
 #+AUTHOR: Marc Scott
 

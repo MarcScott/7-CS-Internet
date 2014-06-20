@@ -153,7 +153,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2">2. Linear Search</a>
 <ul>
 <li><a href="#sec-2-1">Research It</a></li>
-<li><a href="#sec-2-2">Documnent It</a></li>
+<li><a href="#sec-2-2">Document It</a></li>
 <li><a href="#sec-2-3">Learn It</a></li>
 </ul>
 </li>
@@ -166,17 +166,14 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-4-1">Code It</a></li>
 <li><a href="#sec-4-2">Code It</a></li>
-<li><a href="#sec-4-3">Pseudocode</a></li>
-<li><a href="#sec-4-4">The blocks</a></li>
-<li><a href="#sec-4-5">The blocks part 2</a></li>
-<li><a href="#sec-4-6">The completed script</a></li>
-<li><a href="#sec-4-7">The video</a></li>
+<li><a href="#sec-4-3">Run It</a></li>
+<li><a href="#sec-4-4">Document It</a></li>
+<li><a href="#sec-4-5">Learn It</a></li>
 </ul>
 </li>
 <li><a href="#sec-5">5. A Linear Search Project</a>
 <ul>
-<li><a href="#sec-5-1">Instructions</a></li>
-<li><a href="#sec-5-2">Recap.</a></li>
+<li><a href="#sec-5-1">Badge It</a></li>
 </ul>
 </li>
 </ul>
@@ -250,14 +247,10 @@ A quick note. Not everything explained in this presentation is true. Some of it 
 </li>
 <li>In Scratch, create a new list called <code>Domain Names</code> and then another list called <code>IP Addresses</code>
 </li>
-<li>To the <code>Domain Names</code> list add the domain name <i>google.com</i>
-</li>
-<li>To the <code>IP Addresses</code> list add the IP address <i>74.125.239.116</i>
-</li>
 </ul>
 
 <div class="figure">
-<p><img src="images/Create_Lists.png" alt="Create_Lists.png" />
+<p><img src="img/Create_Lists_1.png" alt="Create_Lists_1.png" />
 </p>
 </div>
 </div>
@@ -266,26 +259,31 @@ A quick note. Not everything explained in this presentation is true. Some of it 
 <h3 id="sec-1-4">Code It</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
-<li>We're going to need a few more Domain names and IP Addresses to populate our table.
+<li>We're going to need a few Domain names and IP Addresses to populate our table. About 1000 of each should do the trick.
 </li>
-<li>Goto <a href="http://www.hcidata.info/host2ip.cgi">this site</a>
-<ul class="org-ul">
-<li>Use the webpage to look up some common domain names like <code>facebook.com</code> and <code>youtube.com</code> and add them to the lists.
+<li>This would take ages by hand, but luckily Scratch allows us to import text files.
 </li>
-<li>You should end up with something like this.
+<li>Download this text file - <a href="file:///Users/scott/Curriculum/7-CS-Internet/resources/domains.txt">domains.txt</a> and this text file - <a href="file:///Users/scott/Curriculum/7-CS-Internet/resources/IPs.txt">IPs.txt</a>
 </li>
-</ul>
+<li>Now right click on the gray box that represents the Domain Names list and choose import from the context menu.
+</li>
+<li>You can then direct your file browser to the downloaded file.
 </li>
 </ul>
 
 <div class="figure">
-<p><img src="images/Populated_Lists.png" alt="Populated_Lists.png" />
+<p><img src="img/Create_Lists_2.png" alt="Create_Lists_2.png" />
 </p>
 </div>
 <ul class="org-ul">
-<li>Try to gather around 10 domains and IP addresses.
+<li>Do the same for the IP Addresses list and you should end up with something that looks like this.
 </li>
 </ul>
+
+<div class="figure">
+<p><img src="img/Create_Lists_3.png" alt="Create_Lists_3.png" />
+</p>
+</div>
 </div>
 </div>
 </div>
@@ -297,11 +295,11 @@ A quick note. Not everything explained in this presentation is true. Some of it 
 <h3 id="sec-2-1">Research It</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
-<li>When you type in a URL into a webbrowser address bar, your computer consults the DNS server, to find the IP address.
+<li>When you type in a URL into a web-browser address bar, your computer consults the DNS server, to find the IP address.
 </li>
-<li>The DNS server has to lookup the domain name and find the corresponding IP address
+<li>The DNS server has to look up the domain name and find the corresponding IP address
 </li>
-<li>To do this the server needs to use a searching algorithm
+<li>To do this the server needs to use a searching algorithm.
 </li>
 </ul>
 <p>
@@ -397,13 +395,15 @@ On the image below you're presented with an Identity Parade Lineup. You need to 
 </div>
 </div>
 
-<div id="outline-container-sec-2-2" class="outline-3 documnet">
-<h3 id="sec-2-2">Documnent It</h3>
+<div id="outline-container-sec-2-2" class="outline-3 document">
+<h3 id="sec-2-2">Document It</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>Explain how you choose to find the correct face from the line up.
 </li>
-<li>Try and explain how you think a computer might have doen it.
+<li>Try and explain how you think a computer might have done it.
+</li>
+<li>How long do you think it would take you to find the IP address of a domain name in the list of 1001 you now have in Scratch?
 </li>
 </ul>
 </div>
@@ -430,15 +430,17 @@ On the image below you're presented with an Identity Parade Lineup. You need to 
 <ul class="org-ul">
 <li>The program would check what was at position 1, see if it was parrot and if it wasn't it would move onto position 2, and so on.
 </li>
+<li>Luckily, computers can do this exceptionally quickly.
+</li>
 </ul>
 </div>
 </div>
 </div>
-
-<div id="outline-container-sec-3" class="outline-2">
+<div id="outline-container-sec-3" class="outline-2 activity">
 <h2 id="sec-3"><span class="section-number-2">3</span> Indexing a list</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-sec-3-1" class="outline-3 learn">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
 <h3 id="sec-3-1">Learn It</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
@@ -468,7 +470,7 @@ OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
 Rating = ['4/5','2/5','4/5','3/5','5/5']
 </pre>
 <ul class="org-ul">
-<li>As we move through (iterate) the first list searching for 'Android', we keep a count of our position.
+<li>As we move through (iterate) the first list searching for 'Android', we keep a count of our position. The position is called the <i>index</i> of the list.
 </li>
 <li>The algorithm looks something like this:
 </li>
@@ -487,15 +489,15 @@ Rating = ['4/5','2/5','4/5','3/5','5/5']
 </div>
 </div>
 </div>
-<div id="outline-container-sec-4" class="outline-2">
+<div id="outline-container-sec-4" class="outline-2 activity">
 <h2 id="sec-4"><span class="section-number-2">4</span> Using a linear search in our DNS.</h2>
 <div class="outline-text-2" id="text-4">
-<p>
-In our Scratch program so far we have a list of domain names and a list
-of IP addresses.
-We need to be able to conduct a linear search on the list of domain
-names to find the position of any given name.
-</p>
+<ul class="org-ul">
+<li>In our Scratch program so far we have a list of domain names and a list of IP addresses.
+</li>
+<li>We need to be able to conduct a linear search on the list of domain names to find the index of any given name.
+</li>
+</ul>
 </div>
 <div id="outline-container-sec-4-1" class="outline-3 code">
 <h3 id="sec-4-1">Code It</h3>
@@ -510,160 +512,158 @@ names to find the position of any given name.
 </p>
 </div>
 <ul class="org-ul">
-<li>You're going to need a couple of new variables to start.
+<li>Now we'll ask the user for the domain name they're looking for.
 </li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_2.png" alt="Linear_Search_2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Next you'll need a couple of variables:
+<ul class="org-ul">
 <li>Create a variable called <code>domain</code>
 </li>
 <li>Create a variable called <code>index</code>
 </li>
 </ul>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_3.png" alt="Linear_Search_3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>You should set the domain to be the answer of the <code>ask</code> block and the index to be the integer <code>1</code>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_search_4.png" alt="Linear_search_4.png" />
+</p>
 </div>
 </div>
-
-
+</div>
 <div id="outline-container-sec-4-2" class="outline-3 code">
 <h3 id="sec-4-2">Code It</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
-<li>When the script starts - the program should ask for a domain name.
+<li>Our linear search algorithm could possibly need to search right to the end of the list. So we'll need to use a loop that keeps going until the index is at 1001.
 </li>
-<li>The variable <code>domain</code> is set to the answer.
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_5.png" alt="Linear_Search_5.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Currently <code>index</code> is <code>1</code>. So the algorithm needs to check the 1st item in domain names, and see if it matches the domain that the user is looking for. We can do this with a conditional <code>if/else</code> inside the <code>repeat until</code> loop.
 </li>
-<li>The variable <code>index</code> is set to 1
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_6.png" alt="Linear_Search_6.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If the domain names do not match, then we want <code>index</code> to become <code>2</code>, and the algorithm to go back to the start of the loop.
 </li>
-<li>Within a loop that repeats the same number of times as the length of the Domain Name list.
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_7.png" alt="Linear_Search_7.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If however there is a match, then we know that the index of the IPs list will contain the IP address we're looking for.
 </li>
-<li>If the <code>index</code> of the Domain Name list = the variable <code>domain</code>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_8.png" alt="Linear_Search_8.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3 run">
+<h3 id="sec-4-3">Run It</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Pick some random domain names from the list and use your algorithm to search for their IP addresses.
 </li>
-<li>Say the <code>index</code> of the IP Address list Else Change the variable <code>index</code> by 1
+<li>Once you have an IP address you can copy and paste it into your browser's URL bar, and you should get directed to the site
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_9.png" alt="Linear_Search_9.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Not all of them will work however, as some sites use redirects and other trickery that will fool your browser.
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-4-3" class="outline-3">
-<h3 id="sec-4-3">Pseudocode</h3>
-<div class="outline-text-3" id="text-4-3">
-<pre class="example">
-when GreenFlag clicked
-    ask "What domain are you looking for"
-    set domain to answer
-    set index to 1
-    repeat (length of Domain Names)
-        if (index of Domain Names) = domain
-            say ("the IP address is", index of IP Addresses)
-        else
-            change index by 1
-</pre>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-4-4" class="outline-3">
-<h3 id="sec-4-4">The blocks</h3>
+<div id="outline-container-sec-4-4" class="outline-3 document">
+<h3 id="sec-4-4">Document It</h3>
 <div class="outline-text-3" id="text-4-4">
-<p>
-Try and flick back up to the pseudocode and figure out how to place them
-before scrolling down
-</p>
-
-<p>
-<i>images/linear_search_blocks.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
+<ul class="org-ul">
+<li>Use screen shots and some text to try to explain how your Linear Search algorithm works.
+</li>
+</ul>
 </div>
 </div>
-
-<div id="outline-container-sec-4-5" class="outline-3">
-<h3 id="sec-4-5">The blocks part 2</h3>
+<div id="outline-container-sec-4-5" class="outline-3 learn">
+<h3 id="sec-4-5">Learn It</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
-If you're stuck here are a few of the blocks that have been stacked for
-you.
+Here's a quick recap of what you've covered so far.
 </p>
-
-<p>
-See if you can assemble the script now, before scrolling down.
-</p>
-
-<p>
-<i>images/linear_search_blocks2.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-4-6" class="outline-3">
-<h3 id="sec-4-6">The completed script</h3>
-<div class="outline-text-3" id="text-4-6">
-<p>
-<i>images/linear_search_script.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-4-7" class="outline-3">
-<h3 id="sec-4-7">The video</h3>
-</div>
-</div>
-
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> A Linear Search Project</h2>
-<div class="outline-text-2" id="text-5">
-</div><div id="outline-container-sec-5-1" class="outline-3">
-<h3 id="sec-5-1">Instructions</h3>
-<div class="outline-text-3" id="text-5-1">
-<p>
-You're going to try an implement your own Linear Search program now.
-</p>
-
-<ol class="org-ol">
-<li>Create a Scratch program that:
-
 <ul class="org-ul">
-<li>Uses two lists, one to store a Subject Name (e.g. Science) and the
-other to store a target grade.
-</li>
-<li>Allows a user to search for a Subject Name and returns the target
-grade.
-</li>
-</ul>
-</li>
-
-<li>Use any sprites you like.
-</li>
-<li>If you have time, try to make it return 'Not found" if a subject that
-doesn't exist is asked for.
-</li>
-</ol>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-5-2" class="outline-3">
-<h3 id="sec-5-2">Recap.</h3>
-<div class="outline-text-3" id="text-5-2">
-<ol class="org-ol">
 <li>Domain names are easy for humans to read and remember.
 </li>
-<li>Each domain name links to an IP address that computers use to send
-messages to each other.
+<li>Each domain name links to an IP address that computers use to send messages to each other.
 </li>
-<li>A Domain Name Server (DNS) stores a table of domain names and IP
-addresses.
+<li>A Domain Name Server (DNS) stores a table of domain names and IP addresses.
 </li>
-<li>When you type in a URL, your computer asks the DNS what the IP
-address is for the domain name.
+<li>When you type in a URL, your computer asks the DNS what the IP address is for the domain name.
+</li>
+<li>An item in a list can be referenced by its position, which is called it's index.
 </li>
 <li>Linear search is one method of finding an element in a list.
 </li>
-</ol>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> A Linear Search Project</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 badge">
+<h3 id="sec-5-1">Badge It</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>You're going to try an implement your own Linear Search program now.
+</li>
+<li>Create a Scratch program that:
+<ul class="org-ul">
+<li>Uses two lists, one to store a Subject Name (e.g. Science) and the other to store a teacher's name.
+</li>
+<li>Allows a user to search for a Subject Name and returns the teacher of that subject
+</li>
+</ul>
+</li>
+<li>Use any sprites you like.
+</li>
+<li>Make it return 'Not found" if a subject that doesn't exist is asked for.
+</li>
+</ul>
 </div>
 </div>
 </div>
