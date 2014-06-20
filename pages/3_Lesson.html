@@ -3,10 +3,91 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>How A Network Works.</title>
+<title>Modelling a DNS</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
-<link rel="stylesheet" type="text/css" href="css/lesson.css"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -56,92 +137,43 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">How A Network Works.</h1>
+<h1 class="title">Modelling a DNS</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Sprites</a>
+<li><a href="#sec-1">1. Modelling a DNS table</a>
 <ul>
-<li><a href="#sec-1-1">Sprites</a></li>
+<li><a href="#sec-1-1">Code It</a></li>
+<li><a href="#sec-1-2">Research It</a></li>
+<li><a href="#sec-1-3">Code It</a></li>
+<li><a href="#sec-1-4">Code It</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2. Packets</a>
+<li><a href="#sec-2">2. Linear Search</a>
 <ul>
-<li><a href="#sec-2-1">How computers communicate on a network</a></li>
+<li><a href="#sec-2-1">Research It</a></li>
+<li><a href="#sec-2-2">Document It</a></li>
+<li><a href="#sec-2-3">Learn It</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3. Building the network</a>
+<li><a href="#sec-3">3. Indexing a list</a>
 <ul>
-<li><a href="#sec-3-1">Building the virtual network.</a></li>
-<li><a href="#sec-3-2">Pseudocode</a></li>
-<li><a href="#sec-3-3">The Blocks</a></li>
-<li><a href="#sec-3-4">The Script</a></li>
-<li><a href="#sec-3-5">The Video</a></li>
-<li><a href="#sec-3-6">Emptying the list.</a></li>
+<li><a href="#sec-3-1">Learn It</a></li>
 </ul>
 </li>
-<li><a href="#sec-4">4. Sending the packet</a>
+<li><a href="#sec-4">4. Using a linear search in our DNS.</a>
 <ul>
-<li><a href="#sec-4-1">The packet</a></li>
-<li><a href="#sec-4-2">Pseudocode</a></li>
-<li><a href="#sec-4-3">The Blocks</a></li>
-<li><a href="#sec-4-4">The Script</a></li>
-<li><a href="#sec-4-5">The Video</a></li>
+<li><a href="#sec-4-1">Code It</a></li>
+<li><a href="#sec-4-2">Code It</a></li>
+<li><a href="#sec-4-3">Run It</a></li>
+<li><a href="#sec-4-4">Document It</a></li>
+<li><a href="#sec-4-5">Learn It</a></li>
 </ul>
 </li>
-<li><a href="#sec-5">5. Arriving at the router</a>
+<li><a href="#sec-5">5. A Linear Search Project</a>
 <ul>
-<li><a href="#sec-5-1">The Packet continued</a></li>
-<li><a href="#sec-5-2">Pseudocode</a></li>
-<li><a href="#sec-5-3">The Script</a></li>
-<li><a href="#sec-5-4">The Video</a></li>
-<li><a href="#sec-5-5">Deleting the clone</a></li>
-</ul>
-</li>
-<li><a href="#sec-6">6. Building the router</a>
-<ul>
-<li><a href="#sec-6-1">The router</a></li>
-<li><a href="#sec-6-2">Pseudocode</a></li>
-<li><a href="#sec-6-3">The Blocks</a></li>
-<li><a href="#sec-6-4">The Script</a></li>
-<li><a href="#sec-6-5">The Video</a></li>
-<li><a href="#sec-6-6">Clearing the destination\<sub>list</sub></a></li>
-<li><a href="#sec-6-7">So far</a></li>
-</ul>
-</li>
-<li><a href="#sec-7">7. Forwarding</a></li>
-<li><a href="#sec-8">8. the packet</a>
-<ul>
-<li><a href="#sec-8-1">Forwarding the packet</a></li>
-<li><a href="#sec-8-2">Pseudocode</a></li>
-<li><a href="#sec-8-3">The blocks</a></li>
-<li><a href="#sec-8-4">The script</a></li>
-<li><a href="#sec-8-5">The Video</a></li>
-</ul>
-</li>
-<li><a href="#sec-9">9. Receiving the packet</a>
-<ul>
-<li><a href="#sec-9-1">Receiving the packet</a></li>
-<li><a href="#sec-9-2">Pseudocode</a></li>
-<li><a href="#sec-9-3">The Blocks</a></li>
-<li><a href="#sec-9-4">The Script</a></li>
-<li><a href="#sec-9-5">The Video</a></li>
-<li><a href="#sec-9-6">Duplicating laptops</a></li>
-</ul>
-</li>
-<li><a href="#sec-10">10. Finishing off</a>
-<ul>
-<li><a href="#sec-10-1">Studying the network</a></li>
-<li><a href="#sec-10-2">The real Internet</a></li>
-</ul>
-</li>
-<li><a href="#sec-11">11. Extension Activites</a>
-<ul>
-<li><a href="#sec-11-1">Below are a series of extension activites.</a></li>
-<li><a href="#sec-11-2">Expanding the Network</a></li>
-<li><a href="#sec-11-3">Creating a website.</a></li>
-<li><a href="#sec-11-4">How the Internet works.</a></li>
+<li><a href="#sec-5-1">Badge It</a></li>
 </ul>
 </li>
 </ul>
@@ -151,865 +183,487 @@ for the JavaScript code in this tag.
 <a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
 </div>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Sprites</h2>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Modelling a DNS table</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
 </div>
-
-<div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">Sprites</h3>
+<div id="outline-container-sec-1-1" class="outline-3 code">
+<h3 id="sec-1-1">Code It</h3>
 <div class="outline-text-3" id="text-1-1">
-<p>
-We're going to need three sprites to start with.
-</p>
-
-<ol class="org-ol">
-<li>A computer
-</li>
-<li>A router
-</li>
-<li>A packet
-</li>
-</ol>
-
-<p>
-Here's the ones I used but feel free to select,import or draw your own.
-</p>
-
-<p>
-<i>images/Sprites.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-
-<p>
-We'll name the sprite for the computer with an IP address.
-</p>
-
-<p>
-On most <i>home</i> networks the IP address will fall into the range of
-192.168.1.1 up to 192.168.1.254. We'll give our computer the first IP
-address, so call it <code>192.168.1.1</code>
-</p>
-
-<p>
-We'll name the router <code>192.168.1.254</code> as this is normally the default IP
-address for a home network router
-</p>
-
-<p>
-We'll name the packet <code>packet</code> because it's a packet
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-
-<p>
-Here's a screenshot of my sprites so far and a video to create them if
-you need it.
-</p>
-
-<p>
-<i>images/named_sprites.png</i>
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Packets</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-
-<div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1">How computers communicate on a network</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-Below is a simplified description of how computers on a network send
-messages to each other.
-</p>
-
-<ol class="org-ol">
-<li>The computer sending some data will split the data up into packets.
-</li>
-<li>Each packet contains (amongst other things) the IP address of the
-computer sending the data, a chunk of the data and the IP address of
-the computer that is going to receive the data.
-</li>
-<li>The computer sends the packet to the router.
-</li>
-<li>The router examines the packet and sees the IP address of the
-computer it is supposed to go to.
-</li>
-<li>The router forwards the packet onto the destination computer
-</li>
-<li>The destination computer receives the packet and can see the data it
-contains
-</li>
-</ol>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Building the network</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-
-<div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">Building the virtual network.</h3>
-<div class="outline-text-3" id="text-3-1">
-<p>
-To start we're going to set up the initial script on the laptop.
-</p>
-
-<p>
-The script needs to do the following
-</p>
-
-<ol class="org-ol">
-<li>When the laptop is clicked it creates a clone of the packet.
-</li>
-<li>It then needs to add the laptop's IP to a list called <code>packet_list</code>.
-</li>
-<li>It needs to ask what data is to be sent and add that to the list.
-</li>
-<li>It needs to ask where the data is to be sent and add that to the
-list.
-</li>
-</ol>
-
-<p>
-See if you can build this, but there's help below.
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2">Pseudocode</h3>
-<div class="outline-text-3" id="text-3-2">
-<pre class="example">
-when this sprite clicked
-create clone of packet
-add 192.168.1.1 to packet_list
-ask "What data do you want to send?"
-add answer to packet_list
-ask "Where fo you want to send the data?"
-add answer to packet_list
-</pre>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-3-3" class="outline-3">
-<h3 id="sec-3-3">The Blocks</h3>
-<div class="outline-text-3" id="text-3-3">
-<p>
-<i>images/laptop_blocks1.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-3-4" class="outline-3">
-<h3 id="sec-3-4">The Script</h3>
-<div class="outline-text-3" id="text-3-4">
-<p>
-<i>images/laptop_script1.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-3-5" class="outline-3">
-<h3 id="sec-3-5">The Video</h3>
-<div class="outline-text-3" id="text-3-5">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-3-6" class="outline-3">
-<h3 id="sec-3-6">Emptying the list.</h3>
-<div class="outline-text-3" id="text-3-6">
-<p>
-If you click on the laptop, then you're list will be populated with
-three pieces of data.
-</p>
-
-<ol class="org-ol">
-<li>The IP of the laptop
-</li>
-<li>The Data
-</li>
-<li>Where the data is to be sent
-</li>
-</ol>
-
-<p>
-The probelm is that if we click the laptop a second time then more data
-is added. We need to empty the list each time the laptop is clicked.
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-
-<p>
-Add in a block to empty the list when the laptop is clicked.
-</p>
-
-<p>
-<i>images/empty_the_list.png</i>
-</p>
-
-<p>
-Click the laptop to make sure the script is working.
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-
-<p>
-As we're using clones of the packet, we're going to need to hide the
-parent sprite, then when the clone is created it needs to go to the
-mouse pointer and show itself.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> Sending the packet</h2>
-<div class="outline-text-2" id="text-4">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-
-<div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1">The packet</h3>
-<div class="outline-text-3" id="text-4-1">
-<p>
-So far, when the laptop is clicked a packet is created and a list
-containing IP addresses and data is filled.
-</p>
-
-<p>
-The packet now needs to go to the router, so that it can be directed to
-the correct computer on the network.
-</p>
-
-<p>
-The following should now happen:
-</p>
-
-<ol class="org-ol">
-<li>The packet clone should wait until the packet list contains 3
-elements
-</li>
-<li>Then move towards the router.
-</li>
-</ol>
-
-<p>
-Give this a go.
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2">Pseudocode</h3>
-<div class="outline-text-3" id="text-4-2">
-<pre class="example">
-when I start as a clone
-go to mouse-pointer
-show
-go to front
-forever
-    if length of packet_list = 3 then
-        point towards 192.168.1.254
-        move 1 step
-</pre>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-4-3" class="outline-3">
-<h3 id="sec-4-3">The Blocks</h3>
-<div class="outline-text-3" id="text-4-3">
-<p>
-<i>images/packet_blocks2.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-4-4" class="outline-3">
-<h3 id="sec-4-4">The Script</h3>
-<div class="outline-text-3" id="text-4-4">
-<p>
-<i>images/packet_script2.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-4-5" class="outline-3">
-<h3 id="sec-4-5">The Video</h3>
-</div>
-</div>
-
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> Arriving at the router</h2>
-<div class="outline-text-2" id="text-5">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-
-<div id="outline-container-sec-5-1" class="outline-3">
-<h3 id="sec-5-1">The Packet continued</h3>
-<div class="outline-text-3" id="text-5-1">
-<p>
-If you test your script now the packet should move off towards the
-router and then jiggle there for awhile.
-</p>
-
-<p>
-We now need to tell the router that the packet has arrived so it can
-direct it onward.
-</p>
-
-<p>
-Think about how you might achieve this and have a go. Help as always is
-available below.
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-5-2" class="outline-3">
-<h3 id="sec-5-2">Pseudocode</h3>
-<div class="outline-text-3" id="text-5-2">
-<pre class="example">
-if distance to 192.168.1.254 &lt; 10
-    broadcast "at router"
-    stop this script
-</pre>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-5-3" class="outline-3">
-<h3 id="sec-5-3">The Script</h3>
-<div class="outline-text-3" id="text-5-3">
-<p>
-<i>images/packet_Script3.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-5-4" class="outline-3">
-<h3 id="sec-5-4">The Video</h3>
-<div class="outline-text-3" id="text-5-4">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-5-5" class="outline-3">
-<h3 id="sec-5-5">Deleting the clone</h3>
-<div class="outline-text-3" id="text-5-5">
-<p>
-So we don't end up with thousands of clones, we need to delete the
-clones when the simulation starts.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> Building the router</h2>
-<div class="outline-text-2" id="text-6">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-
-<div id="outline-container-sec-6-1" class="outline-3">
-<h3 id="sec-6-1">The router</h3>
-<div class="outline-text-3" id="text-6-1">
-<p>
-It's time to script the router. The router is going to find out where
-the packet needs to be sent and send it in the right direction.
-</p>
-
-<ol class="org-ol">
-<li>create a list called <code>destination_list</code>
-</li>
-<li>when the router receives the broadcast "at router":
-</li>
-<li>add x coordinate of the destination to <code>destination_list</code>
-</li>
-<li>add y coordinate of the destination to <code>destination_list</code>
-</li>
-<li>broadcast that the packet can be sent
-</li>
-</ol>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-6-2" class="outline-3">
-<h3 id="sec-6-2">Pseudocode</h3>
-<div class="outline-text-3" id="text-6-2">
-<pre class="example">
-when I receive "at router"
-    add x position of item last of packet_list to destination_list
-    add y position of item last of packet_list to destination_list
-    broadcast foward_packet
-</pre>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-6-3" class="outline-3">
-<h3 id="sec-6-3">The Blocks</h3>
-<div class="outline-text-3" id="text-6-3">
-<p>
-<i>images/router_blocks.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-6-4" class="outline-3">
-<h3 id="sec-6-4">The Script</h3>
-<div class="outline-text-3" id="text-6-4">
-<p>
-<i>images/router_script.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-6-5" class="outline-3">
-<h3 id="sec-6-5">The Video</h3>
-<div class="outline-text-3" id="text-6-5">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-6-6" class="outline-3">
-<h3 id="sec-6-6">Clearing the destination\<sub>list</sub></h3>
-<div class="outline-text-3" id="text-6-6">
-<p>
-Again, we're going to need to make sure that the <code>destination_list</code> is
-emptied when the simulation runs.
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-6-7" class="outline-3">
-<h3 id="sec-6-7">So far</h3>
-<div class="outline-text-3" id="text-6-7">
-<p>
-We now have a simulation that sends a packet to the router and the
-router stores the destination.
-</p>
-
-<p>
-However, we only have one computer.
-</p>
-
-<p>
-We can still test our script out, by getting the laptop to send a packet
-to itself.
-</p>
-
-<p>
-Run the simulation sending any data you want to 192.168.1.1
-</p>
-
-<p>
-The destination list should fill with the x and y coordinates of the
-laptop.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> Forwarding</h2>
-</div>
-
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8"><span class="section-number-2">8</span> the packet</h2>
-<div class="outline-text-2" id="text-8">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-
-<div id="outline-container-sec-8-1" class="outline-3">
-<h3 id="sec-8-1">Forwarding the packet</h3>
-<div class="outline-text-3" id="text-8-1">
-<p>
-Next the packet needs to head off to it's destination
-</p>
-
-<p>
-To do this, the packet needs to listen out for the <code>forward_packet</code>
-broadcast.
-</p>
-
-<p>
-The packet should then head off to the x and y coordinates in the
-<code>destination_list</code>
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-8-2" class="outline-3">
-<h3 id="sec-8-2">Pseudocode</h3>
-<div class="outline-text-3" id="text-8-2">
-<pre class="example">
-when I receive forward_packet
-glide 5 secs to x: item 1 of destination_list y: item 2 of destination_list
-broadcast arrived
-</pre>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-8-3" class="outline-3">
-<h3 id="sec-8-3">The blocks</h3>
-<div class="outline-text-3" id="text-8-3">
-<p>
-<i>images/packet_blocks_forward.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-8-4" class="outline-3">
-<h3 id="sec-8-4">The script</h3>
-<div class="outline-text-3" id="text-8-4">
-<p>
-<i>images/packet_script_forward.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-8-5" class="outline-3">
-<h3 id="sec-8-5">The Video</h3>
-</div>
-</div>
-
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9"><span class="section-number-2">9</span> Receiving the packet</h2>
-<div class="outline-text-2" id="text-9">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-
-<div id="outline-container-sec-9-1" class="outline-3">
-<h3 id="sec-9-1">Receiving the packet</h3>
-<div class="outline-text-3" id="text-9-1">
-<p>
-Nearly there now.
-</p>
-
-<p>
-To finish off scripting the following needs to happen.
-</p>
-
-<p>
-The laptop has to listen out for the packet to broadcast <code>arrived</code>
-</p>
-
-<p>
-When this happends it can say the contents of the <code>packet_list</code>
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-9-2" class="outline-3">
-<h3 id="sec-9-2">Pseudocode</h3>
-<div class="outline-text-3" id="text-9-2">
-<pre class="example">
-when I receive arrived
-if touching packet
-    say (join "Received " (join item 2 of packet_list (join " from " item 1 of packet_list)))
-</pre>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-9-3" class="outline-3">
-<h3 id="sec-9-3">The Blocks</h3>
-<div class="outline-text-3" id="text-9-3">
-<p>
-<i>images/receiving_packet_blocks.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-9-4" class="outline-3">
-<h3 id="sec-9-4">The Script</h3>
-<div class="outline-text-3" id="text-9-4">
-<p>
-<i>images/receiving_packet_script.png</i>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-9-5" class="outline-3">
-<h3 id="sec-9-5">The Video</h3>
-<div class="outline-text-3" id="text-9-5">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-9-6" class="outline-3">
-<h3 id="sec-9-6">Duplicating laptops</h3>
-<div class="outline-text-3" id="text-9-6">
-<p>
-The last thing to do is to duplicate the laptops and change the IP
-addresses each one adds to the <code>packet_list</code>
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-10" class="outline-2">
-<h2 id="sec-10"><span class="section-number-2">10</span> Finishing off</h2>
-<div class="outline-text-2" id="text-10">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-
-<div id="outline-container-sec-10-1" class="outline-3">
-<h3 id="sec-10-1">Studying the network</h3>
-<div class="outline-text-3" id="text-10-1">
-<p>
-Play around with your network by clicking on different laptops and
-entering data and an IP address to send it to.
-</p>
-
-<p>
-Make sure you understand the basics of how the network works
-</p>
-
-<p>
-Remember - <i>this is an oversimplification but it should give you an
-idea.</i>
-</p>
-
-<p>
-You can find a working model
-<a href="http://scratch.mit.edu/projects/11937692/">here</a> if your's doesn't
-work.
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-10-2" class="outline-3">
-<h3 id="sec-10-2">The real Internet</h3>
-<div class="outline-text-3" id="text-10-2">
-<p>
-The real internet is obviously much larger.
-</p>
-
-<p>
-On the internet packets are passed from one router to another, until
-they eventually end up on the network of the destination computer
-</p>
-
-<p>
-Also, not all the packets will go by the same route. Different packets
-can travel to the same computer by going across completely different
-countries!
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-11" class="outline-2">
-<h2 id="sec-11"><span class="section-number-2">11</span> Extension Activites</h2>
-<div class="outline-text-2" id="text-11">
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-
-<div id="outline-container-sec-11-1" class="outline-3">
-<h3 id="sec-11-1">Below are a series of extension activites.</h3>
-<div class="outline-text-3" id="text-11-1">
-<p>
-Choose an activity or activities that you feel will stretch your
-abilities but that you feel comfortable with.
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-11-2" class="outline-3">
-<h3 id="sec-11-2">Expanding the Network</h3>
-<div class="outline-text-3" id="text-11-2">
-<p>
-Alter your network model so that it includes a DNS lookup.
-</p>
-
-<p>
-The sending computer should ask for a name to send to and the IP address
-should then be searched for.
-</p>
-
-<p>
-The packet can then be sent to the looked up IP address
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-11-3" class="outline-3">
-<h3 id="sec-11-3">Creating a website.</h3>
-<div class="outline-text-3" id="text-11-3">
-<p>
-Go back and look at the web pages you created using HTML.
-</p>
-
-<p>
-Try to build on the website by adding more complex and a greater number
-of pages.
-</p>
-
-<p>
-You can find help on HTML at [w3schools](<a href="http://www.w3schools.com/html/">http://www.w3schools.com/html/</a>)
-</p>
-
-<p>
-[[#][<i>images/arrow.png</i>]]
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-11-4" class="outline-3">
-<h3 id="sec-11-4">How the Internet works.</h3>
-<div class="outline-text-3" id="text-11-4">
-<p>
-Using any software you desire:
-</p>
-
-<p>
-Create a presentation, poster or report to explaian how the internet
-works. Include:
-</p>
-
 <ul class="org-ul">
-<li>What a packet is
+<li>Go to <a href="http://mit.scratch.edu/">The MIT Scratch website</a>
 </li>
-<li>What a router is
+<li>Create a new project
 </li>
-<li>How a packet is transmitted from one computer to another
+<li>Name it DNS model
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 research">
+<h3 id="sec-1-2">Research It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>A Domain Name Server has a table stored on it, that will look something like this:
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Domain Name</th>
+<th scope="col" class="right">IP Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">google.com</td>
+<td class="right">74.125.239.116</td>
+</tr>
+
+<tr>
+<td class="left">bbc.co.uk</td>
+<td class="right">212.58.246.90</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+A quick note. Not everything explained in this presentation is true. Some of it is a <a href="http://en.wikipedia.org/wiki/Lie-to-children">simplification</a> to make things easier to understand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 code">
+<h3 id="sec-1-3">Code It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>We're going to have to build a DNS Table to begin with. This is going to be made up of two lists.
+</li>
+<li>In Scratch, create a new list called <code>Domain Names</code> and then another list called <code>IP Addresses</code>
 </li>
 </ul>
 
+<div class="figure">
+<p><img src="img/Create_Lists_1.png" alt="Create_Lists_1.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 code">
+<h3 id="sec-1-4">Code It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>We're going to need a few Domain names and IP Addresses to populate our table. About 1000 of each should do the trick.
+</li>
+<li>This would take ages by hand, but luckily Scratch allows us to import text files.
+</li>
+<li>Download this text file - <a href="file:///Users/scott/Curriculum/7-CS-Internet/resources/domains.txt">domains.txt</a> and this text file - <a href="file:///Users/scott/Curriculum/7-CS-Internet/resources/IPs.txt">IPs.txt</a>
+</li>
+<li>Now right click on the gray box that represents the Domain Names list and choose import from the context menu.
+</li>
+<li>You can then direct your file browser to the downloaded file.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Create_Lists_2.png" alt="Create_Lists_2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Do the same for the IP Addresses list and you should end up with something that looks like this.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Create_Lists_3.png" alt="Create_Lists_3.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Linear Search</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 research">
+<h3 id="sec-2-1">Research It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>When you type in a URL into a web-browser address bar, your computer consults the DNS server, to find the IP address.
+</li>
+<li>The DNS server has to look up the domain name and find the corresponding IP address
+</li>
+<li>To do this the server needs to use a searching algorithm.
+</li>
+</ul>
 <p>
-Make sure the product you create is suitable for a person who know
-little about the Internet/
+-&#x2014;
+On the image below you're presented with an Identity Parade Lineup. You need to find this face:
+<img src="images/Face.jpg" alt="Face.jpg" />
 </p>
 
+<canvas id="myCanvas" width="960" height="600"></canvas>
+<script> //Some seriously ugly js here. Come back and fix.
+ var canvas = document.getElementById('myCanvas');
+ var context = canvas.getContext('2d');
+ var UsualBkg = new Image();
+ var blank_face = new Image();
+ var image1Vis = true;
+ var image2Vis = true;
+ var image3Vis = true;
+ var image4Vis = true;
+ var image5Vis = true;
+ var faceSize = 100
+ var x;
+ var y;
+ 
+
+ function getMousePos(canvas, evt) 
+ {
+   var rect = canvas.getBoundingClientRect();
+   return {
+     x: evt.clientX - rect.left,
+     y: evt.clientY - rect.top
+   };
+ }
+
+
+ canvas.addEventListener('mousedown', function(evt) 
+                         {
+     var mousePos = getMousePos(canvas, evt);
+
+     if (mousePos.x>100 && mousePos.x<200 && mousePos.y>130 && mousePos.y<230)
+     {
+       image1Vis = false
+     }
+     if (mousePos.x>240 && mousePos.x<340 && mousePos.y>90 && mousePos.y<190)
+     {
+       image2Vis = false
+     }
+     if (mousePos.x>435 && mousePos.x<535 && mousePos.y>75 && mousePos.y<1750)
+     {
+       image3Vis = false
+     }
+     if (mousePos.x>585 && mousePos.x<685 && mousePos.y>90 && mousePos.y<190)
+     {
+       image4Vis = false
+     }
+     if (mousePos.x>760 && mousePos.x<860 && mousePos.y>100 && mousePos.y<200)
+     {
+       image5Vis = false
+     }
+     context.drawImage(UsualBkg, 0, 0, 960, 600);
+     if (image1Vis == true) 
+     {
+       context.drawImage(blank_face, 100, 120, 100, 100);
+     }
+     if (image2Vis == true) 
+     {
+       context.drawImage(blank_face, 240, 90, 100, 100);
+     }
+     if (image3Vis == true) 
+     {
+       context.drawImage(blank_face, 435, 75, 100, 100);
+     }
+     if (image4Vis == true) 
+     {
+       context.drawImage(blank_face, 585, 90, 100, 100);
+     }
+     if (image5Vis == true) 
+     {
+       context.drawImage(blank_face, 760, 100, 100, 100);
+     }
+   }, false);
+
+ UsualBkg.onload = function() {
+   context.drawImage(UsualBkg, 0, 0, 960, 600);
+   context.drawImage(blank_face, 100, 130, 100, 100);
+   context.drawImage(blank_face, 240, 90, 100, 100);
+   context.drawImage(blank_face, 435, 75, 100, 100);
+   context.drawImage(blank_face, 585, 90, 100, 100);
+   context.drawImage(blank_face, 760, 100, 100, 100);
+ };
+ UsualBkg.src = 'images/The_Usual_suspects.jpg';
+ blank_face.src = 'images/blank_face.gif';
+</script>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 document">
+<h3 id="sec-2-2">Document It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Explain how you choose to find the correct face from the line up.
+</li>
+<li>Try and explain how you think a computer might have done it.
+</li>
+<li>How long do you think it would take you to find the IP address of a domain name in the list of 1001 you now have in Scratch?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 learn">
+<h3 id="sec-2-3">Learn It</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>A linear search is a method of going through a list of items, one by one, and checking each item. 
+</li>
+<li>Imagine we had a list of 'things'
+</li>
+</ul>
 <p>
-Make sure to include some information that you have gathered
-independently.
+<code>[cat,dog,horse,mouse,rabbit,parrot,elephant]</code>
 </p>
+<ul class="org-ul">
+<li>If we wanted a computer to program to find the position of the element
+</li>
+</ul>
+<p>
+<code>parrot</code> it would check from left to right
+</p>
+<ul class="org-ul">
+<li>The program would check what was at position 1, see if it was parrot and if it wasn't it would move onto position 2, and so on.
+</li>
+<li>Luckily, computers can do this exceptionally quickly.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Indexing a list</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>As a computer reads through a list, it needs to keep track of where it is. This is what an index is for.
+</li>
+<li>Imagine we have the following two lists:
+</li>
+</ul>
+<pre class="example">
+OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+Rating = ['4/5','2/5','4/5','3/5','5/5']
+</pre>
+<ul class="org-ul">
+<li>The items in the first list are Operating systems.
+</li>
+<li>The items in the second list give a user rating out of 5.
+</li>
+<li>Imagine we wanted to find out the rating out of 5 for Android.
+</li>
+<li>We could step through the list of operating systems until we found Android.
+</li>
+<li>This would not tell us where to find the rating out of five in the second list though. It would just tell us that Android exists in the first list.
+</li>
+</ul>
+<pre class="example">
+OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+Rating = ['4/5','2/5','4/5','3/5','5/5']
+</pre>
+<ul class="org-ul">
+<li>As we move through (iterate) the first list searching for 'Android', we keep a count of our position. The position is called the <i>index</i> of the list.
+</li>
+<li>The algorithm looks something like this:
+</li>
+</ul>
+<pre class="example">
+1. index = 1
+2. Is Android at index (position 1)
+3. No, so add 1 to index
+4. Is Android at index (position 2)
+5. No, so add 1 to index.
+6. Is Android at index (position 3)
+7. Yes. So look up index of the second list
+8. index (position 3) of the second list is 4/5
+9. So Android has a rating of 4/5
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Using a linear search in our DNS.</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>In our Scratch program so far we have a list of domain names and a list of IP addresses.
+</li>
+<li>We need to be able to conduct a linear search on the list of domain names to find the index of any given name.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 code">
+<h3 id="sec-4-1">Code It</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Start by adding in a When <code>green flag</code> clicked block
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_1.png" alt="Linear_Search_1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Now we'll ask the user for the domain name they're looking for.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_2.png" alt="Linear_Search_2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Next you'll need a couple of variables:
+<ul class="org-ul">
+<li>Create a variable called <code>domain</code>
+</li>
+<li>Create a variable called <code>index</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_3.png" alt="Linear_Search_3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>You should set the domain to be the answer of the <code>ask</code> block and the index to be the integer <code>1</code>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_search_4.png" alt="Linear_search_4.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3 code">
+<h3 id="sec-4-2">Code It</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Our linear search algorithm could possibly need to search right to the end of the list. So we'll need to use a loop that keeps going until the index is at 1001.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_5.png" alt="Linear_Search_5.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Currently <code>index</code> is <code>1</code>. So the algorithm needs to check the 1st item in domain names, and see if it matches the domain that the user is looking for. We can do this with a conditional <code>if/else</code> inside the <code>repeat until</code> loop.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_6.png" alt="Linear_Search_6.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If the domain names do not match, then we want <code>index</code> to become <code>2</code>, and the algorithm to go back to the start of the loop.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_7.png" alt="Linear_Search_7.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If however there is a match, then we know that the index of the IPs list will contain the IP address we're looking for.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_8.png" alt="Linear_Search_8.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3 run">
+<h3 id="sec-4-3">Run It</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Pick some random domain names from the list and use your algorithm to search for their IP addresses.
+</li>
+<li>Once you have an IP address you can copy and paste it into your browser's URL bar, and you should get directed to the site
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Linear_Search_9.png" alt="Linear_Search_9.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Not all of them will work however, as some sites use redirects and other trickery that will fool your browser.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-4" class="outline-3 document">
+<h3 id="sec-4-4">Document It</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>Use screen shots and some text to try to explain how your Linear Search algorithm works.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5" class="outline-3 learn">
+<h3 id="sec-4-5">Learn It</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+Here's a quick recap of what you've covered so far.
+</p>
+<ul class="org-ul">
+<li>Domain names are easy for humans to read and remember.
+</li>
+<li>Each domain name links to an IP address that computers use to send messages to each other.
+</li>
+<li>A Domain Name Server (DNS) stores a table of domain names and IP addresses.
+</li>
+<li>When you type in a URL, your computer asks the DNS what the IP address is for the domain name.
+</li>
+<li>An item in a list can be referenced by its position, which is called it's index.
+</li>
+<li>Linear search is one method of finding an element in a list.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> A Linear Search Project</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 badge">
+<h3 id="sec-5-1">Badge It</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>You're going to try an implement your own Linear Search program now.
+</li>
+<li>Create a Scratch program that:
+<ul class="org-ul">
+<li>Uses two lists, one to store a Subject Name (e.g. Science) and the other to store a teacher's name.
+</li>
+<li>Allows a user to search for a Subject Name and returns the teacher of that subject
+</li>
+</ul>
+</li>
+<li>Use any sprites you like.
+</li>
+<li>Make it return 'Not found" if a subject that doesn't exist is asked for.
+</li>
+</ul>
 </div>
 </div>
 </div>
