@@ -1,0 +1,621 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: How a Network works
+#+AUTHOR: Marc Scott
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+#+END_HTML
+The internet is a very large network, but at the end of the day it is still just a network of computers.
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* What is a Computer Network?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+When ever we connect two or more computers together, so that they can communicate with each other, we have a Computer Network.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- There are many different types of network, with names like /mesh/,/bus/ and /ring/.
+[[http://upload.wikimedia.org/wikipedia/commons/9/96/NetworkTopologies.png]]
+- Most networks you will have used will have been /star/ networks.
+- Star networks are named because of the shape they have in diagrams.
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/StarNetwork.svg/1200px-StarNetwork.svg.png]]
+- Even though in reality they look more like this:
+[[http://upload.wikimedia.org/wikipedia/commons/a/a5/Contemporary_Computer_Lab.jpg]]
+- With the cables tucked away out of sight and leading back to the central hub.
+[[http://upload.wikimedia.org/wikipedia/commons/e/e9/Switch-and-nest.jpg]]
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+
+* Modelling a network
+
+The internet is a very large network, but at the end of the day it is
+still just a network.
+
+You're going to build a model network in Scratch, that shows how
+information is past around.
+
+[[#][[[images/arrow.png]]]]
+
+** Getting started
+
+Goto the Scratch website and create a new project
+
+Call the project "Virtual Network"
+* Sprites
+
+[[#][[[images/arrow.png]]]]
+
+** Sprites
+
+We're going to need three sprites to start with.
+
+1. A computer
+2. A router
+3. A packet
+
+Here's the ones I used but feel free to select,import or draw your own.
+
+[[images/Sprites.png]]
+[[#][[[images/arrow.png]]]]
+
+We'll name the sprite for the computer with an IP address.
+
+On most /home/ networks the IP address will fall into the range of
+192.168.1.1 up to 192.168.1.254. We'll give our computer the first IP
+address, so call it =192.168.1.1=
+
+We'll name the router =192.168.1.254= as this is normally the default IP
+address for a home network router
+
+We'll name the packet =packet= because it's a packet
+
+[[#][[[images/arrow.png]]]]
+
+Here's a screenshot of my sprites so far and a video to create them if
+you need it.
+
+[[images/named_sprites.png]]
+
+* Packets
+
+[[#][[[images/arrow.png]]]]
+
+** How computers communicate on a network
+
+Below is a simplified description of how computers on a network send
+messages to each other.
+
+1. The computer sending some data will split the data up into packets.
+2. Each packet contains (amongst other things) the IP address of the
+   computer sending the data, a chunk of the data and the IP address of
+   the computer that is going to receive the data.
+3. The computer sends the packet to the router.
+4. The router examines the packet and sees the IP address of the
+   computer it is supposed to go to.
+5. The router forwards the packet onto the destination computer
+6. The destination computer receives the packet and can see the data it
+   contains
+
+[[#][[[images/arrow.png]]]]
+
+* Building the network
+
+[[#][[[images/arrow.png]]]]
+
+** Building the virtual network.
+
+To start we're going to set up the initial script on the laptop.
+
+The script needs to do the following
+
+1. When the laptop is clicked it creates a clone of the packet.
+2. It then needs to add the laptop's IP to a list called =packet_list=.
+3. It needs to ask what data is to be sent and add that to the list.
+4. It needs to ask where the data is to be sent and add that to the
+   list.
+
+See if you can build this, but there's help below.
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when this sprite clicked
+    create clone of packet
+    add 192.168.1.1 to packet_list
+    ask "What data do you want to send?"
+    add answer to packet_list
+    ask "Where fo you want to send the data?"
+    add answer to packet_list
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Blocks
+
+[[images/laptop_blocks1.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/laptop_script1.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+[[#][[[images/arrow.png]]]]
+
+** Emptying the list.
+
+If you click on the laptop, then you're list will be populated with
+three pieces of data.
+
+1. The IP of the laptop
+2. The Data
+3. Where the data is to be sent
+
+The probelm is that if we click the laptop a second time then more data
+is added. We need to empty the list each time the laptop is clicked.
+
+[[#][[[images/arrow.png]]]]
+
+Add in a block to empty the list when the laptop is clicked.
+
+[[images/empty_the_list.png]]
+
+Click the laptop to make sure the script is working.
+
+[[#][[[images/arrow.png]]]]
+
+[[#][[[images/arrow.png]]]]
+
+As we're using clones of the packet, we're going to need to hide the
+parent sprite, then when the clone is created it needs to go to the
+mouse pointer and show itself.
+
+* Sending the packet
+
+[[#][[[images/arrow.png]]]]
+
+** The packet
+
+So far, when the laptop is clicked a packet is created and a list
+containing IP addresses and data is filled.
+
+The packet now needs to go to the router, so that it can be directed to
+the correct computer on the network.
+
+The following should now happen:
+
+1. The packet clone should wait until the packet list contains 3
+   elements
+2. Then move towards the router.
+
+Give this a go.
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when I start as a clone
+    go to mouse-pointer
+    show
+    go to front
+    forever
+        if length of packet_list = 3 then
+            point towards 192.168.1.254
+            move 1 step
+                            
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Blocks
+
+[[images/packet_blocks2.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/packet_script2.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+* Arriving at the router
+
+[[#][[[images/arrow.png]]]]
+
+** The Packet continued
+
+If you test your script now the packet should move off towards the
+router and then jiggle there for awhile.
+
+We now need to tell the router that the packet has arrived so it can
+direct it onward.
+
+Think about how you might achieve this and have a go. Help as always is
+available below.
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    if distance to 192.168.1.254 < 10
+        broadcast "at router"
+        stop this script
+                        
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/packet_Script3.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+[[#][[[images/arrow.png]]]]
+
+** Deleting the clone
+
+So we don't end up with thousands of clones, we need to delete the
+clones when the simulation starts.
+
+* Building the router
+
+[[#][[[images/arrow.png]]]]
+
+** The router
+
+It's time to script the router. The router is going to find out where
+the packet needs to be sent and send it in the right direction.
+
+1. create a list called =destination_list=
+2. when the router receives the broadcast "at router":
+3. add x coordinate of the destination to =destination_list=
+4. add y coordinate of the destination to =destination_list=
+5. broadcast that the packet can be sent
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when I receive "at router"
+        add x position of item last of packet_list to destination_list
+        add y position of item last of packet_list to destination_list
+        broadcast foward_packet
+                            
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Blocks
+
+[[images/router_blocks.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/router_script.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+[[#][[[images/arrow.png]]]]
+
+** Clearing the destination\_list
+
+Again, we're going to need to make sure that the =destination_list= is
+emptied when the simulation runs.
+
+[[#][[[images/arrow.png]]]]
+
+** So far
+
+We now have a simulation that sends a packet to the router and the
+router stores the destination.
+
+However, we only have one computer.
+
+We can still test our script out, by getting the laptop to send a packet
+to itself.
+
+Run the simulation sending any data you want to 192.168.1.1
+
+The destination list should fill with the x and y coordinates of the
+laptop.
+
+* Forwarding
+* the packet
+
+[[#][[[images/arrow.png]]]]
+
+** Forwarding the packet
+
+Next the packet needs to head off to it's destination
+
+To do this, the packet needs to listen out for the =forward_packet=
+broadcast.
+
+The packet should then head off to the x and y coordinates in the
+=destination_list=
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when I receive forward_packet
+    glide 5 secs to x: item 1 of destination_list y: item 2 of destination_list
+    broadcast arrived
+                            
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The blocks
+
+[[images/packet_blocks_forward.png]]
+[[#][[[images/arrow.png]]]]
+
+** The script
+
+[[images/packet_script_forward.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+* Receiving the packet
+
+[[#][[[images/arrow.png]]]]
+
+** Receiving the packet
+
+Nearly there now.
+
+To finish off scripting the following needs to happen.
+
+The laptop has to listen out for the packet to broadcast =arrived=
+
+When this happends it can say the contents of the =packet_list=
+
+[[#][[[images/arrow.png]]]]
+
+** Pseudocode
+
+#+BEGIN_EXAMPLE
+    when I receive arrived
+    if touching packet
+        say (join "Received " (join item 2 of packet_list (join " from " item 1 of packet_list)))
+#+END_EXAMPLE
+
+[[#][[[images/arrow.png]]]]
+
+** The Blocks
+
+[[images/receiving_packet_blocks.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Script
+
+[[images/receiving_packet_script.png]]
+[[#][[[images/arrow.png]]]]
+
+** The Video
+
+[[#][[[images/arrow.png]]]]
+
+** Duplicating laptops
+
+The last thing to do is to duplicate the laptops and change the IP
+addresses each one adds to the =packet_list=
+
+* Finishing off
+
+[[#][[[images/arrow.png]]]]
+
+** Studying the network
+
+Play around with your network by clicking on different laptops and
+entering data and an IP address to send it to.
+
+Make sure you understand the basics of how the network works
+
+Remember - /this is an oversimplification but it should give you an
+idea./
+
+You can find a working model
+[[http://scratch.mit.edu/projects/11937692/][here]] if your's doesn't
+work.
+
+[[#][[[images/arrow.png]]]]
+
+** The real Internet
+
+The real internet is obviously much larger.
+
+On the internet packets are passed from one router to another, until
+they eventually end up on the network of the destination computer
+
+Also, not all the packets will go by the same route. Different packets
+can travel to the same computer by going across completely different
+countries!
+
+* Extension Activites
+
+[[#][[[images/arrow.png]]]]
+
+** Below are a series of extension activites.
+
+Choose an activity or activities that you feel will stretch your
+abilities but that you feel comfortable with.
+
+[[#][[[images/arrow.png]]]]
+
+** Expanding the Network
+
+Alter your network model so that it includes a DNS lookup.
+
+The sending computer should ask for a name to send to and the IP address
+should then be searched for.
+
+The packet can then be sent to the looked up IP address
+
+[[#][[[images/arrow.png]]]]
+
+** Creating a website.
+
+Go back and look at the web pages you created using HTML.
+
+Try to build on the website by adding more complex and a greater number
+of pages.
+
+You can find help on HTML at [w3schools](http://www.w3schools.com/html/)
+
+[[#][[[images/arrow.png]]]]
+
+** How the Internet works.
+
+Using any software you desire:
+
+Create a presentation, poster or report to explaian how the internet
+works. Include:
+
+-  What a packet is
+-  What a router is
+-  How a packet is transmitted from one computer to another
+
+Make sure the product you create is suitable for a person who know
+little about the Internet/
+
+Make sure to include some information that you have gathered
+independently.
