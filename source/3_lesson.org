@@ -212,7 +212,7 @@ On the image below you're presented with an Identity Parade Lineup. You need to 
 	       context.drawImage(blank_face, 585, 90, 100, 100);
 	       context.drawImage(blank_face, 760, 100, 100, 100);
 	     };
-	     UsualBkg.src = 'img/The_Usual_suspects.jpg';
+	     UsualBkg.src = 'img/The_Usual_Suspects.jpg';
 	     blank_face.src = 'img/blank_face.gif';
 	    </script>
 #+END_HTML
