@@ -128,7 +128,7 @@ A quick note. Not everything explained in this presentation is true. Some of it 
 - To do this the server needs to use a searching algorithm.
 ----
 On the image below you're presented with an Identity Parade Lineup. You need to find this face:
-[[file:images/Face.jpg]]
+[[file:img/Face.jpg]]
 
 #+BEGIN_HTML
 	    <canvas id="myCanvas" width="960" height="600"></canvas>
@@ -212,8 +212,8 @@ On the image below you're presented with an Identity Parade Lineup. You need to 
 	       context.drawImage(blank_face, 585, 90, 100, 100);
 	       context.drawImage(blank_face, 760, 100, 100, 100);
 	     };
-	     UsualBkg.src = 'images/The_Usual_suspects.jpg';
-	     blank_face.src = 'images/blank_face.gif';
+	     UsualBkg.src = 'img/The_Usual_suspects.jpg';
+	     blank_face.src = 'img/blank_face.gif';
 	    </script>
 #+END_HTML
 
@@ -329,7 +329,6 @@ Here's a quick recap of what you've covered so far.
 - When you type in a URL, your computer asks the DNS what the IP address is for the domain name.
 - An item in a list can be referenced by its position, which is called it's index.
 - Linear search is one method of finding an element in a list.
-
 
 * A Linear Search Project
 :PROPERTIES:
