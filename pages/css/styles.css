@@ -1,6 +1,6 @@
 /*GitHub Ribbon*/
 .ribbon {
-  background-color: #a30000;
+  background-color: #4099ff;
   overflow: hidden;
   white-space: nowrap;
   position: absolute;
@@ -60,7 +60,7 @@ p code {
 }
 pre {
   font-size: 16px;
-  font-family: "Source Code Pro", Courier, monospace;
+  font-family: 'Ubuntu mono', "Courier New", Courier, monospace;
   font-weight: 400;
   line-height: 1.5;
   clear: both;
@@ -110,14 +110,14 @@ pre {
 /* CSS For Lesson*/
 h1 {
   font-size: 50px;
-  color: #a30000;
+  color: #4099ff;
   margin-left: auto;
   margin-right: auto;
 }
 .activity h2 {
   font-size: 30px;
   color: #FFF;
-  background: #a30000;
+  background: #4099ff;
   margin-top: 30px;
   padding: 10px 10px;
   border-radius: 5px;
@@ -125,6 +125,13 @@ h1 {
 .activity img {
   padding: 5px;
   border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 600px;
+}
+.activity iframe {
+  padding: 5px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -168,7 +175,7 @@ h1 {
   background-image: url(icons/Save.svg);
 }
 h3 {
-  color: #a30000;
+  color: #4099ff;
   background-position: 0px 10px;
   background-size: 40px 40px;
   background-repeat: no-repeat;
@@ -180,7 +187,7 @@ h3 {
   font-size: 20px;
   float: left;
   width: 100%;
-  border-top: 3px dotted #a30000;
+  border-top: 3px dotted #4099ff;
 }
 /*CSS FOR LISTS*/
 li:before {
@@ -192,7 +199,7 @@ li:before {
   margin-left: 5px;
   content: " ";
   border-radius: 4px;
-  border: 2px solid #a30000;
+  border: 2px solid #4099ff;
   padding: 6px 6px;
   margin-right: 20px;
   float: left;

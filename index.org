@@ -1,5 +1,5 @@
 #+STARTUP:indent
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="pages/css/lesson.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="pages/css/styles.css"/>
 #+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil html-style:nil 
 
 #+TITLE: How The Internet Works
@@ -19,7 +19,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-* [[file:pages/3_Lesson.html][Lesson 3 - How A Network Works]]
+* [[file:pages/3_Lesson.html][Lesson 3 - Modelling a DNS]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
