@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Modeling a Network in Scratch</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Modeling a Network in Scratch</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Getting started</a>
+<ul>
+<li><a href="#sec-1-1">Code It</a></li>
+<li><a href="#sec-1-2">Code It</a></li>
+<li><a href="#sec-1-3">Code It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Scripting the Computer</a>
+<ul>
+<li><a href="#sec-2-1">Code It</a></li>
+<li><a href="#sec-2-2">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Scripting the Packet</a>
+<ul>
+<li><a href="#sec-3-1">Code It</a></li>
+<li><a href="#sec-3-2">Code It</a></li>
+<li><a href="#sec-3-3">Try It</a></li>
+<li><a href="#sec-3-4">Code It</a></li>
+<li><a href="#sec-3-5">Try It</a></li>
+<li><a href="#sec-3-6">Code It</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Checking it works</a>
+<ul>
+<li><a href="#sec-4-1">Run It</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Extension Activities</a>
+<ul>
+<li><a href="#sec-5-1">Badge It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Getting started</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 code">
+<h3 id="sec-1-1">Code It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Go to the <a href="http://scratch.mit.edu/">Scratch website</a> and create a new project
+</li>
+<li>Call the project "Virtual Network"
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 code">
+<h3 id="sec-1-2">Code It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>We're going to need three sprites to start with.
+<ul class="org-ul">
+<li>A computer
+</li>
+<li>A router
+</li>
+<li>A packet
+</li>
+</ul>
+</li>
+<li>Here's the ones I used but feel free to select,import or draw your own.
+</li>
+</ul>
+<p>
+<img src="img/Computer.png" alt="Computer.png" />
+<img src="img/Router.png" alt="Router.png" />
+</p>
+<ul class="org-ul">
+<li>We'll name the sprite for the computer with an IP address.
+</li>
+<li>On most <i>home</i> networks the IP address will fall into the range of 192.168.1.1 up to 192.168.1.254. We'll give our computer the first IP address, so call it <code>192.168.1.1</code>
+</li>
+<li>We'll name the Router <code>router</code> and the Packet <code>packet</code>.
+</li>
+<li>Here's a screen-shot of my sprites so far.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Model_Net_1.png" alt="Model_Net_1.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3 code">
+<h3 id="sec-1-3">Code It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Next we'll need three variable, to represent the data the packet is going to contain.
+</li>
+<li>Create a variable called source.
+</li>
+<li>Create a variable called destination.
+</li>
+<li>Create a variable called data
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Model_Net_2.png" alt="Model_Net_2.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Scripting the Computer</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 code">
+<h3 id="sec-2-1">Code It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Click on the Computer Sprite so that you can add scripts to it.
+</li>
+<li>The Script we need is very simple.
+</li>
+<li>When the sprite is clicked, the variable <code>source</code> needs to be set to the name of the sprite (in this case 192.168.1.1), and a message needs to be broadcast called <code>Create Packet</code>)
+</li>
+</ul>
+<pre class="example">
+When this sprite clicked
+Set source to 192.168.1.1
+Broadcast Create Packet
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 try">
+<h3 id="sec-2-2">Try It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>We'll need more than one Computer on our network.
+</li>
+<li>Duplicate the computer a few times (5 should be enough computers, but you can have more or less if you like)
+</li>
+<li>Rename each one so that it has a unique IP.
+</li>
+<li>Alter the script of each one so that it set's the variable <code>source</code> to the IP of the computer.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Scripting the Packet</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 code">
+<h3 id="sec-3-1">Code It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>The packet script is a little more complicated.
+</li>
+<li>The first thing we want to happen, is for the packet to appear on the computer that has been clicked.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Model_Net_3.png" alt="Model_Net_3.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 code">
+<h3 id="sec-3-2">Code It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Next the packet needs to be provided with some information. The variable <code>source</code> already contains the sender's IP, but the packet needs to know where it is going and what data it should carry.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Model_Net_4.png" alt="Model_Net_4.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 try">
+<h3 id="sec-3-3">Try It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>Now get the packet to ask for a message and save the user's input in the variable <code>data</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3 code">
+<h3 id="sec-3-4">Code It</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>For the next part we'll need a loop.
+</li>
+<li>We'll use a <code>Repeat until</code> loop to get the packet to move towards the router, until it touches it.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Model_Net_5.png" alt="Model_Net_5.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3 try">
+<h3 id="sec-3-5">Try It</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>Once the packet has reached the router, it'll need to move off towards the computer that is currently stored in the variable <code>destination</code>
+</li>
+<li>Try to use another <code>Repeat until</code> loop to do this.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3 code">
+<h3 id="sec-3-6">Code It</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>Finally when the packet arrives at it's destination, it can say the message that is stored in <code>data</code> for a couple of seconds and then the script can stop.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Model_Net_6.png" alt="Model_Net_6.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Checking it works</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 run">
+<h3 id="sec-4-1">Run It</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Run your script. It should operate like the video below.
+</li>
+</ul>
+<video controls>
+  <source src="img/Model_Net.m4v" type="video/mp4">
+  Your browser does not support the video file
+</video>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> Extension Activities</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 badge">
+<h3 id="sec-5-1">Badge It</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Alter your network model so that it includes a DNS look-up.
+</li>
+<li>The sending computer should ask for a name to send to the packet to.
+</li>
+<li>The IP address should then be searched for from a couple of lists.
+</li>
+<li>The packet can then be sent to the looked up IP address
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
