@@ -13,17 +13,17 @@
 #+END_HTML
 * [[file:pages/1_Lesson.html][Lesson 1 - The Internet, The Web, Browsers and Search Engines]]
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
+:HTML_CONTAINER_CLASS: link-heading
 :END:
 * [[file:pages/2_Lesson.html][Lesson 2 - Domain Names, IP Addresses and DNS]]
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
+:HTML_CONTAINER_CLASS: link-heading
 :END:
 * [[file:pages/3_Lesson.html][Lesson 3 - Modelling a DNS]]
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
+:HTML_CONTAINER_CLASS: link-heading
 :END:
 * [[file:pages/4_Lesson.html][Lesson 4 - Packets and Routers]]
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
+:HTML_CONTAINER_CLASS: link-heading
 :END:

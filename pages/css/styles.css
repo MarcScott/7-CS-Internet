@@ -108,6 +108,25 @@ pre {
   list-style-position: outside;
 }
 /* CSS For Lesson*/
+.link-heading {
+  font-size: 15px;
+  background: #4099ff;
+  margin-top: 10px;
+  padding: 10px 10px;
+  border-radius: 3px;
+}
+.link-heading a:link {
+  color: #FFFFFF;
+}
+.link-heading a:visited {
+  color: #FFFFFF;
+}
+.link-heading a:hover {
+  color: #808080;
+}
+.link-heading a:link {
+  color: #ffffff;
+}
 h1 {
   font-size: 50px;
   color: #4099ff;
