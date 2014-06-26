@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>How a Network works</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">How a Network works</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. What is a Computer Network?</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Research It</a></li>
+<li><a href="#sec-1-3">Document It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Packets and Routers</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Try It</a></li>
+<li><a href="#sec-2-3">Learn It</a></li>
+<li><a href="#sec-2-4">Try It</a></li>
+<li><a href="#sec-2-5">Learn It</a></li>
+<li><a href="#sec-2-6">Try It</a></li>
+<li><a href="#sec-2-7">Research It</a></li>
+<li><a href="#sec-2-8">Learn It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. A Presentation on Networks</a>
+<ul>
+<li><a href="#sec-3-1">Badge It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+<p>
+The internet is a very large network, but at the end of the day it is still just a network of computers.
+</p>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> What is a Computer Network?</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+When ever we connect two or more computers together, so that they can communicate with each other, we have a Computer Network.
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>There are many different types of network, with names like <i>mesh</i>,/bus/ and <i>ring</i>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/9/96/NetworkTopologies.png" alt="NetworkTopologies.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Most networks you will have used will have been <i>star</i> networks.
+</li>
+<li>Star networks are named because of the shape they have in diagrams.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/StarNetwork.svg/1200px-StarNetwork.svg.png" alt="1200px-StarNetwork.svg.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Even though in reality they look more like this:
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/a/a5/Contemporary_Computer_Lab.jpg" alt="Contemporary_Computer_Lab.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>With the cables tucked away out of sight and leading back to the central hub.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/e/e9/Switch-and-nest.jpg" alt="Switch-and-nest.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 research">
+<h3 id="sec-1-2">Research It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>The video below will give you an overview of how a Network works.
+</li>
+</ul>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/EWTJKcg7Pj8" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 document">
+<h3 id="sec-1-3">Document It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Having watched the video, try and produce a summary of it for your notes.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Packets and Routers</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>The image below shows the devices that might make up a home network
+</li>
+<li>Download the image (right click on it), and then open it up in a graphics package such as Paint or Photoshop.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Network_components.jpg" alt="Network_components.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 try">
+<h3 id="sec-2-2">Try It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Now label the devices using the list below.
+<ul class="org-ul">
+<li>Desktop Computer
+</li>
+<li>Smartphone
+</li>
+<li>Router
+</li>
+<li>Media Player
+</li>
+<li>Games Console.
+</li>
+<li>Notebook
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 learn">
+<h3 id="sec-2-3">Learn It</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>We can connect up devices on a network using cable called <i>Patch cables</i>. You've probably got one coming out of the back of the computer you are using right now.
+</li>
+<li>Patch cables are plugged into <i>Ethernet Ports</i> on devices.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3 try">
+<h3 id="sec-2-4">Try It</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>On your diagram, draw on wires that link the the Ethernet ports on the Desktop Computer, Media Player and Games Console to the Router
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Ethernet_ports.jpg" alt="Ethernet_ports.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3 learn">
+<h3 id="sec-2-5">Learn It</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>Some devices connect wirelessly.
+</li>
+<li><i>WiFi</i> stands for Wireless Fidelity.
+</li>
+<li><i>WiFi</i> uses radio waves to allow devices to communicate with each other.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-6" class="outline-3 try">
+<h3 id="sec-2-6">Try It</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>On your diagram, add in something to indicate that the Router is able to connect to the Smartphone and Notebook using <i>WiFi</i>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-7" class="outline-3 research">
+<h3 id="sec-2-7">Research It</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>Devices can connect with each other using a few other methods. Use the Web to try and answer the following questions:
+<ul class="org-ul">
+<li>What is <i>Bluetooth</i>?
+</li>
+<li>What is the range of <i>Bluetooth</i> communications
+</li>
+<li>What are Fibre Optic cables?
+</li>
+<li>What does 4G mean?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-8" class="outline-3 learn">
+<h3 id="sec-2-8">Learn It</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li>Your diagram should probably look something like this now.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Home_network.jpg" alt="Home_network.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Let's imagine that the Desktop Computer is going to send an image file to the Media Player.
+</li>
+<li>The image is called tree.jpg and has a size of 1.5MB (That's 1.5 Million bytes)
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/tree.jpg" alt="tree.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>1.5 Million bytes is too large to send in one go, so the Desktop Computer needs to break up the file into small chunks called <i>packets</i>
+</li>
+<li>Each packet has an average size of about 1.5KB (That's 1500 bytes)
+</li>
+<li>The Desktop Computer breaks up the image into packets, and adds some extra data onto the packet as well
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/packet.jpg" alt="packet.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Each packet is then sent to the Router.
+</li>
+<li>When the Router receives a packet, it looks at the receiver's IP Address, and then sends the packet onto the correct device on the network.
+</li>
+<li>The receiving device (in this case the Media Player) receives all these packets, and uses the packet number to assemble them all in the correct order.
+</li>
+<li>Sometimes a packet get's lost or destroyed on the way. The receiving device will know that a packet is missing, and can use the sender's IP address to ask for the packet to be sent again.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> A Presentation on Networks</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 badge">
+<h3 id="sec-3-1">Badge It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Imagine you had to try and explain how an image is sent over a network, from one device to another.
+</li>
+<li>Create a presentation (using any software you like), and the image you drew earlier of a network, to explain how a file is sent over a network.
+</li>
+<li>Your teacher will award you a silver, gold or platinum badge, depending on the clarity of your presentation.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
