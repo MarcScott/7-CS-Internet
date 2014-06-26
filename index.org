@@ -19,11 +19,15 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* [[file:pages/3_Lesson.html][Lesson 3 - Modelling a DNS]]
+* [[file:pages/3_Lesson.html][Lesson 3 - Modeling a DNS]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
 * [[file:pages/4_Lesson.html][Lesson 4 - Packets and Routers]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/5_Lesson.html][Lesson 5 - Modeling a Network]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
