@@ -252,9 +252,12 @@ computer
 :HTML_CONTAINER_CLASS: badge
 :END:
 - To get your badge for this section, you're going to need to pass a little online test.
+- The test can be found [[file:js/popquiz.htm][here]]
+- Be sure you want to submit the test, as once submitted you can't go back.
 - 50% or above will award you with the bronze badge
 - 70& or above will award you with the silver badge
 - 90% or above will award you with the gold badge.
+- Show the results page of the test to your teacher once you have completed it.
 - If you get below 50%, then you'll have to do a little more revision and take the test again.
 
 
