@@ -73,9 +73,8 @@
 :END:
 - Most people don't know what the Internet is or how it works, even though they use it every day.
 #+BEGIN_HTML
-<iframe width="560" height="315" src="http://www.youtube.com/embed/iDbyYGrswtg" frameborder="0" allowfullscreen></iframe>
+<object data="http://www.youtube.com/embed/iDbyYGrswtg" width="560" height="315"></object>
 #+END_HTML
-
 - In reality, The Internet is a global network of computers, connected by /fibre optic/ and /copper cables/ or /wireless and satellite signals/.
 - On it's own, the internet is nothing more than a lot of very expensive equipment.
 ** Research It
@@ -230,7 +229,7 @@ computer
 
 - Watch the following video about Google search. Most search engines like Bing, Duck Duck Go and Yahoo work in much the same way.
 #+BEGIN_HTML
-<iframe width="560" height="315" src="http://www.youtube.com/embed/BNHR6IQJGZs" frameborder="0" allowfullscreen></iframe>
+<object width="560" height="315" data="http://www.youtube.com/embed/BNHR6IQJGZs"</object>
 #+END_HTML
 ** Present It
 :PROPERTIES:

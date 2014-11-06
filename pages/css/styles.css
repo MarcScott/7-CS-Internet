@@ -142,7 +142,8 @@ h1 {
   border-radius: 5px;
 }
 .activity img,
-video {
+video,
+object {
   padding: 5px;
   border-radius: 10px;
   margin-left: auto;
