@@ -228,7 +228,7 @@ computer
 :END:
 - Watch the following video about Google search. Most search engines like Bing, Duck Duck Go and Yahoo work in much the same way.
 #+BEGIN_HTML
-<object width="560" height="315" data="https://www.youtube.com/embed/BNHR6IQJGZs"</object>
+<object data="https://www.youtube.com/embed/BNHR6IQJGZs" width="560" height="315"></object>
 #+END_HTML
 ** Present It
 :PROPERTIES:
