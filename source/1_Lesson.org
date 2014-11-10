@@ -73,7 +73,7 @@
 :END:
 - Most people don't know what the Internet is or how it works, even though they use it every day.
 #+BEGIN_HTML
-<object data="http://www.youtube.com/embed/iDbyYGrswtg" width="560" height="315"></object>
+<object data="https://www.youtube.com/embed/iDbyYGrswtg" width="560" height="315"></object>
 #+END_HTML
 - In reality, The Internet is a global network of computers, connected by /fibre optic/ and /copper cables/ or /wireless and satellite signals/.
 - On it's own, the internet is nothing more than a lot of very expensive equipment.
@@ -82,7 +82,7 @@
 - Find out where the world's longest fibre optic cables can be found.
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: research
-:END:
+:END:      
 ** Present It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: present
@@ -99,7 +99,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-[[http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg]]
+[[https://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg]]
 - Tim Berners-Lee invented the Web back in 1989.
 - To understand how the Web works, we're going to create a little web-page.
   - Create a new directory somewhere in your directory. Call it =myWebsite=
@@ -168,7 +168,7 @@ ends in =.html= and /NOT/ =.txt=
 - They all link to each other using links like the ones you made.
 - The =html= documents are stored on different computers all over the world.
 - These computers are called /Web Servers/
-[[http://upload.wikimedia.org/wikipedia/commons/9/98/Cern_datacenter.jpg]]
+[[https://upload.wikimedia.org/wikipedia/commons/9/98/Cern_datacenter.jpg]]
 - Try to find out the following information
   - What is the most popular web page in the world?
   - What was the worlds first web page?
@@ -226,10 +226,9 @@ computer
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: research
 :END:
-
 - Watch the following video about Google search. Most search engines like Bing, Duck Duck Go and Yahoo work in much the same way.
 #+BEGIN_HTML
-<object width="560" height="315" data="http://www.youtube.com/embed/BNHR6IQJGZs"</object>
+<object width="560" height="315" data="https://www.youtube.com/embed/BNHR6IQJGZs"</object>
 #+END_HTML
 ** Present It
 :PROPERTIES:
