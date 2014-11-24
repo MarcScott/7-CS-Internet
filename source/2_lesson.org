@@ -139,9 +139,9 @@ VIH_DisplayOnPage = "yes";
 :END:
 - Below are three videos, each explaining DNS in a little more detail. You can watch just the first, or all three, but make sure you understand what DNS is.
 #+BEGIN_HTML
-<iframe width="560" height="315" src="http://www.youtube.com/embed/2ZUxoi7YNgs" frameborder="0" allowfullscreen></iframe>
-<iframe class="wistia_embed" name="wistia_embed" src="http://fast.wistia.net/embed/iframe/z8ryt1i6yf?canonicalUrl=http%3A%2F%2Fdyn.com%2Fblog%2Fdynedu-video-dns-explained%2F&canonicalTitle=%23DynEdu%20Video%3A%20DNS%20Explained%20%7C%20Dyn%20Blog" allowtransparency="true" frameborder="0" scrolling="no" width="480" height="498"></iframe>
-<iframe width="560" height="315" src="http://www.youtube.com/embed/72snZctFFtA" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2ZUxoi7YNgs" frameborder="0" allowfullscreen></iframe>
+<iframe class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/z8ryt1i6yf?canonicalUrl=http%3A%2F%2Fdyn.com%2Fblog%2Fdynedu-video-dns-explained%2F&canonicalTitle=%23DynEdu%20Video%3A%20DNS%20Explained%20%7C%20Dyn%20Blog" allowtransparency="true" frameborder="0" scrolling="no" width="480" height="498"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/72snZctFFtA" frameborder="0" allowfullscreen></iframe>
 #+END_HTML
 
 ** Badge It:

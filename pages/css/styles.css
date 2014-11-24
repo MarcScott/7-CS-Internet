@@ -22,6 +22,31 @@
   text-align: center;
   text-decoration: none;
 }
+/*Home Ribbon*/
+.ribbon2 {
+  background-color: #0071bb;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 50px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.ribbon2 a {
+  border: 1px solid #faa;
+  color: #fff;
+  display: block;
+  font: bold 81.25% 'Ubuntu', Helvetica, Arial, sans-serif;
+  margin: 1px 0;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+}
 /*Main Styles*/
 * {
   margin: 0px padding: 0px;

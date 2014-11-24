@@ -98,7 +98,7 @@ When ever we connect two or more computers together, so that they can communicat
 :END:
 - The video below will give you an overview of how a Network works.
 #+BEGIN_HTML
-<iframe width="420" height="315" src="http://www.youtube.com/embed/EWTJKcg7Pj8" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/EWTJKcg7Pj8" frameborder="0" allowfullscreen></iframe>
 #+END_HTML
 ** Document It
 :PROPERTIES:

@@ -109,7 +109,7 @@ A quick note. Not everything explained in this presentation is true. Some of it 
 :END:
 - We're going to need a few Domain names and IP Addresses to populate our table. About 1000 of each should do the trick.
 - This would take ages by hand, but luckily Scratch allows us to import text files.
-- Download this text file - [[file:~/Curriculum/7-CS-Internet/resources/domains.txt][domains.txt]] and this text file - [[file:~/Curriculum/7-CS-Internet/resources/IPs.txt][IPs.txt]]
+- Download this text file - [[file:../resources/domains.txt][Domains.txt]] and this text file - [[file:../resources/IPs.txt][IPs.txt]]
 - Now right click on the gray box that represents the Domain Names list and choose import from the context menu.
 - You can then direct your file browser to the downloaded file.
 [[file:img/Create_Lists_2.png]]

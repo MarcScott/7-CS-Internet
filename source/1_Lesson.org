@@ -1,7 +1,7 @@
 #+STARTUP:indent
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 #+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
-#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
 #+TITLE: The Internet, The Web, Browsers and Search Engines.
 #+AUTHOR: Marc Scott
 
@@ -259,3 +259,4 @@ computer
 - If you get below 50%, then you'll have to do a little more revision and take the test again.
 
 
+[[file:~/bournetocode/projects/7-CS-Internet/index.html][Back to Home]]
