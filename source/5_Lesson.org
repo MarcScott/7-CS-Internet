@@ -202,5 +202,5 @@ Broadcast Create Packet
 - Alter your network model so that it includes a DNS look-up.
 - The sending computer should ask for a name to send to the packet to.
 - The IP address should then be searched for from a couple of lists.
-- The packet can then be sent to the looked up IP address
+- The packet can then be sent to the looked up IP address.
 
